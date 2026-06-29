@@ -39,8 +39,17 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     const seen  = buildSeenSet(shows);
     log(`  ${shows.length} shows, ${seen.size} unique artists seen`);
 
-    // Resolve seen artist names → ranks via alias lookup
+    // Resolve seen artist names → ranks via alias lookup.
+    // Also split "X with Y" names so both artists get credit.
     const seenRanks = new Set();
+    const rawNames = shows.map(s => s?.artist?.name).filter(Boolean);
+    for (const raw of rawNames) {
+      const parts = raw.split(/\s+with\s+/i);
+      for (const part of parts) {
+        const rank = aliasToRank.get(normalize(part));
+        if (rank) seenRanks.add(rank);
+      }
+    }
     for (const normName of seen) {
       const rank = aliasToRank.get(normName);
       if (rank) seenRanks.add(rank);
