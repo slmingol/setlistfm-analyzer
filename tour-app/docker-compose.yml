@@ -2,7 +2,7 @@ services:
   tour-app:
     build: .
     ports:
-      - "3234:3000"
+      - "3234:3234"
     volumes:
       # top_artists.json is read from the parent project
       - ../top_artists.json:/app/data/top_artists.json
