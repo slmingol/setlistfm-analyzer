@@ -4,7 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - 'tour-app/**'
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+      - 'Dockerfile'
       - 'top_artists.json'
       - '.github/workflows/docker-publish.yml'
 
@@ -40,7 +43,6 @@ jobs:
 
       - name: Bump version in package.json
         id: version
-        working-directory: tour-app
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -49,7 +51,7 @@ jobs:
 
       - name: Commit and push version bump
         run: |
-          git add tour-app/package.json
+          git add package.json
           git commit -m "chore: bump version to ${{ steps.version.outputs.version }} [skip ci]"
           git push
 
@@ -73,7 +75,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./tour-app
+          context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

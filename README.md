@@ -33,7 +33,6 @@ A self-hosted web app that tracks your concert coverage against a curated list o
 ## Setup
 
 ```bash
-cd tour-app
 cp .env.example .env
 ```
 
@@ -48,7 +47,12 @@ TICKETMASTER_API_KEY=your_ticketmaster_consumer_key
 Then start the app:
 
 ```bash
+# local dev (builds image from source)
 docker compose up -d
+
+# production (pulls pre-built image from GHCR)
+docker compose -f docker-compose.prod.yml up -d
+
 # open http://localhost:3234
 ```
 
@@ -59,7 +63,7 @@ On first start, the app syncs immediately (fetches your setlist.fm history and q
 | File | Description |
 |------|-------------|
 | `top_artists.json` | 501-artist reference list with genre, era, deceased/touring status, and name aliases |
-| `tour-app/data/tours.db` | SQLite database (created at runtime, persisted via Docker volume) |
+| `data/tours.db` | SQLite database (created at runtime, persisted via Docker volume) |
 
 ## Configuration
 

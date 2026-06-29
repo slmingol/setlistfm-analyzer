@@ -4,8 +4,7 @@ services:
     ports:
       - "3234:3000"
     volumes:
-      # top_artists.json is read from the parent project
-      - ../top_artists.json:/app/data/top_artists.json
+      - ./top_artists.json:/app/data/top_artists.json
       # tours.db persists between restarts
       - tour-data:/app/data
     env_file:

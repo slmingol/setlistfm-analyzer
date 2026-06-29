@@ -1,6 +1,4 @@
 .env
-cache_attended.json
-report.html
-__pycache__/
-*.pyc
 .DS_Store
+node_modules/
+data/tours.db

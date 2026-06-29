@@ -1,0 +1,14 @@
+services:
+  setlistfm-analyzer:
+    image: ghcr.io/slmingol/setlistfm-analyzer:latest
+    ports:
+      - "3234:3000"
+    volumes:
+      - ./top_artists.json:/app/data/top_artists.json
+      - app-data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
+
+volumes:
+  app-data:
