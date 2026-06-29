@@ -219,7 +219,7 @@ function render() {
       <td class="rank">#${a.rank}</td>
       <td><span class="artist-name">${a.name}</span></td>
       <td class="dates-cell">${evHtml}${more}</td>
-      <td><button class="hide-btn" onclick="hideArtist(${a.rank},${JSON.stringify(a.name)})">✕ Hide</button></td>
+      <td><button class="hide-btn" data-rank="${a.rank}" data-name="${a.name.replace(/"/g,'&quot;')}" onclick="hideArtist(this)">✕ Hide</button></td>
     </tr>`;
   }).join('');
 
@@ -241,7 +241,9 @@ function setSort(col) {
   render();
 }
 
-async function hideArtist(rank, name) {
+async function hideArtist(btn) {
+  const rank = Number(btn.dataset.rank);
+  const name = btn.dataset.name;
   await fetch('/api/blacklist', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ rank, name }),
