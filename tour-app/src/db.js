@@ -62,6 +62,17 @@ db.exec(`
     detected_at      TEXT NOT NULL DEFAULT (datetime('now')),
     dismissed        INTEGER NOT NULL DEFAULT 0
   );
+
+  CREATE TABLE IF NOT EXISTS list_suggestions (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    source      TEXT NOT NULL,
+    name        TEXT NOT NULL,
+    year        INTEGER,
+    category    TEXT,
+    detected_at TEXT NOT NULL DEFAULT (datetime('now')),
+    dismissed   INTEGER NOT NULL DEFAULT 0,
+    UNIQUE(source, name)
+  );
 `);
 
 export default db;

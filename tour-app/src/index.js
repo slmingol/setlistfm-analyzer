@@ -7,6 +7,7 @@ import { mkdirSync } from 'fs';
 import db from './db.js';
 import { runSync, isSyncing } from './sync.js';
 import { runStatusSync, isStatusSyncing, applyStatusChange } from './statusSync.js';
+import { runListSync, isListSyncing } from './listSync.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 mkdirSync(join(__dir, '..', 'data'), { recursive: true });
@@ -19,6 +20,7 @@ const {
   SYNC_ON_START = 'true',
   CRON_SCHEDULE = '0 12 * * 1',         // Monday noon UTC
   STATUS_SYNC_SCHEDULE = '0 14 * * 1',  // Monday 2pm UTC (after main sync)
+  LIST_SYNC_SCHEDULE   = '0 10 1 * *',  // 1st of each month, 10am UTC
 } = process.env;
 
 if (!SETLIST_KEY || !SETLIST_USER || !TM_KEY) {
@@ -142,6 +144,25 @@ app.post('/api/status-sync', (_req, res) => {
   runStatusSync({ tmKey: TM_KEY });
 });
 
+// List gap suggestions (RRHOF etc.)
+app.get('/api/list-suggestions', (_req, res) => {
+  const rows = db.prepare(
+    `SELECT * FROM list_suggestions WHERE dismissed = 0 ORDER BY year DESC, name ASC`
+  ).all();
+  res.json(rows);
+});
+
+app.post('/api/list-suggestions/:id/dismiss', (req, res) => {
+  db.prepare(`UPDATE list_suggestions SET dismissed = 1 WHERE id = ?`).run(Number(req.params.id));
+  res.json({ ok: true });
+});
+
+app.post('/api/list-sync', (_req, res) => {
+  if (isListSyncing()) return res.status(409).json({ error: 'List sync already running' });
+  res.json({ started: true });
+  runListSync();
+});
+
 // --- Scheduler ---
 
 cron.schedule(CRON_SCHEDULE, () => {
@@ -152,6 +173,11 @@ cron.schedule(CRON_SCHEDULE, () => {
 cron.schedule(STATUS_SYNC_SCHEDULE, () => {
   console.log('Cron: starting weekly status sync');
   runStatusSync({ tmKey: TM_KEY });
+});
+
+cron.schedule(LIST_SYNC_SCHEDULE, () => {
+  console.log('Cron: starting monthly list sync');
+  runListSync();
 });
 
 app.listen(Number(PORT), () => {

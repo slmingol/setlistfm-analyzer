@@ -170,6 +170,15 @@
     <div class="sugg-list" id="suggList"></div>
   </section>
 
+  <section id="listSuggSection" style="display:none">
+    <h3>Missing Inductees</h3>
+    <div class="status-sync-row">
+      <p style="margin:0">RRHOF inductees not in top_artists.json. Dismiss or add manually.</p>
+      <button class="btn-dismiss" id="listSyncBtn" onclick="triggerListSync()" style="white-space:nowrap">Run Check</button>
+    </div>
+    <div class="sugg-list" id="listSuggList"></div>
+  </section>
+
   <section>
     <h3>Hidden Artists</h3>
     <p>Artists you've hidden will not appear in the planner. Click ✕ to restore.</p>
@@ -181,6 +190,7 @@
 let allArtists = [];
 let blacklist = [];
 let suggestions = [];
+let listSuggestions = [];
 let status = {};
 let sortCol = 'rank', sortDir = 1;
 const NEW_HOURS = 72;
@@ -207,19 +217,22 @@ function loadPrefs() {
 
 async function load() {
   loadPrefs();
-  const [ar, sr, bl, sg] = await Promise.all([
+  const [ar, sr, bl, sg, ls] = await Promise.all([
     fetch('/api/artists').then(r => r.json()),
     fetch('/api/status').then(r => r.json()),
     fetch('/api/blacklist').then(r => r.json()),
     fetch('/api/suggestions').then(r => r.json()),
+    fetch('/api/list-suggestions').then(r => r.json()),
   ]);
   allArtists = ar;
   status = sr;
   blacklist = bl;
   suggestions = sg;
+  listSuggestions = ls;
   renderStatus();
   renderBlacklist();
   renderSuggestions();
+  renderListSuggestions();
   render();
 }
 
@@ -340,13 +353,14 @@ function renderSuggestions() {
 
   if (!suggestions.length) {
     section.style.display = 'none';
-    badge.style.display = 'none';
-    return;
+  } else {
+    section.style.display = '';
   }
 
-  section.style.display = '';
-  badge.textContent = suggestions.length;
-  badge.style.display = '';
+  // Badge reflects total across both suggestion types
+  const total = suggestions.length + listSuggestions.length;
+  badge.textContent = total;
+  badge.style.display = total ? '' : 'none';
 
   const pill = s => `<span class="status-pill status-${s}">${s}</span>`;
 
@@ -385,6 +399,51 @@ async function triggerStatusSync() {
     btn.disabled = false;
     btn.textContent = 'Run Check';
   }, 5000);
+}
+
+function renderListSuggestions() {
+  const section = document.getElementById('listSuggSection');
+  const list    = document.getElementById('listSuggList');
+  const badge   = document.getElementById('suggBadge');
+
+  if (!listSuggestions.length) {
+    section.style.display = 'none';
+  } else {
+    section.style.display = '';
+    list.innerHTML = listSuggestions.map(s => `
+      <div class="sugg-item" id="lsugg-${s.id}">
+        <div class="sugg-name">${s.name}${s.year ? ` <span style="color:var(--muted);font-weight:400">(${s.year})</span>` : ''}</div>
+        <div class="sugg-detail">RRHOF Performer — not in top_artists.json</div>
+        <div class="sugg-actions">
+          <button class="btn-dismiss" onclick="dismissListSuggestion(${s.id})">Dismiss</button>
+        </div>
+      </div>`).join('');
+  }
+
+  // Update badge to reflect combined count
+  const total = suggestions.length + listSuggestions.length;
+  badge.textContent = total;
+  badge.style.display = total ? '' : 'none';
+}
+
+async function dismissListSuggestion(id) {
+  await fetch(`/api/list-suggestions/${id}/dismiss`, { method: 'POST' });
+  listSuggestions = listSuggestions.filter(s => s.id !== id);
+  renderListSuggestions();
+}
+
+async function triggerListSync() {
+  const btn = document.getElementById('listSyncBtn');
+  btn.disabled = true;
+  btn.textContent = 'Running…';
+  await fetch('/api/list-sync', { method: 'POST' });
+  // Wikipedia fetch takes a few seconds; poll after 10s
+  setTimeout(async () => {
+    listSuggestions = await fetch('/api/list-suggestions').then(r => r.json());
+    renderListSuggestions();
+    btn.disabled = false;
+    btn.textContent = 'Run Check';
+  }, 10000);
 }
 
 function renderBlacklist() {
