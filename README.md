@@ -1,93 +1,87 @@
 # setlist.fm Analyzer
 
-Compares your setlist.fm concert history against a curated list of the top 500 musical acts of all time and generates a self-contained HTML report showing your coverage.
+A self-hosted web app that tracks your concert coverage against a curated list of the top 500 musical acts of all time, and surfaces upcoming shows from artists you haven't seen yet.
 
 ## Features
 
-- Coverage dials broken down by All 500 / Living / Touring+Off-Tour / Touring Only
-- Sortable, filterable table of all 500 artists with seen/unseen status
-- Filter by seen status, artist status (touring, off-tour, disbanded, deceased), and genre
+**Coverage tab**
+- Coverage dials: All 500 / Living / Touring+Off-Tour / Touring Only
 - Genre and era breakdown charts
+- Filterable table of all 500 artists with seen/unseen status, genre, era, and source
+- Filter by seen status, touring status, and genre
 - Artists You've Seen table with show counts
-- Keyboard arrow-key pagination
-- All output is a single self-contained `report.html` -- no server needed
+- All filter selections persist across page loads
+
+**Tour Planner tab**
+- Queries Ticketmaster weekly for upcoming shows from unseen top-500 active artists
+- Location filter (enter state/country codes to show only nearby shows)
+- Hide artists you have no interest in seeing (persisted in DB)
+- Newly found dates badged **NEW** for 72 hours
+- Filter and sort state persists across page loads
 
 ## Requirements
 
-- Python 3.8+
-- A [setlist.fm API key](https://www.setlist.fm/settings/api) (free)
+- Docker (or Docker Compose)
+- A free [setlist.fm API key](https://www.setlist.fm/settings/api)
+- A free [Ticketmaster Discovery API key](https://developer.ticketmaster.com/) (Consumer Key)
 
 ## Setup
 
 ```bash
-pip install -r requirements.txt
+cd tour-app
 cp .env.example .env
 ```
 
-Edit `.env` and fill in your credentials:
+Edit `.env`:
 
 ```
-SETLISTFM_API_KEY=your_api_key_here
+SETLISTFM_API_KEY=your_setlistfm_api_key
 SETLISTFM_USERNAME=your_setlistfm_username
+TICKETMASTER_API_KEY=your_ticketmaster_consumer_key
 ```
 
-## Usage
+Then start the app:
 
 ```bash
-python3 analyze.py
+docker compose up -d
+# open http://localhost:3234
 ```
 
-Opens / generates `report.html` in the current directory.
+On first start, the app syncs immediately (fetches your setlist.fm history and queries Ticketmaster). Subsequent syncs run every Monday at noon UTC.
 
-On first run the script fetches your full show history from the setlist.fm API and caches it to `cache_attended.json`. Subsequent runs read from the cache.
-
-```bash
-python3 analyze.py --refresh   # re-fetch from API, ignoring cache
-```
-
-Use `--refresh` after adding new shows to setlist.fm or if your history looks stale.
-
-## Data files
+## Data
 
 | File | Description |
 |------|-------------|
-| `top_artists.json` | The 501-artist reference list with genre, era, deceased status, touring status, and name aliases |
-| `cache_attended.json` | Cached API response of your attended shows |
-| `report.html` | Generated report (overwritten on each run) |
+| `top_artists.json` | 501-artist reference list with genre, era, deceased/touring status, and name aliases |
+| `tour-app/data/tours.db` | SQLite database (created at runtime, persisted via Docker volume) |
+
+## Configuration
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `SETLISTFM_API_KEY` | required | setlist.fm API key |
+| `SETLISTFM_USERNAME` | required | setlist.fm username |
+| `TICKETMASTER_API_KEY` | required | Ticketmaster Discovery API Consumer Key |
+| `PORT` | `3000` | Internal container port |
+| `SYNC_ON_START` | `true` | Run a sync immediately on startup |
+| `CRON_SCHEDULE` | `0 12 * * 1` | When to sync (Monday noon UTC) |
 
 ## Artist matching
 
-The script normalizes artist names and attempts a three-pass match against your show history:
+Show history is matched against `top_artists.json` via a three-pass algorithm:
 
-1. Exact normalized name match
+1. Exact normalized name match (including all aliases)
 2. Strip common band suffixes (`and the X`, `with the X`, etc.)
-3. Split `X with Y` / `X feat Y` and try each part independently
+3. Split `X with Y` co-bills and credit each artist independently
 
-Aliases in `top_artists.json` cover common variations (e.g. `Elvis Costello & The Imposters` resolves to `Elvis Costello`, `Jefferson Starship` resolves to `Jefferson Airplane`).
-
-## Tour Planner app
-
-`tour-app/` is a self-hosted Node.js web app that checks [Ticketmaster](https://developer.ticketmaster.com/) weekly for upcoming shows from top-500 artists you haven't seen yet.
-
-```bash
-cd tour-app
-cp .env.example .env   # fill in all three API keys
-docker compose up -d
-# open http://localhost:3000
-```
-
-Requires a free [Ticketmaster Discovery API key](https://developer.ticketmaster.com/) in addition to the setlist.fm credentials.
-
-- Syncs automatically every Monday at noon UTC (configurable via `CRON_SCHEDULE`)
-- "Refresh Now" button in the UI triggers an immediate sync
-- Newly found dates are badged **NEW** for 72 hours
-- SQLite database persists between restarts via a Docker volume
+Aliases cover common variations (e.g. `Pat Benatar & Neil Giraldo` → `Pat Benatar`, `Jefferson Starship` → `Jefferson Airplane`).
 
 ## Touring status values
 
 | Status | Meaning |
 |--------|---------|
 | `active` | Currently touring |
-| `hiatus` | Living but not actively touring (health, retirement, hiatus) |
+| `hiatus` | Living but not actively touring (health, retirement, or indefinite hiatus) |
 | `disbanded` | Group officially dissolved |
-| `deceased` | Essential member(s) died and the act is no longer performing |
+| `deceased` | Essential member(s) died and the act no longer performs |
