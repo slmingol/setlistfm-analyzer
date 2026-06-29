@@ -2827,7 +2827,7 @@
       "OJays"
     ],
     "deceased": false,
-    "touring_status": "active"
+    "touring_status": "disbanded"
   },
   {
     "rank": 169,
@@ -3065,8 +3065,8 @@
     "aliases": [
       "ATCQ"
     ],
-    "deceased": false,
-    "touring_status": "active"
+    "deceased": true,
+    "touring_status": "deceased"
   },
   {
     "rank": 184,
@@ -5415,7 +5415,7 @@
     ],
     "aliases": [],
     "deceased": false,
-    "touring_status": "active"
+    "touring_status": "disbanded"
   },
   {
     "rank": 333,
@@ -5862,8 +5862,8 @@
       "RS100"
     ],
     "aliases": [],
-    "deceased": false,
-    "touring_status": "active"
+    "deceased": true,
+    "touring_status": "deceased"
   },
   {
     "rank": 362,
