@@ -16,7 +16,7 @@ const {
   SETLISTFM_API_KEY:  SETLIST_KEY  = '',
   SETLISTFM_USERNAME: SETLIST_USER = '',
   TICKETMASTER_API_KEY: TM_KEY     = '',
-  PORT = '3234',
+  PORT = '3000',
   SYNC_ON_START = 'true',
   CRON_SCHEDULE = '0 12 * * 1',         // Monday noon UTC
   STATUS_SYNC_SCHEDULE = '0 14 * * 1',  // Monday 2pm UTC (after main sync)
