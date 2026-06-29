@@ -1,0 +1,8066 @@
+[
+  {
+    "rank": 1,
+    "name": "The Beatles",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Beatles"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 2,
+    "name": "Bob Dylan",
+    "genre": [
+      "Folk",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 3,
+    "name": "Elvis Presley",
+    "genre": [
+      "Rock",
+      "Country",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "The King"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 4,
+    "name": "The Rolling Stones",
+    "genre": [
+      "Rock",
+      "Blues Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Rolling Stones"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 5,
+    "name": "Chuck Berry",
+    "genre": [
+      "Rock",
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 6,
+    "name": "Jimi Hendrix",
+    "genre": [
+      "Rock",
+      "Blues Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "The Jimi Hendrix Experience",
+      "Jimi Hendrix Experience"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 7,
+    "name": "James Brown",
+    "genre": [
+      "R&B/Soul",
+      "Funk"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 8,
+    "name": "Little Richard",
+    "genre": [
+      "Rock",
+      "R&B/Soul"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 9,
+    "name": "Aretha Franklin",
+    "genre": [
+      "R&B/Soul",
+      "Gospel"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 10,
+    "name": "Ray Charles",
+    "genre": [
+      "R&B/Soul",
+      "Jazz"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 11,
+    "name": "Jerry Lee Lewis",
+    "genre": [
+      "Rock",
+      "Country"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 12,
+    "name": "Marvin Gaye",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 13,
+    "name": "Robert Johnson",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1930s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 14,
+    "name": "Muddy Waters",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 15,
+    "name": "The Everly Brothers",
+    "genre": [
+      "Rock",
+      "Country"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Everly Brothers"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 16,
+    "name": "Buddy Holly",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Buddy Holly and the Crickets"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 17,
+    "name": "Led Zeppelin",
+    "genre": [
+      "Classic Rock",
+      "Heavy Metal"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Robert Plant",
+      "Robert Plant & Alison Krauss",
+      "Robert Plant and Alison Krauss",
+      "Jimmy Page"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 18,
+    "name": "Stevie Wonder",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 19,
+    "name": "Sam Cooke",
+    "genre": [
+      "R&B/Soul",
+      "Gospel"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 20,
+    "name": "Otis Redding",
+    "genre": [
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 21,
+    "name": "The Who",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Who"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 22,
+    "name": "Bo Diddley",
+    "genre": [
+      "Rock",
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 23,
+    "name": "The Velvet Underground",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Velvet Underground"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 24,
+    "name": "Bob Marley",
+    "genre": [
+      "Reggae"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Bob Marley and the Wailers",
+      "Bob Marley & the Wailers"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 25,
+    "name": "Sly & the Family Stone",
+    "genre": [
+      "R&B/Soul",
+      "Funk",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Sly and the Family Stone"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 26,
+    "name": "Hank Williams",
+    "genre": [
+      "Country"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 27,
+    "name": "Creedence Clearwater Revival",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "CCR"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 28,
+    "name": "The Animals",
+    "genre": [
+      "Rock",
+      "Blues Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Animals"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 29,
+    "name": "Simon & Garfunkel",
+    "genre": [
+      "Folk",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Simon and Garfunkel"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 30,
+    "name": "Neil Young",
+    "genre": [
+      "Classic Rock",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Neil Young & Crazy Horse"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 31,
+    "name": "Johnny Cash",
+    "genre": [
+      "Country",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 32,
+    "name": "The Temptations",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Temptations"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 33,
+    "name": "Howlin' Wolf",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Howlin Wolf"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 34,
+    "name": "The Kinks",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Kinks"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 35,
+    "name": "Frank Sinatra",
+    "genre": [
+      "Pop",
+      "Jazz"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "GLA",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 36,
+    "name": "Van Morrison",
+    "genre": [
+      "Rock",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 37,
+    "name": "Curtis Mayfield",
+    "genre": [
+      "R&B/Soul",
+      "Funk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 38,
+    "name": "Michael Jackson",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "MJ"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 39,
+    "name": "Elton John",
+    "genre": [
+      "Pop",
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 40,
+    "name": "David Bowie",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 41,
+    "name": "Smokey Robinson",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Smokey Robinson and the Miracles",
+      "Smokey Robinson & the Miracles"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 42,
+    "name": "B.B. King",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "BB King"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 43,
+    "name": "The Ramones",
+    "genre": [
+      "Punk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Ramones"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 44,
+    "name": "The Band",
+    "genre": [
+      "Classic Rock",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 45,
+    "name": "The Clash",
+    "genre": [
+      "Punk",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Clash"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 46,
+    "name": "Elvis Costello",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Elvis Costello and the Attractions",
+      "Elvis Costello & the Attractions",
+      "Elvis Costello & The Imposters",
+      "Elvis Costello and the Imposters",
+      "Elvis Costello & the Imposters"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 47,
+    "name": "Joni Mitchell",
+    "genre": [
+      "Folk",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 48,
+    "name": "Grateful Dead",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "The Grateful Dead"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 49,
+    "name": "The Four Tops",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Four Tops"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 50,
+    "name": "The Byrds",
+    "genre": [
+      "Classic Rock",
+      "Folk"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Byrds"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 51,
+    "name": "Stevie Ray Vaughan",
+    "genre": [
+      "Blues",
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Stevie Ray Vaughan and Double Trouble"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 52,
+    "name": "N.W.A.",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "NWA",
+      "N.W.A"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 53,
+    "name": "Bruce Springsteen",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Bruce Springsteen and the E Street Band"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 54,
+    "name": "Guns N' Roses",
+    "genre": [
+      "Heavy Metal",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Guns N Roses",
+      "GNR"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 55,
+    "name": "Public Enemy",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 56,
+    "name": "Donna Summer",
+    "genre": [
+      "Pop",
+      "Electronic"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 57,
+    "name": "Metallica",
+    "genre": [
+      "Heavy Metal"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 58,
+    "name": "OutKast",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [
+      "Outkast"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 59,
+    "name": "Fats Domino",
+    "genre": [
+      "Rock",
+      "R&B/Soul"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 60,
+    "name": "The Supremes",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Supremes"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 61,
+    "name": "Roy Orbison",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 62,
+    "name": "Al Green",
+    "genre": [
+      "R&B/Soul",
+      "Gospel"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 63,
+    "name": "AC/DC",
+    "genre": [
+      "Heavy Metal",
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "ACDC"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 64,
+    "name": "Madonna",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 65,
+    "name": "Prince",
+    "genre": [
+      "Pop",
+      "R&B/Soul",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Prince and the Revolution"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 66,
+    "name": "Patti Smith",
+    "genre": [
+      "Punk",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 67,
+    "name": "Cream",
+    "genre": [
+      "Classic Rock",
+      "Blues Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 68,
+    "name": "Radiohead",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 69,
+    "name": "Miles Davis",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RS100",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 70,
+    "name": "TLC",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 71,
+    "name": "Tom Petty and the Heartbreakers",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Tom Petty & the Heartbreakers",
+      "Tom Petty"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 72,
+    "name": "Fleetwood Mac",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 73,
+    "name": "The Jackson 5",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Jackson 5",
+      "The Jacksons"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 74,
+    "name": "Lynyrd Skynyrd",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 75,
+    "name": "The Beach Boys",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Beach Boys"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 76,
+    "name": "U2",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 77,
+    "name": "Pink Floyd",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 78,
+    "name": "Nirvana",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 79,
+    "name": "The Stooges",
+    "genre": [
+      "Punk",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Iggy Pop and the Stooges",
+      "Iggy and the Stooges"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 80,
+    "name": "The Doors",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Doors"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 81,
+    "name": "Crosby, Stills, Nash & Young",
+    "genre": [
+      "Classic Rock",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "CSNY",
+      "Crosby Stills Nash Young",
+      "Crosby, Stills & Nash",
+      "Crosby Stills and Nash"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 82,
+    "name": "Sex Pistols",
+    "genre": [
+      "Punk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 83,
+    "name": "Eagles",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "The Eagles"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 84,
+    "name": "Santana",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 85,
+    "name": "Talking Heads",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 86,
+    "name": "Aerosmith",
+    "genre": [
+      "Classic Rock",
+      "Heavy Metal"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 87,
+    "name": "Queen",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 88,
+    "name": "R.E.M.",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "REM"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 89,
+    "name": "The Police",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Police",
+      "Sting"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 90,
+    "name": "Pearl Jam",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 91,
+    "name": "Eric Clapton",
+    "genre": [
+      "Classic Rock",
+      "Blues"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 92,
+    "name": "ZZ Top",
+    "genre": [
+      "Classic Rock",
+      "Blues Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 93,
+    "name": "Van Halen",
+    "genre": [
+      "Classic Rock",
+      "Heavy Metal"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 94,
+    "name": "Billy Joel",
+    "genre": [
+      "Pop",
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 95,
+    "name": "Tupac Shakur",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "2Pac",
+      "Tupac",
+      "2pac"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 96,
+    "name": "Eminem",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 97,
+    "name": "Jay-Z",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Jay Z"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 98,
+    "name": "Run-D.M.C.",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Run DMC",
+      "Run-DMC"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 99,
+    "name": "The Pretenders",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Pretenders"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 100,
+    "name": "Blondie",
+    "genre": [
+      "Punk",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 101,
+    "name": "Black Sabbath",
+    "genre": [
+      "Heavy Metal"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 102,
+    "name": "Deep Purple",
+    "genre": [
+      "Heavy Metal",
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 103,
+    "name": "Def Leppard",
+    "genre": [
+      "Heavy Metal",
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 104,
+    "name": "Bon Jovi",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 105,
+    "name": "KISS",
+    "genre": [
+      "Heavy Metal",
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 106,
+    "name": "Cheap Trick",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 107,
+    "name": "The Cars",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Cars"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 108,
+    "name": "Dire Straits",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 109,
+    "name": "Genesis",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 110,
+    "name": "Yes",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 111,
+    "name": "Earth, Wind & Fire",
+    "genre": [
+      "R&B/Soul",
+      "Funk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [
+      "Earth Wind and Fire",
+      "Earth Wind & Fire"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 112,
+    "name": "Parliament-Funkadelic",
+    "genre": [
+      "Funk",
+      "R&B/Soul"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [
+      "Parliament",
+      "Funkadelic",
+      "P-Funk"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 113,
+    "name": "Isaac Hayes",
+    "genre": [
+      "R&B/Soul",
+      "Funk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 114,
+    "name": "Stevie Nicks",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 115,
+    "name": "Beastie Boys",
+    "genre": [
+      "Hip-Hop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 116,
+    "name": "Red Hot Chili Peppers",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "RHCP"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 117,
+    "name": "Green Day",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 118,
+    "name": "Nine Inch Nails",
+    "genre": [
+      "Alternative",
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "NIN"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 119,
+    "name": "The Cure",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Cure"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 120,
+    "name": "Depeche Mode",
+    "genre": [
+      "Electronic",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 121,
+    "name": "Foo Fighters",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 122,
+    "name": "The Go-Go's",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Go-Go's",
+      "Go Gos",
+      "Go-Gos"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 123,
+    "name": "Rage Against the Machine",
+    "genre": [
+      "Alternative",
+      "Rock",
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "RATM"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 124,
+    "name": "Carole King",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 125,
+    "name": "Joan Jett and the Blackhearts",
+    "genre": [
+      "Rock",
+      "Punk"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Joan Jett",
+      "Joan Jett & the Blackhearts"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 126,
+    "name": "Pat Benatar",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Pat Benatar and Neil Giraldo"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 127,
+    "name": "Eurythmics",
+    "genre": [
+      "Pop",
+      "Electronic"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 128,
+    "name": "Heart",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 129,
+    "name": "Bonnie Raitt",
+    "genre": [
+      "Blues",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 130,
+    "name": "Linda Ronstadt",
+    "genre": [
+      "Country",
+      "Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 131,
+    "name": "The Allman Brothers Band",
+    "genre": [
+      "Classic Rock",
+      "Blues"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Allman Brothers Band",
+      "Allman Brothers"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 132,
+    "name": "Jefferson Airplane",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Jefferson Starship",
+      "Starship"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 133,
+    "name": "Janis Joplin",
+    "genre": [
+      "Classic Rock",
+      "Blues"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 134,
+    "name": "Traffic",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 135,
+    "name": "Ike & Tina Turner",
+    "genre": [
+      "R&B/Soul",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Ike and Tina Turner"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 136,
+    "name": "Isley Brothers",
+    "genre": [
+      "R&B/Soul",
+      "Funk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [
+      "The Isley Brothers"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 137,
+    "name": "The Yardbirds",
+    "genre": [
+      "Classic Rock",
+      "Blues Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Yardbirds"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 138,
+    "name": "The Mamas & the Papas",
+    "genre": [
+      "Folk",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "The Mamas and the Papas",
+      "Mamas and the Papas"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 139,
+    "name": "Paul Simon",
+    "genre": [
+      "Folk",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 140,
+    "name": "Paul McCartney",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 141,
+    "name": "John Lennon",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 142,
+    "name": "George Harrison",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 143,
+    "name": "Buffalo Springfield",
+    "genre": [
+      "Classic Rock",
+      "Folk"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 144,
+    "name": "Neil Diamond",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 145,
+    "name": "Tom Waits",
+    "genre": [
+      "Rock",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 146,
+    "name": "Alice Cooper",
+    "genre": [
+      "Heavy Metal",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 147,
+    "name": "Dr. John",
+    "genre": [
+      "R&B/Soul",
+      "Blues"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 148,
+    "name": "The Hollies",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Hollies"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 149,
+    "name": "ABBA",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 150,
+    "name": "Steve Miller Band",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 151,
+    "name": "Chicago",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 152,
+    "name": "The Doobie Brothers",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Doobie Brothers"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 153,
+    "name": "Whitney Houston",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 154,
+    "name": "T. Rex",
+    "genre": [
+      "Classic Rock",
+      "Glam Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "T Rex",
+      "Marc Bolan"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 155,
+    "name": "Janet Jackson",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 156,
+    "name": "Roxy Music",
+    "genre": [
+      "Classic Rock",
+      "Glam Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 157,
+    "name": "The Moody Blues",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Moody Blues"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 158,
+    "name": "Nina Simone",
+    "genre": [
+      "Jazz",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 159,
+    "name": "Joan Baez",
+    "genre": [
+      "Folk"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 160,
+    "name": "Electric Light Orchestra",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "ELO",
+      "The Electric Light Orchestra"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 161,
+    "name": "Journey",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 162,
+    "name": "Todd Rundgren",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 163,
+    "name": "Tina Turner",
+    "genre": [
+      "Rock",
+      "R&B/Soul"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 164,
+    "name": "Grandmaster Flash and the Furious Five",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Grandmaster Flash",
+      "Grandmaster Flash & the Furious Five"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 165,
+    "name": "The Ronettes",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Ronettes"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 166,
+    "name": "Leonard Cohen",
+    "genre": [
+      "Folk",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 167,
+    "name": "John Mellencamp",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "John Cougar Mellencamp",
+      "John Cougar"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 168,
+    "name": "The O'Jays",
+    "genre": [
+      "R&B/Soul"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [
+      "O'Jays",
+      "OJays"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 169,
+    "name": "Buddy Guy",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 170,
+    "name": "Bob Seger",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Bob Seger and the Silver Bullet Band",
+      "Bob Seger & the Silver Bullet Band"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 171,
+    "name": "Peter Gabriel",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 172,
+    "name": "Rush",
+    "genre": [
+      "Classic Rock",
+      "Heavy Metal"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 173,
+    "name": "Hall & Oates",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Hall and Oates",
+      "Daryl Hall and John Oates",
+      "Daryl Hall"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 174,
+    "name": "Cat Stevens",
+    "genre": [
+      "Folk",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [
+      "Yusuf",
+      "Yusuf / Cat Stevens",
+      "Yusuf Islam"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 175,
+    "name": "Gladys Knight & the Pips",
+    "genre": [
+      "R&B/Soul"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [
+      "Gladys Knight and the Pips",
+      "Gladys Knight"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 176,
+    "name": "Lou Reed",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 177,
+    "name": "Missy Elliott",
+    "genre": [
+      "Hip-Hop",
+      "R&B/Soul"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 178,
+    "name": "Kate Bush",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 179,
+    "name": "Sheryl Crow",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 180,
+    "name": "Willie Nelson",
+    "genre": [
+      "Country"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 181,
+    "name": "George Michael",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 182,
+    "name": "Lionel Richie",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 183,
+    "name": "A Tribe Called Quest",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "ATCQ"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 184,
+    "name": "Dolly Parton",
+    "genre": [
+      "Country"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 185,
+    "name": "Booker T. & the M.G.'s",
+    "genre": [
+      "R&B/Soul",
+      "Jazz"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Booker T and the MGs",
+      "Booker T. and the MG's"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 186,
+    "name": "Sam & Dave",
+    "genre": [
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Sam and Dave"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 187,
+    "name": "The Drifters",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Drifters"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 188,
+    "name": "Carl Perkins",
+    "genre": [
+      "Rock",
+      "Country"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 189,
+    "name": "Jackie Wilson",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 190,
+    "name": "Etta James",
+    "genre": [
+      "R&B/Soul",
+      "Blues"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 191,
+    "name": "The Four Seasons",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Four Seasons"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 192,
+    "name": "The Bee Gees",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [
+      "Bee Gees"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 193,
+    "name": "The Rascals",
+    "genre": [
+      "Rock",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Young Rascals",
+      "The Young Rascals"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 194,
+    "name": "Dusty Springfield",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 195,
+    "name": "Jackson Browne",
+    "genre": [
+      "Classic Rock",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 196,
+    "name": "Peter, Paul and Mary",
+    "genre": [
+      "Folk"
+    ],
+    "era": "1960s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [
+      "Peter Paul and Mary"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 197,
+    "name": "Brenda Lee",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 198,
+    "name": "Rod Stewart",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 199,
+    "name": "Boogie Down Productions",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [
+      "KRS-One"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 200,
+    "name": "The Impressions",
+    "genre": [
+      "R&B/Soul",
+      "Gospel"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Curtis Mayfield and the Impressions"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 201,
+    "name": "The Notorious B.I.G.",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Biggie",
+      "Biggie Smalls",
+      "Notorious B.I.G."
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 202,
+    "name": "Nas",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 203,
+    "name": "Wu-Tang Clan",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 204,
+    "name": "Ice Cube",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 205,
+    "name": "Dr. Dre",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 206,
+    "name": "Snoop Dogg",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Snoop Doggy Dogg",
+      "Snoop Lion"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 207,
+    "name": "Kendrick Lamar",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 208,
+    "name": "Kanye West",
+    "genre": [
+      "Hip-Hop",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Ye"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 209,
+    "name": "Lil Wayne",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 210,
+    "name": "Drake",
+    "genre": [
+      "Hip-Hop",
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 211,
+    "name": "Mary J. Blige",
+    "genre": [
+      "R&B/Soul",
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 212,
+    "name": "Lauryn Hill",
+    "genre": [
+      "R&B/Soul",
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "The Fugees"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 213,
+    "name": "Beyonce",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2000s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [
+      "Beyoncé",
+      "Destiny's Child"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 214,
+    "name": "Usher",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 215,
+    "name": "Alicia Keys",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 216,
+    "name": "D'Angelo",
+    "genre": [
+      "R&B/Soul",
+      "Funk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 217,
+    "name": "Erykah Badu",
+    "genre": [
+      "R&B/Soul",
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 218,
+    "name": "Soundgarden",
+    "genre": [
+      "Alternative",
+      "Heavy Metal"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 219,
+    "name": "Alice in Chains",
+    "genre": [
+      "Heavy Metal",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 220,
+    "name": "Smashing Pumpkins",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "The Smashing Pumpkins"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 221,
+    "name": "Stone Temple Pilots",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "STP"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 222,
+    "name": "Tool",
+    "genre": [
+      "Heavy Metal",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 223,
+    "name": "System of a Down",
+    "genre": [
+      "Heavy Metal",
+      "Alternative"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 224,
+    "name": "Linkin Park",
+    "genre": [
+      "Alternative",
+      "Heavy Metal"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 225,
+    "name": "The White Stripes",
+    "genre": [
+      "Alternative",
+      "Blues Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "White Stripes"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 226,
+    "name": "Arcade Fire",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 227,
+    "name": "The Killers",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Killers"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 228,
+    "name": "Coldplay",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 229,
+    "name": "Muse",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 230,
+    "name": "Oasis",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 231,
+    "name": "Blur",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 232,
+    "name": "Bjork",
+    "genre": [
+      "Alternative",
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [
+      "Björk"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 233,
+    "name": "PJ Harvey",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 234,
+    "name": "Tori Amos",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 235,
+    "name": "Daft Punk",
+    "genre": [
+      "Electronic",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 236,
+    "name": "Portishead",
+    "genre": [
+      "Electronic",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 237,
+    "name": "Massive Attack",
+    "genre": [
+      "Electronic",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 238,
+    "name": "The Chemical Brothers",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [
+      "Chemical Brothers"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 239,
+    "name": "The Prodigy",
+    "genre": [
+      "Electronic",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [
+      "Prodigy"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 240,
+    "name": "Aphex Twin",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 241,
+    "name": "The Smiths",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [
+      "Smiths",
+      "Morrissey"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 242,
+    "name": "New Order",
+    "genre": [
+      "Electronic",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 243,
+    "name": "Joy Division",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 244,
+    "name": "Echo & the Bunnymen",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [
+      "Echo and the Bunnymen"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 245,
+    "name": "The Pixies",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [
+      "Pixies"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 246,
+    "name": "Sonic Youth",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 247,
+    "name": "Beck",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 248,
+    "name": "Garth Brooks",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 249,
+    "name": "Shania Twain",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 250,
+    "name": "Tim McGraw",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 251,
+    "name": "Faith Hill",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 252,
+    "name": "Kenny Chesney",
+    "genre": [
+      "Country"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 253,
+    "name": "Alan Jackson",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 254,
+    "name": "George Strait",
+    "genre": [
+      "Country"
+    ],
+    "era": "1980s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 255,
+    "name": "Reba McEntire",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 256,
+    "name": "Loretta Lynn",
+    "genre": [
+      "Country"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 257,
+    "name": "Tammy Wynette",
+    "genre": [
+      "Country"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 258,
+    "name": "Merle Haggard",
+    "genre": [
+      "Country"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 259,
+    "name": "Waylon Jennings",
+    "genre": [
+      "Country"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 260,
+    "name": "Kris Kristofferson",
+    "genre": [
+      "Country",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 261,
+    "name": "Kenny Rogers",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 262,
+    "name": "Glen Campbell",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 263,
+    "name": "Patsy Cline",
+    "genre": [
+      "Country"
+    ],
+    "era": "1960s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 264,
+    "name": "Emmylou Harris",
+    "genre": [
+      "Country",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 265,
+    "name": "Duke Ellington",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1940s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 266,
+    "name": "Louis Armstrong",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1930s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 267,
+    "name": "Charlie Parker",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1940s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [
+      "Bird"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 268,
+    "name": "Dizzy Gillespie",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1940s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 269,
+    "name": "John Coltrane",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1960s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 270,
+    "name": "Thelonious Monk",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1950s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 271,
+    "name": "Billie Holiday",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1940s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 272,
+    "name": "Ella Fitzgerald",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1950s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 273,
+    "name": "Count Basie",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1940s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 274,
+    "name": "Nat King Cole",
+    "genre": [
+      "Jazz",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [
+      "Nat 'King' Cole"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 275,
+    "name": "Tony Bennett",
+    "genre": [
+      "Pop",
+      "Jazz"
+    ],
+    "era": "1950s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 276,
+    "name": "The Fugees",
+    "genre": [
+      "Hip-Hop",
+      "R&B/Soul"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 277,
+    "name": "Destiny's Child",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1990s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 278,
+    "name": "No Doubt",
+    "genre": [
+      "Alternative",
+      "Ska"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 279,
+    "name": "Weezer",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 280,
+    "name": "Alanis Morissette",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 281,
+    "name": "Dave Matthews Band",
+    "genre": [
+      "Rock",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 282,
+    "name": "Phish",
+    "genre": [
+      "Rock",
+      "Jam"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 283,
+    "name": "Wilco",
+    "genre": [
+      "Alternative",
+      "Folk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 284,
+    "name": "Pavement",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 285,
+    "name": "Built to Spill",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 286,
+    "name": "Guided by Voices",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 287,
+    "name": "Modest Mouse",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 288,
+    "name": "Death Cab for Cutie",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 289,
+    "name": "The National",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 290,
+    "name": "Bon Iver",
+    "genre": [
+      "Folk",
+      "Indie"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 291,
+    "name": "Fleet Foxes",
+    "genre": [
+      "Folk",
+      "Indie"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 292,
+    "name": "Sufjan Stevens",
+    "genre": [
+      "Folk",
+      "Indie"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 293,
+    "name": "Iron Maiden",
+    "genre": [
+      "Heavy Metal"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 294,
+    "name": "Judas Priest",
+    "genre": [
+      "Heavy Metal"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 295,
+    "name": "Ozzy Osbourne",
+    "genre": [
+      "Heavy Metal"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 296,
+    "name": "Megadeth",
+    "genre": [
+      "Heavy Metal"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 297,
+    "name": "Slayer",
+    "genre": [
+      "Heavy Metal"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 298,
+    "name": "Pantera",
+    "genre": [
+      "Heavy Metal"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 299,
+    "name": "Motorhead",
+    "genre": [
+      "Heavy Metal",
+      "Punk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [
+      "Motörhead"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 300,
+    "name": "Thin Lizzy",
+    "genre": [
+      "Classic Rock",
+      "Heavy Metal"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 301,
+    "name": "Whitesnake",
+    "genre": [
+      "Heavy Metal",
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 302,
+    "name": "Motley Crue",
+    "genre": [
+      "Heavy Metal",
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [
+      "Mötley Crüe",
+      "Motley Crue"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 303,
+    "name": "Scorpions",
+    "genre": [
+      "Heavy Metal",
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 304,
+    "name": "Billy Idol",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 305,
+    "name": "Cyndi Lauper",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 306,
+    "name": "Diana Ross",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 307,
+    "name": "Mariah Carey",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1990s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 308,
+    "name": "Celine Dion",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 309,
+    "name": "Cher",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 310,
+    "name": "Barry White",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 312,
+    "name": "The Faces",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "VH1"
+    ],
+    "aliases": [
+      "Faces"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 313,
+    "name": "Foreigner",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 314,
+    "name": "REO Speedwagon",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 315,
+    "name": "Styx",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 316,
+    "name": "Boston",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 317,
+    "name": "Kansas",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 318,
+    "name": "Supertramp",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 319,
+    "name": "Toto",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 320,
+    "name": "America",
+    "genre": [
+      "Classic Rock",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 321,
+    "name": "Bread",
+    "genre": [
+      "Pop",
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 322,
+    "name": "Steely Dan",
+    "genre": [
+      "Classic Rock",
+      "Jazz"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 323,
+    "name": "Doobie Brothers",
+    "genre": [
+      "Classic Rock",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "The Doobie Brothers"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 324,
+    "name": "James Taylor",
+    "genre": [
+      "Folk",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 325,
+    "name": "Carly Simon",
+    "genre": [
+      "Pop",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 326,
+    "name": "Crosby, Stills & Nash",
+    "genre": [
+      "Classic Rock",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "CSN",
+      "Crosby Stills and Nash"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 327,
+    "name": "Blood, Sweat & Tears",
+    "genre": [
+      "Classic Rock",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [
+      "Blood Sweat and Tears"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 328,
+    "name": "Three Dog Night",
+    "genre": [
+      "Classic Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 329,
+    "name": "Iggy Pop",
+    "genre": [
+      "Punk",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 330,
+    "name": "Siouxsie and the Banshees",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "VH1",
+      "RS100"
+    ],
+    "aliases": [
+      "Siouxsie & the Banshees"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 331,
+    "name": "The B-52's",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "B-52's",
+      "The B52s",
+      "B52s",
+      "The B-52s",
+      "B-52s",
+      "The B52's",
+      "B52's"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 332,
+    "name": "REM",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF",
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 333,
+    "name": "Squeeze",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 334,
+    "name": "XTC",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 335,
+    "name": "Television",
+    "genre": [
+      "Punk",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 336,
+    "name": "Pere Ubu",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 337,
+    "name": "Wire",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 338,
+    "name": "Gang of Four",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 339,
+    "name": "The Replacements",
+    "genre": [
+      "Alternative",
+      "Punk"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [
+      "Replacements"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 340,
+    "name": "Husker Du",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [
+      "Hüsker Dü",
+      "Husker Du"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 341,
+    "name": "Black Flag",
+    "genre": [
+      "Punk",
+      "Heavy Metal"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 342,
+    "name": "Minor Threat",
+    "genre": [
+      "Punk"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 343,
+    "name": "Fugazi",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 344,
+    "name": "Dead Kennedys",
+    "genre": [
+      "Punk"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 345,
+    "name": "Buzzcocks",
+    "genre": [
+      "Punk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 346,
+    "name": "Magazine",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 347,
+    "name": "Big Star",
+    "genre": [
+      "Classic Rock",
+      "Alternative"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 348,
+    "name": "Nick Drake",
+    "genre": [
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 349,
+    "name": "Tim Buckley",
+    "genre": [
+      "Folk",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 350,
+    "name": "Brian Eno",
+    "genre": [
+      "Electronic",
+      "Alternative"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 351,
+    "name": "Kraftwerk",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 352,
+    "name": "Can",
+    "genre": [
+      "Electronic",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 353,
+    "name": "Neu!",
+    "genre": [
+      "Electronic",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [
+      "Neu"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 354,
+    "name": "Tangerine Dream",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 355,
+    "name": "Public Image Ltd",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [
+      "PIL",
+      "Public Image Limited"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 356,
+    "name": "The Undertones",
+    "genre": [
+      "Punk",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [
+      "Undertones"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 357,
+    "name": "My Bloody Valentine",
+    "genre": [
+      "Alternative",
+      "Shoegaze"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 358,
+    "name": "Slowdive",
+    "genre": [
+      "Alternative",
+      "Shoegaze"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 359,
+    "name": "Ride",
+    "genre": [
+      "Alternative",
+      "Shoegaze"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 360,
+    "name": "Lush",
+    "genre": [
+      "Alternative",
+      "Shoegaze"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 361,
+    "name": "Mazzy Star",
+    "genre": [
+      "Alternative",
+      "Folk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 362,
+    "name": "Spiritualized",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 363,
+    "name": "Primal Scream",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 364,
+    "name": "The Stone Roses",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [
+      "Stone Roses"
+    ],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 365,
+    "name": "Happy Mondays",
+    "genre": [
+      "Alternative",
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "VH1"
+    ],
+    "aliases": [
+      "The Happy Mondays"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 366,
+    "name": "Suede",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 367,
+    "name": "Pulp",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "1990s",
+    "sources": [
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 368,
+    "name": "Elastica",
+    "genre": [
+      "Alternative",
+      "Punk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 369,
+    "name": "Supergrass",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "VH1"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 370,
+    "name": "Sleater-Kinney",
+    "genre": [
+      "Punk",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 371,
+    "name": "Bikini Kill",
+    "genre": [
+      "Punk",
+      "Riot Grrrl"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 372,
+    "name": "Hole",
+    "genre": [
+      "Alternative",
+      "Punk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 373,
+    "name": "Garbage",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 374,
+    "name": "Liz Phair",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 375,
+    "name": "Yo La Tengo",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 376,
+    "name": "Dinosaur Jr.",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [
+      "Dinosaur Jr"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 377,
+    "name": "Sebadoh",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 378,
+    "name": "Mudhoney",
+    "genre": [
+      "Alternative",
+      "Punk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 379,
+    "name": "Melvins",
+    "genre": [
+      "Heavy Metal",
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [
+      "The Melvins"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 380,
+    "name": "Sugar Ray",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 381,
+    "name": "Third Eye Blind",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 382,
+    "name": "Matchbox Twenty",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [
+      "Matchbox 20"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 383,
+    "name": "Goo Goo Dolls",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [
+      "The Goo Goo Dolls"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 384,
+    "name": "Live",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 385,
+    "name": "Counting Crows",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 386,
+    "name": "Collective Soul",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 387,
+    "name": "Our Lady Peace",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 388,
+    "name": "Jack Johnson",
+    "genre": [
+      "Folk",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 389,
+    "name": "John Mayer",
+    "genre": [
+      "Pop",
+      "Blues"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 390,
+    "name": "Jason Mraz",
+    "genre": [
+      "Pop",
+      "Folk"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 391,
+    "name": "Norah Jones",
+    "genre": [
+      "Jazz",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 392,
+    "name": "Adele",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 393,
+    "name": "Amy Winehouse",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 394,
+    "name": "Lily Allen",
+    "genre": [
+      "Pop",
+      "Alternative"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 395,
+    "name": "Duffy",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 396,
+    "name": "Sam Smith",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 397,
+    "name": "Ed Sheeran",
+    "genre": [
+      "Pop",
+      "Folk"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 398,
+    "name": "Taylor Swift",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 399,
+    "name": "Lady Gaga",
+    "genre": [
+      "Pop",
+      "Electronic"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 400,
+    "name": "Katy Perry",
+    "genre": [
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 401,
+    "name": "Rihanna",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 402,
+    "name": "Bruno Mars",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 403,
+    "name": "The Weeknd",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 404,
+    "name": "Frank Ocean",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 405,
+    "name": "Childish Gambino",
+    "genre": [
+      "Hip-Hop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Donald Glover"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 406,
+    "name": "Tyler, the Creator",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Tyler the Creator"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 407,
+    "name": "Mac DeMarco",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 408,
+    "name": "Car Seat Headrest",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 409,
+    "name": "Japanese Breakfast",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 410,
+    "name": "Big Thief",
+    "genre": [
+      "Folk",
+      "Alternative"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 411,
+    "name": "Angel Olsen",
+    "genre": [
+      "Alternative",
+      "Folk"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 412,
+    "name": "Sharon Van Etten",
+    "genre": [
+      "Alternative",
+      "Folk"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 413,
+    "name": "Mitski",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 414,
+    "name": "Lucy Dacus",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 415,
+    "name": "boygenius",
+    "genre": [
+      "Alternative",
+      "Folk"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 416,
+    "name": "Phoebe Bridgers",
+    "genre": [
+      "Alternative",
+      "Folk"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 417,
+    "name": "Billie Eilish",
+    "genre": [
+      "Pop",
+      "Alternative"
+    ],
+    "era": "2020s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 418,
+    "name": "Olivia Rodrigo",
+    "genre": [
+      "Pop",
+      "Alternative"
+    ],
+    "era": "2020s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 419,
+    "name": "Lizzo",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 420,
+    "name": "Anderson .Paak",
+    "genre": [
+      "Hip-Hop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Anderson Paak"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 421,
+    "name": "SZA",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 422,
+    "name": "H.E.R.",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "BB",
+      "GLA"
+    ],
+    "aliases": [
+      "HER"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 423,
+    "name": "Little Walter",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 424,
+    "name": "Leadbelly",
+    "genre": [
+      "Blues",
+      "Folk"
+    ],
+    "era": "1930s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Lead Belly"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 425,
+    "name": "Bessie Smith",
+    "genre": [
+      "Blues",
+      "Jazz"
+    ],
+    "era": "1920s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 426,
+    "name": "John Lee Hooker",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 427,
+    "name": "Jimmy Reed",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 428,
+    "name": "T-Bone Walker",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1940s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 429,
+    "name": "Elmore James",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 430,
+    "name": "Lightnin' Hopkins",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [
+      "Lightnin Hopkins"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 431,
+    "name": "Bobby Blue Bland",
+    "genre": [
+      "Blues",
+      "R&B/Soul"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Bobby 'Blue' Bland",
+      "B.B. Bland"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 432,
+    "name": "Junior Wells",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1960s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 433,
+    "name": "Son House",
+    "genre": [
+      "Blues"
+    ],
+    "era": "1930s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 434,
+    "name": "Pete Seeger",
+    "genre": [
+      "Folk"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 435,
+    "name": "Woody Guthrie",
+    "genre": [
+      "Folk"
+    ],
+    "era": "1940s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 436,
+    "name": "Phil Spector Productions",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 437,
+    "name": "The Platters",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Platters"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 438,
+    "name": "The Moonglows",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Moonglows"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 439,
+    "name": "Frankie Lymon and the Teenagers",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Frankie Lymon & the Teenagers"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 440,
+    "name": "The Coasters",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Coasters"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 441,
+    "name": "LaVern Baker",
+    "genre": [
+      "R&B/Soul",
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF",
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 442,
+    "name": "Ruth Brown",
+    "genre": [
+      "R&B/Soul",
+      "Blues"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 443,
+    "name": "Wilson Pickett",
+    "genre": [
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 444,
+    "name": "Percy Sledge",
+    "genre": [
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 445,
+    "name": "Bobby Womack",
+    "genre": [
+      "R&B/Soul"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 446,
+    "name": "Little Anthony and the Imperials",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Little Anthony & the Imperials"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 447,
+    "name": "The Spinners",
+    "genre": [
+      "R&B/Soul"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Spinners",
+      "Detroit Spinners"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 448,
+    "name": "Martha Reeves and the Vandellas",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Martha and the Vandellas",
+      "Martha Reeves"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 449,
+    "name": "Darlene Love",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 450,
+    "name": "Lloyd Price",
+    "genre": [
+      "R&B/Soul",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 451,
+    "name": "Big Joe Turner",
+    "genre": [
+      "Blues",
+      "R&B/Soul"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 452,
+    "name": "Hank Ballard",
+    "genre": [
+      "R&B/Soul",
+      "Rock"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Hank Ballard and the Midnighters"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 453,
+    "name": "Gene Vincent",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Gene Vincent and his Blue Caps"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 454,
+    "name": "Ricky Nelson",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 455,
+    "name": "Bobby Darin",
+    "genre": [
+      "Pop",
+      "Jazz"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 456,
+    "name": "Bill Haley and His Comets",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1950s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Bill Haley & His Comets",
+      "Bill Haley"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 457,
+    "name": "Sister Rosetta Tharpe",
+    "genre": [
+      "Gospel",
+      "Blues"
+    ],
+    "era": "1940s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 458,
+    "name": "Solomon Burke",
+    "genre": [
+      "R&B/Soul",
+      "Gospel"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 459,
+    "name": "The Dave Clark Five",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "Dave Clark Five"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 460,
+    "name": "Barry Manilow",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 461,
+    "name": "Bette Midler",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 462,
+    "name": "Barbra Streisand",
+    "genre": [
+      "Pop",
+      "Jazz"
+    ],
+    "era": "1970s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 463,
+    "name": "Dean Martin",
+    "genre": [
+      "Pop",
+      "Jazz"
+    ],
+    "era": "1950s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 464,
+    "name": "Sammy Davis Jr.",
+    "genre": [
+      "Pop",
+      "Jazz"
+    ],
+    "era": "1960s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 465,
+    "name": "Burl Ives",
+    "genre": [
+      "Folk",
+      "Country"
+    ],
+    "era": "1950s",
+    "sources": [
+      "GLA"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 466,
+    "name": "Petula Clark",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 467,
+    "name": "Tom Jones",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 468,
+    "name": "Engelbert Humperdinck",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1960s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 469,
+    "name": "Shirley Bassey",
+    "genre": [
+      "Pop",
+      "Jazz"
+    ],
+    "era": "1960s",
+    "sources": [
+      "GLA",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 470,
+    "name": "Jamiroquai",
+    "genre": [
+      "R&B/Soul",
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 471,
+    "name": "Moby",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 472,
+    "name": "Fatboy Slim",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 473,
+    "name": "Chemical Brothers",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "The Chemical Brothers"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 474,
+    "name": "Orbital",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 475,
+    "name": "Leftfield",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 476,
+    "name": "Underworld",
+    "genre": [
+      "Electronic"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 477,
+    "name": "Basement Jaxx",
+    "genre": [
+      "Electronic",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 478,
+    "name": "LCD Soundsystem",
+    "genre": [
+      "Electronic",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 479,
+    "name": "Hot Chip",
+    "genre": [
+      "Electronic",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 480,
+    "name": "M.I.A.",
+    "genre": [
+      "Electronic",
+      "Hip-Hop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 481,
+    "name": "Vampire Weekend",
+    "genre": [
+      "Alternative",
+      "Indie"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 482,
+    "name": "Animal Collective",
+    "genre": [
+      "Alternative",
+      "Electronic"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 483,
+    "name": "St. Vincent",
+    "genre": [
+      "Alternative",
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 484,
+    "name": "Interpol",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 485,
+    "name": "The Strokes",
+    "genre": [
+      "Alternative",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Strokes"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 486,
+    "name": "Yeah Yeah Yeahs",
+    "genre": [
+      "Alternative",
+      "Punk"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 487,
+    "name": "TV on the Radio",
+    "genre": [
+      "Alternative",
+      "Electronic"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 488,
+    "name": "James Blake",
+    "genre": [
+      "Electronic",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 489,
+    "name": "Janelle Monae",
+    "genre": [
+      "Pop",
+      "R&B/Soul"
+    ],
+    "era": "2010s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [
+      "Janelle Monáe"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "name": "Jethro Tull",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "VH1",
+      "BB"
+    ],
+    "aliases": [],
+    "rank": 490,
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "name": "Bad Company",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "rank": 491,
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "name": "King Crimson",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RS100",
+      "VH1"
+    ],
+    "aliases": [],
+    "rank": 492,
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "name": "Procol Harum",
+    "genre": [
+      "Classic Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "VH1",
+      "BB"
+    ],
+    "aliases": [],
+    "rank": 493,
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "name": "Small Faces",
+    "genre": [
+      "Classic Rock",
+      "R&B/Soul"
+    ],
+    "era": "1960s",
+    "sources": [
+      "VH1"
+    ],
+    "aliases": [],
+    "rank": 494,
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "name": "The Monkees",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1960s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [
+      "Monkees"
+    ],
+    "rank": 495,
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "name": "LL Cool J",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "RRHOF",
+      "BB"
+    ],
+    "aliases": [],
+    "rank": 496,
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "name": "Ice-T",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "rank": 497,
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "name": "De La Soul",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "rank": 498,
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "name": "Common",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "RS100",
+      "BB"
+    ],
+    "aliases": [],
+    "rank": 499,
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "name": "DMX",
+    "genre": [
+      "Hip-Hop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "BB"
+    ],
+    "aliases": [],
+    "rank": 500,
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 501,
+    "name": "Ringo Starr",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "deceased": false,
+    "aliases": [
+      "Ringo Starr & His All Starr Band",
+      "Ringo Starr and His All Starr Band"
+    ],
+    "touring_status": "active"
+  },
+  {
+    "rank": 502,
+    "name": "Bee Gees",
+    "genre": [
+      "Pop",
+      "Disco"
+    ],
+    "era": "1970s",
+    "sources": [
+      "RRHOF"
+    ],
+    "aliases": [
+      "The Bee Gees"
+    ],
+    "deceased": true,
+    "touring_status": "deceased"
+  }
+]
