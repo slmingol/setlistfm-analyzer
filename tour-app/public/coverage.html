@@ -152,21 +152,37 @@ const pct = (n, d) => d ? (n / d * 100).toFixed(1) : '0.0';
 Chart.defaults.color = '#7070a0';
 Chart.defaults.borderColor = '#2a2a50';
 
-let dt, excludedGenres = new Set(), seenFilter = 'all', statusFilter = 'all';
+let dt, dtSeen, excludedGenres = new Set(), seenFilter = 'all', statusFilter = 'all';
 
-function saveGenrePrefs() {
-  localStorage.setItem('coverage_excluded_genres', JSON.stringify([...excludedGenres]));
+function getPrefs() {
+  try { return JSON.parse(localStorage.getItem('coverage_prefs') ?? '{}'); } catch (_) { return {}; }
 }
 
-function loadGenrePrefs() {
-  try {
-    const saved = JSON.parse(localStorage.getItem('coverage_excluded_genres') ?? '[]');
-    excludedGenres = new Set(saved);
-    document.querySelectorAll('.genre-toggle').forEach(b => {
-      if (excludedGenres.has(b.dataset.genre)) b.classList.add('excluded');
-    });
-    if (excludedGenres.size) dt.draw();
-  } catch (_) {}
+function savePrefs() {
+  localStorage.setItem('coverage_prefs', JSON.stringify({
+    excludedGenres: [...excludedGenres],
+    seenFilter,
+    statusFilter,
+    pageLength:     dt     ? dt.page.len()     : 25,
+    seenPageLength: dtSeen ? dtSeen.page.len() : 25,
+  }));
+}
+
+function loadPrefs() {
+  const p = getPrefs();
+
+  seenFilter   = p.seenFilter   ?? 'all';
+  statusFilter = p.statusFilter ?? 'all';
+  document.querySelectorAll('.fbtn[data-g="seen"]').forEach(b =>
+    b.classList.toggle('active', b.dataset.filter === seenFilter));
+  document.querySelectorAll('.fbtn[data-g="status"]').forEach(b =>
+    b.classList.toggle('active', b.dataset.filter === statusFilter));
+
+  excludedGenres = new Set(p.excludedGenres ?? []);
+  document.querySelectorAll('.genre-toggle').forEach(b =>
+    b.classList.toggle('excluded', excludedGenres.has(b.dataset.genre)));
+
+  if (seenFilter !== 'all' || statusFilter !== 'all' || excludedGenres.size) dt.draw();
 }
 
 async function init() {
@@ -228,14 +244,17 @@ async function init() {
     },
   });
 
+  const prefs = getPrefs();
+
   // Seen artists DataTable
-  $('#seenTable').DataTable({
-    pageLength: 25, lengthMenu: [10,25,50,100,200],
+  dtSeen = $('#seenTable').DataTable({
+    pageLength: prefs.seenPageLength ?? 25, lengthMenu: [10,25,50,100,200],
     order: [[0,'asc']],
     language: { search: '', searchPlaceholder: 'Search…' },
   });
+  dtSeen.on('length.dt', savePrefs);
 
-  // Genre toggles custom search for main table
+  // Custom search for main table (seen/status/genre filters)
   $.fn.dataTable.ext.search.push((_s, row) => {
     if (seenFilter   === 'seen'      && row[6] !== '1') return false;
     if (seenFilter   === 'unseen'    && row[6] !== '0') return false;
@@ -249,13 +268,14 @@ async function init() {
   });
 
   dt = $('#artistTable').DataTable({
-    pageLength: 25, lengthMenu: [10,25,50,100,200],
+    pageLength: prefs.pageLength ?? 25, lengthMenu: [10,25,50,100,200],
     order: [[0,'asc']],
     language: { search: '', searchPlaceholder: 'Search artists…' },
     columnDefs: [{ visible: false, targets: [6,7,8,9] }],
   });
+  dt.on('length.dt', savePrefs);
 
-  loadGenrePrefs();
+  loadPrefs();
 
   document.addEventListener('keydown', e => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -405,16 +425,16 @@ function buildHTML(s, by_genre, by_era, artists, top10) {
     <section>
       <h2>All 500 Artists</h2>
       <div class="filter-bar">
-        <button class="fbtn active"         data-g="seen"   onclick="applySeenFilter(this,'all')">All (${s.total})</button>
-        <button class="fbtn"                data-g="seen"   onclick="applySeenFilter(this,'seen')">Seen (${s.seen_count})</button>
-        <button class="fbtn"                data-g="seen"   onclick="applySeenFilter(this,'unseen')">Not Seen (${s.total - s.seen_count})</button>
+        <button class="fbtn" data-g="seen"   data-filter="all"       onclick="applySeenFilter(this,'all')">All (${s.total})</button>
+        <button class="fbtn" data-g="seen"   data-filter="seen"      onclick="applySeenFilter(this,'seen')">Seen (${s.seen_count})</button>
+        <button class="fbtn" data-g="seen"   data-filter="unseen"    onclick="applySeenFilter(this,'unseen')">Not Seen (${s.total - s.seen_count})</button>
         <span class="fbtn-divider"></span>
-        <button class="fbtn"                data-g="status" onclick="applyStatusFilter(this,'all')">Any Status</button>
-        <button class="fbtn"                data-g="status" onclick="applyStatusFilter(this,'living')">Living (${s.living_count})</button>
-        <button class="fbtn fbtn-active"    data-g="status" onclick="applyStatusFilter(this,'active')">Touring (${s.active_count})</button>
-        <button class="fbtn fbtn-hiatus"    data-g="status" onclick="applyStatusFilter(this,'hiatus')">Off-Tour (${s.hiatus_count})</button>
-        <button class="fbtn fbtn-disbanded" data-g="status" onclick="applyStatusFilter(this,'disbanded')">Disbanded (${s.disbanded_count})</button>
-        <button class="fbtn fbtn-deceased"  data-g="status" onclick="applyStatusFilter(this,'deceased')">Deceased (${s.deceased_count})</button>
+        <button class="fbtn"                data-g="status" data-filter="all"       onclick="applyStatusFilter(this,'all')">Any Status</button>
+        <button class="fbtn"                data-g="status" data-filter="living"    onclick="applyStatusFilter(this,'living')">Living (${s.living_count})</button>
+        <button class="fbtn fbtn-active"    data-g="status" data-filter="active"    onclick="applyStatusFilter(this,'active')">Touring (${s.active_count})</button>
+        <button class="fbtn fbtn-hiatus"    data-g="status" data-filter="hiatus"    onclick="applyStatusFilter(this,'hiatus')">Off-Tour (${s.hiatus_count})</button>
+        <button class="fbtn fbtn-disbanded" data-g="status" data-filter="disbanded" onclick="applyStatusFilter(this,'disbanded')">Disbanded (${s.disbanded_count})</button>
+        <button class="fbtn fbtn-deceased"  data-g="status" data-filter="deceased"  onclick="applyStatusFilter(this,'deceased')">Deceased (${s.deceased_count})</button>
       </div>
       <div class="genre-filter-bar">
         <span class="genre-filter-label">Genres</span>
@@ -438,6 +458,7 @@ function applySeenFilter(btn, f) {
   seenFilter = f;
   document.querySelectorAll('.fbtn[data-g="seen"]').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  savePrefs();
   dt.draw();
 }
 
@@ -445,26 +466,27 @@ function applyStatusFilter(btn, f) {
   statusFilter = f;
   document.querySelectorAll('.fbtn[data-g="status"]').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  savePrefs();
   dt.draw();
 }
 
 function toggleGenre(btn, genre) {
   if (excludedGenres.has(genre)) { excludedGenres.delete(genre); btn.classList.remove('excluded'); }
   else                           { excludedGenres.add(genre);    btn.classList.add('excluded'); }
-  saveGenrePrefs();
+  savePrefs();
   dt.draw();
 }
 
 function clearGenres() {
   document.querySelectorAll('.genre-toggle').forEach(b => { excludedGenres.add(b.dataset.genre); b.classList.add('excluded'); });
-  saveGenrePrefs();
+  savePrefs();
   dt.draw();
 }
 
 function resetGenres() {
   excludedGenres.clear();
   document.querySelectorAll('.genre-toggle').forEach(b => b.classList.remove('excluded'));
-  saveGenrePrefs();
+  savePrefs();
   dt.draw();
 }
 
