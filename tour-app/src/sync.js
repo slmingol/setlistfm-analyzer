@@ -23,9 +23,15 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
   const syncId = syncRow.lastInsertRowid;
 
   try {
-    // 1. Load top artists
+    // 1. Load top artists + build alias lookup (normalized alias → rank)
     const topArtists = JSON.parse(readFileSync(TOP_ARTISTS_PATH, 'utf8'));
     const active = topArtists.filter(a => a.touring_status === 'active' && !a.deceased);
+
+    const aliasToRank = new Map();
+    for (const a of topArtists) {
+      aliasToRank.set(normalize(a.name), a.rank);
+      for (const alias of (a.aliases ?? [])) aliasToRank.set(normalize(alias), a.rank);
+    }
 
     // 2. Fetch setlist.fm history
     log('Fetching setlist.fm history…');
@@ -33,8 +39,15 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     const seen  = buildSeenSet(shows);
     log(`  ${shows.length} shows, ${seen.size} unique artists seen`);
 
-    // 3. Filter to unseen active artists
-    const unseen = active.filter(a => !seen.has(normalize(a.name)));
+    // Resolve seen artist names → ranks via alias lookup
+    const seenRanks = new Set();
+    for (const normName of seen) {
+      const rank = aliasToRank.get(normName);
+      if (rank) seenRanks.add(rank);
+    }
+
+    // 3. Filter to unseen active artists (by rank, so aliases match)
+    const unseen = active.filter(a => !seenRanks.has(a.rank));
     log(`  ${unseen.length} unseen active artists to check`);
 
     // 4. Query Ticketmaster for each
