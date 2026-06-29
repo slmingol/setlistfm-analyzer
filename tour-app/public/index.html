@@ -122,7 +122,7 @@
   <div class="toolbar">
     <input class="search-box" id="search" placeholder="Search artists…" oninput="render()">
     <span class="loc-label">Locations:</span>
-    <input class="loc-box" id="locFilter" placeholder="CA, NY, WA …" title="Comma-separated state codes or country codes. Leave blank for all." oninput="render()">
+    <input class="loc-box" id="locFilter" placeholder="CA, NY, WA …" title="Comma-separated state codes or country codes. Leave blank for all." oninput="savePrefs();render()">
     <button class="btn btn-accent" id="syncBtn" onclick="triggerSync()">Refresh Now</button>
     <button class="btn btn-settings" onclick="openSettings()">⚙ Settings</button>
   </div>
@@ -156,7 +156,28 @@ let status = {};
 let sortCol = 'rank', sortDir = 1;
 const NEW_HOURS = 72;
 
+function savePrefs() {
+  localStorage.setItem('tour_prefs', JSON.stringify({
+    locFilter: document.getElementById('locFilter').value,
+    sortCol,
+    sortDir,
+  }));
+}
+
+function loadPrefs() {
+  try {
+    const p = JSON.parse(localStorage.getItem('tour_prefs') ?? '{}');
+    if (p.locFilter != null) {
+      document.getElementById('locFilter').value = p.locFilter;
+      document.getElementById('locSettingInput').value = p.locFilter;
+    }
+    if (p.sortCol) sortCol = p.sortCol;
+    if (p.sortDir) sortDir = p.sortDir;
+  } catch (_) {}
+}
+
 async function load() {
+  loadPrefs();
   const [ar, sr, bl] = await Promise.all([
     fetch('/api/artists').then(r => r.json()),
     fetch('/api/status').then(r => r.json()),
@@ -254,6 +275,7 @@ function render() {
 function setSort(col) {
   sortDir = sortCol === col ? sortDir * -1 : 1;
   sortCol = col;
+  savePrefs();
   render();
 }
 
@@ -292,6 +314,7 @@ function renderBlacklist() {
 
 function syncLocInputs() {
   document.getElementById('locFilter').value = document.getElementById('locSettingInput').value;
+  savePrefs();
   render();
 }
 
