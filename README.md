@@ -65,6 +65,24 @@ The script normalizes artist names and attempts a three-pass match against your 
 
 Aliases in `top_artists.json` cover common variations (e.g. `Elvis Costello & The Imposters` resolves to `Elvis Costello`, `Jefferson Starship` resolves to `Jefferson Airplane`).
 
+## Tour Planner app
+
+`tour-app/` is a self-hosted Node.js web app that checks [Ticketmaster](https://developer.ticketmaster.com/) weekly for upcoming shows from top-500 artists you haven't seen yet.
+
+```bash
+cd tour-app
+cp .env.example .env   # fill in all three API keys
+docker compose up -d
+# open http://localhost:3000
+```
+
+Requires a free [Ticketmaster Discovery API key](https://developer.ticketmaster.com/) in addition to the setlist.fm credentials.
+
+- Syncs automatically every Monday at noon UTC (configurable via `CRON_SCHEDULE`)
+- "Refresh Now" button in the UI triggers an immediate sync
+- Newly found dates are badged **NEW** for 72 hours
+- SQLite database persists between restarts via a Docker volume
+
 ## Touring status values
 
 | Status | Meaning |

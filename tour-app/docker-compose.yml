@@ -1,0 +1,16 @@
+services:
+  tour-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      # top_artists.json is read from the parent project
+      - ../top_artists.json:/app/data/top_artists.json:ro
+      # tours.db persists between restarts
+      - tour-data:/app/data
+    env_file:
+      - .env
+    restart: unless-stopped
+
+volumes:
+  tour-data:
