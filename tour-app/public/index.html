@@ -161,7 +161,7 @@
     <input id="locSettingInput" placeholder="e.g. CA, NY, WA, OR" oninput="syncLocInputs()">
   </section>
 
-  <section id="suggSection" style="display:none">
+  <section id="suggSection">
     <h3>Status Suggestions</h3>
     <div class="status-sync-row">
       <p style="margin:0">Touring status conflicts detected by weekly Ticketmaster check.</p>
@@ -170,7 +170,7 @@
     <div class="sugg-list" id="suggList"></div>
   </section>
 
-  <section id="listSuggSection" style="display:none">
+  <section id="listSuggSection">
     <h3>Missing Inductees</h3>
     <div class="status-sync-row">
       <p style="margin:0">RRHOF inductees not in top_artists.json. Dismiss or add manually.</p>
@@ -351,11 +351,7 @@ function renderSuggestions() {
   const list    = document.getElementById('suggList');
   const badge   = document.getElementById('suggBadge');
 
-  if (!suggestions.length) {
-    section.style.display = 'none';
-  } else {
-    section.style.display = '';
-  }
+  section.style.display = '';
 
   // Badge reflects total across both suggestion types
   const total = suggestions.length + listSuggestions.length;
@@ -364,16 +360,18 @@ function renderSuggestions() {
 
   const pill = s => `<span class="status-pill status-${s}">${s}</span>`;
 
-  list.innerHTML = suggestions.map(s => `
-    <div class="sugg-item" id="sugg-${s.artist_rank}">
-      <div class="sugg-name">#${s.artist_rank} ${s.artist_name}</div>
-      <div class="sugg-detail">${s.reason}${s.consecutive_hits > 1 ? ` &middot; seen ${s.consecutive_hits}x` : ''}</div>
-      <div class="sugg-status">${pill(s.current_status)} &rarr; ${pill(s.suggested_status)}</div>
-      <div class="sugg-actions">
-        <button class="btn-accept" onclick="acceptSuggestion(${s.artist_rank}, '${s.suggested_status}')">Accept</button>
-        <button class="btn-dismiss" onclick="dismissSuggestion(${s.artist_rank})">Dismiss</button>
-      </div>
-    </div>`).join('');
+  list.innerHTML = suggestions.length
+    ? suggestions.map(s => `
+        <div class="sugg-item" id="sugg-${s.artist_rank}">
+          <div class="sugg-name">#${s.artist_rank} ${s.artist_name}</div>
+          <div class="sugg-detail">${s.reason}${s.consecutive_hits > 1 ? ` &middot; seen ${s.consecutive_hits}x` : ''}</div>
+          <div class="sugg-status">${pill(s.current_status)} &rarr; ${pill(s.suggested_status)}</div>
+          <div class="sugg-actions">
+            <button class="btn-accept" onclick="acceptSuggestion(${s.artist_rank}, '${s.suggested_status}')">Accept</button>
+            <button class="btn-dismiss" onclick="dismissSuggestion(${s.artist_rank})">Dismiss</button>
+          </div>
+        </div>`).join('')
+    : '<p class="bl-empty">No conflicts found. Run Check to scan now.</p>';
 }
 
 async function acceptSuggestion(rank, newStatus) {
@@ -406,19 +404,17 @@ function renderListSuggestions() {
   const list    = document.getElementById('listSuggList');
   const badge   = document.getElementById('suggBadge');
 
-  if (!listSuggestions.length) {
-    section.style.display = 'none';
-  } else {
-    section.style.display = '';
-    list.innerHTML = listSuggestions.map(s => `
-      <div class="sugg-item" id="lsugg-${s.id}">
-        <div class="sugg-name">${s.name}${s.year ? ` <span style="color:var(--muted);font-weight:400">(${s.year})</span>` : ''}</div>
-        <div class="sugg-detail">RRHOF Performer — not in top_artists.json</div>
-        <div class="sugg-actions">
-          <button class="btn-dismiss" onclick="dismissListSuggestion(${s.id})">Dismiss</button>
-        </div>
-      </div>`).join('');
-  }
+  section.style.display = '';
+  list.innerHTML = listSuggestions.length
+    ? listSuggestions.map(s => `
+        <div class="sugg-item" id="lsugg-${s.id}">
+          <div class="sugg-name">${s.name}${s.year ? ` <span style="color:var(--muted);font-weight:400">(${s.year})</span>` : ''}</div>
+          <div class="sugg-detail">RRHOF Performer — not in top_artists.json</div>
+          <div class="sugg-actions">
+            <button class="btn-dismiss" onclick="dismissListSuggestion(${s.id})">Dismiss</button>
+          </div>
+        </div>`).join('')
+    : '<p class="bl-empty">No gaps found. Run Check to scan now.</p>';
 
   // Update badge to reflect combined count
   const total = suggestions.length + listSuggestions.length;
