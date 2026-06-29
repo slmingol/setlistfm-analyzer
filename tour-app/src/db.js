@@ -34,6 +34,17 @@ db.exec(`
 
   CREATE INDEX IF NOT EXISTS idx_events_artist ON events(artist_rank);
   CREATE INDEX IF NOT EXISTS idx_events_date   ON events(date);
+
+  CREATE TABLE IF NOT EXISTS blacklist (
+    artist_rank INTEGER PRIMARY KEY,
+    artist_name TEXT NOT NULL,
+    added_at    TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+
+  CREATE TABLE IF NOT EXISTS preferences (
+    key   TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+  );
 `);
 
 export default db;

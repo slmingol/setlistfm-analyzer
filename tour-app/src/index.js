@@ -39,40 +39,59 @@ app.get('/api/status', (_req, res) => {
 });
 
 app.get('/api/artists', (_req, res) => {
+  const blacklisted = new Set(
+    db.prepare(`SELECT artist_rank FROM blacklist`).all().map(r => r.artist_rank)
+  );
+
   const rows = db.prepare(`
-    SELECT
-      artist_rank  AS rank,
-      artist_name  AS name,
-      date,
-      venue,
-      city,
-      state,
-      country,
-      url,
-      first_seen
+    SELECT artist_rank AS rank, artist_name AS name,
+           date, venue, city, state, country, url, first_seen
     FROM events
     WHERE date >= date('now')
     ORDER BY artist_rank ASC, date ASC
   `).all();
 
-  // Group by artist
   const byArtist = {};
   for (const row of rows) {
-    if (!byArtist[row.rank]) {
-      byArtist[row.rank] = { rank: row.rank, name: row.name, events: [] };
-    }
+    if (blacklisted.has(row.rank)) continue;
+    if (!byArtist[row.rank]) byArtist[row.rank] = { rank: row.rank, name: row.name, events: [] };
     byArtist[row.rank].events.push({
-      date:       row.date,
-      venue:      row.venue,
-      city:       row.city,
-      state:      row.state,
-      country:    row.country,
-      url:        row.url,
-      first_seen: row.first_seen,
+      date: row.date, venue: row.venue, city: row.city,
+      state: row.state, country: row.country, url: row.url, first_seen: row.first_seen,
     });
   }
 
   res.json(Object.values(byArtist).sort((a, b) => a.rank - b.rank));
+});
+
+// Blacklist
+app.get('/api/blacklist', (_req, res) => {
+  res.json(db.prepare(`SELECT artist_rank AS rank, artist_name AS name, added_at FROM blacklist ORDER BY artist_name`).all());
+});
+
+app.post('/api/blacklist', express.json(), (req, res) => {
+  const { rank, name } = req.body ?? {};
+  if (!rank || !name) return res.status(400).json({ error: 'rank and name required' });
+  db.prepare(`INSERT OR IGNORE INTO blacklist (artist_rank, artist_name) VALUES (?, ?)`).run(rank, name);
+  res.json({ ok: true });
+});
+
+app.delete('/api/blacklist/:rank', (req, res) => {
+  db.prepare(`DELETE FROM blacklist WHERE artist_rank = ?`).run(Number(req.params.rank));
+  res.json({ ok: true });
+});
+
+// Preferences
+app.get('/api/preferences', (_req, res) => {
+  const rows = db.prepare(`SELECT key, value FROM preferences`).all();
+  res.json(Object.fromEntries(rows.map(r => [r.key, r.value])));
+});
+
+app.put('/api/preferences', express.json(), (req, res) => {
+  const prefs = req.body ?? {};
+  const upsert = db.prepare(`INSERT OR REPLACE INTO preferences (key, value) VALUES (?, ?)`);
+  for (const [key, value] of Object.entries(prefs)) upsert.run(key, String(value));
+  res.json({ ok: true });
 });
 
 app.post('/api/sync', async (_req, res) => {

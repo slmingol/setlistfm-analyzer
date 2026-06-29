@@ -9,8 +9,7 @@
     --bg:#0d0d1a; --surface:#13132a; --card:#1a1a35;
     --border:#2a2a50; --text:#e0e0f0; --muted:#7a7aaa;
     --green:#00c853; --blue:#42a5f5; --orange:#ff9800;
-    --purple:#ab47bc; --red:#ef5350;
-    --accent:#7c4dff;
+    --red:#ef5350; --accent:#7c4dff;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px}
@@ -18,49 +17,80 @@
   a:hover{text-decoration:underline}
 
   .hero{background:linear-gradient(135deg,#1a0533 0%,#0d0d1a 100%);padding:1.5rem 0;border-bottom:1px solid var(--border)}
-  .hero h1{font-size:1.4rem;font-weight:700;letter-spacing:.03em}
+  .hero h1{font-size:1.4rem;font-weight:700}
   .hero p{color:var(--muted);font-size:.82rem;margin-top:.25rem}
   .container{max-width:1200px;margin:0 auto;padding:0 1.25rem}
 
-  .toolbar{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;padding:1rem 0}
-  .search-box{flex:1;min-width:180px;max-width:280px;background:var(--surface);border:1px solid var(--border);
-    border-radius:6px;padding:.45rem .75rem;color:var(--text);font-size:.85rem;outline:none}
+  .toolbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;padding:1rem 0}
+  .search-box{flex:1;min-width:180px;max-width:260px;background:var(--surface);
+    border:1px solid var(--border);border-radius:6px;padding:.42rem .75rem;
+    color:var(--text);font-size:.85rem;outline:none}
   .search-box:focus{border-color:var(--accent)}
-  .filter-group{display:flex;gap:.35rem;flex-wrap:wrap}
-  .fbtn{background:var(--surface);border:1px solid var(--border);color:var(--muted);
-    border-radius:5px;padding:.35rem .75rem;cursor:pointer;font-size:.78rem;transition:all .15s}
-  .fbtn:hover{border-color:var(--accent);color:var(--text)}
-  .fbtn.active{background:var(--accent);border-color:var(--accent);color:#fff}
-  .sync-btn{margin-left:auto;background:var(--accent);border:none;color:#fff;
-    border-radius:5px;padding:.4rem .9rem;cursor:pointer;font-size:.78rem;font-weight:600}
-  .sync-btn:disabled{opacity:.5;cursor:default}
+  .loc-box{width:220px;background:var(--surface);border:1px solid var(--border);
+    border-radius:6px;padding:.42rem .75rem;color:var(--text);font-size:.82rem;outline:none}
+  .loc-box:focus{border-color:var(--orange)}
+  .loc-label{color:var(--muted);font-size:.75rem;white-space:nowrap}
+  .btn{border:1px solid var(--border);border-radius:5px;padding:.38rem .8rem;
+    cursor:pointer;font-size:.78rem;font-weight:600;transition:all .15s}
+  .btn-accent{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn-accent:hover{opacity:.85}
+  .btn-ghost{background:var(--surface);color:var(--muted)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--text)}
+  .btn-settings{background:var(--surface);color:var(--muted);margin-left:auto}
+  .btn-settings:hover{border-color:var(--accent);color:var(--text)}
+  .btn:disabled{opacity:.45;cursor:default}
 
-  .status-bar{display:flex;gap:1.5rem;padding:.6rem 0 1rem;color:var(--muted);font-size:.78rem;flex-wrap:wrap}
+  .status-bar{display:flex;gap:1.5rem;padding:.4rem 0 .8rem;color:var(--muted);font-size:.78rem;flex-wrap:wrap}
   .status-bar strong{color:var(--text)}
   .badge-new{background:#1a3a1a;color:var(--green);border:1px solid #2a5a2a;
-    border-radius:4px;padding:.1rem .4rem;font-size:.68rem;font-weight:700;margin-left:.4rem;vertical-align:middle}
+    border-radius:4px;padding:.1rem .35rem;font-size:.65rem;font-weight:700;
+    margin-left:.35rem;vertical-align:middle}
 
   table{width:100%;border-collapse:collapse}
-  th{text-align:left;padding:.55rem .75rem;font-size:.72rem;color:var(--muted);
+  th{text-align:left;padding:.5rem .75rem;font-size:.7rem;color:var(--muted);
     text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--border);
     background:var(--surface);cursor:pointer;user-select:none;white-space:nowrap}
   th:hover{color:var(--text)}
-  th.sorted-asc::after{content:' ▲';font-size:.65rem}
-  th.sorted-desc::after{content:' ▼';font-size:.65rem}
-  td{padding:.55rem .75rem;border-bottom:1px solid #1e1e3a;vertical-align:top}
-  tr:hover td{background:rgba(124,77,255,.05)}
-  .rank{color:var(--muted);font-size:.8rem;width:50px}
+  th.asc::after{content:' ▲';font-size:.6rem}
+  th.desc::after{content:' ▼';font-size:.6rem}
+  td{padding:.5rem .75rem;border-bottom:1px solid #1a1a30;vertical-align:top}
+  tr:hover td{background:rgba(124,77,255,.04)}
+  .rank{color:var(--muted);font-size:.78rem;width:46px}
   .artist-name{font-weight:600}
-  .genre-tag{display:inline-block;background:var(--surface);border:1px solid var(--border);
-    color:var(--muted);border-radius:4px;padding:.1rem .4rem;font-size:.7rem;margin-left:.4rem}
   .dates-cell{font-size:.78rem}
-  .event-row{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.3rem}
-  .event-date{color:var(--orange);font-weight:600;white-space:nowrap;min-width:90px}
+  .event-row{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.28rem;flex-wrap:wrap}
+  .event-date{color:var(--orange);font-weight:600;white-space:nowrap;min-width:92px}
   .event-loc{color:var(--muted)}
-  .event-link{font-size:.72rem}
+  .event-link{font-size:.7rem;white-space:nowrap}
+  .hide-btn{background:none;border:none;color:#444;cursor:pointer;font-size:.8rem;
+    padding:.2rem .4rem;border-radius:3px;transition:color .1s;white-space:nowrap}
+  .hide-btn:hover{color:var(--red)}
   .empty{text-align:center;padding:3rem;color:var(--muted)}
-  .syncing-msg{color:var(--orange);font-size:.78rem;animation:pulse 1.5s infinite}
+  .syncing{color:var(--orange);animation:pulse 1.5s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+  /* Settings drawer */
+  .drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:100}
+  .drawer-overlay.open{display:block}
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:360px;background:var(--surface);
+    border-left:1px solid var(--border);padding:1.5rem;overflow-y:auto;z-index:101;
+    transform:translateX(100%);transition:transform .2s}
+  .drawer.open{transform:none}
+  .drawer h2{font-size:1rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:center}
+  .drawer-close{background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;padding:.2rem}
+  .drawer-close:hover{color:var(--text)}
+  .drawer section{margin-bottom:1.5rem}
+  .drawer h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:.6rem}
+  .drawer p{font-size:.78rem;color:var(--muted);margin-bottom:.5rem;line-height:1.5}
+  .drawer input{width:100%;background:var(--card);border:1px solid var(--border);
+    border-radius:5px;padding:.45rem .7rem;color:var(--text);font-size:.82rem;outline:none}
+  .drawer input:focus{border-color:var(--accent)}
+  .bl-list{margin-top:.6rem;max-height:300px;overflow-y:auto}
+  .bl-item{display:flex;justify-content:space-between;align-items:center;
+    padding:.35rem 0;border-bottom:1px solid var(--border);font-size:.8rem}
+  .bl-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.85rem}
+  .bl-remove:hover{color:var(--red)}
+  .bl-empty{color:var(--muted);font-size:.78rem;padding:.5rem 0}
 </style>
 </head>
 <body>
@@ -68,142 +98,202 @@
 <div class="hero">
   <div class="container">
     <h1>Tour Planner</h1>
-    <p>Top-500 artists you haven't seen yet — with upcoming shows</p>
+    <p>Top-500 artists you haven't seen · upcoming shows only</p>
   </div>
 </div>
 
 <div class="container">
   <div class="toolbar">
     <input class="search-box" id="search" placeholder="Search artists…" oninput="render()">
-    <div class="filter-group" id="genre-filters"></div>
-    <button class="sync-btn" id="syncBtn" onclick="triggerSync()">Refresh Now</button>
+    <span class="loc-label">Locations:</span>
+    <input class="loc-box" id="locFilter" placeholder="CA, NY, WA …" title="Comma-separated state codes or country codes. Leave blank for all." oninput="render()">
+    <button class="btn btn-accent" id="syncBtn" onclick="triggerSync()">Refresh Now</button>
+    <button class="btn btn-settings" onclick="openSettings()">⚙ Settings</button>
   </div>
 
   <div class="status-bar" id="statusBar">Loading…</div>
-
   <div id="tableWrap"></div>
+</div>
+
+<!-- Settings drawer -->
+<div class="drawer-overlay" id="overlay" onclick="closeSettings()"></div>
+<div class="drawer" id="drawer">
+  <h2>Settings <button class="drawer-close" onclick="closeSettings()">✕</button></h2>
+
+  <section>
+    <h3>Location Filter</h3>
+    <p>Show only shows in these US state codes or country codes (comma-separated). Leave blank to show all locations.</p>
+    <input id="locSettingInput" placeholder="e.g. CA, NY, WA, OR" oninput="syncLocInputs()">
+  </section>
+
+  <section>
+    <h3>Hidden Artists</h3>
+    <p>Artists you've hidden will not appear in the planner. Click ✕ to restore.</p>
+    <div class="bl-list" id="blList"></div>
+  </section>
 </div>
 
 <script>
 let allArtists = [];
+let blacklist = [];
 let status = {};
-let activeGenre = 'all';
-let sortCol = 'rank';
-let sortDir = 1;
-const NEW_THRESHOLD_HOURS = 72;
+let sortCol = 'rank', sortDir = 1;
+const NEW_HOURS = 72;
 
 async function load() {
-  const [artistRes, statusRes] = await Promise.all([
-    fetch('/api/artists'),
-    fetch('/api/status'),
+  const [ar, sr, bl] = await Promise.all([
+    fetch('/api/artists').then(r => r.json()),
+    fetch('/api/status').then(r => r.json()),
+    fetch('/api/blacklist').then(r => r.json()),
   ]);
-  allArtists = await artistRes.json();
-  status = await statusRes.json();
-  buildGenreFilters();
+  allArtists = ar;
+  status = sr;
+  blacklist = bl;
   renderStatus();
+  renderBlacklist();
   render();
 }
 
-function isNew(firstSeen) {
-  const diff = (Date.now() - new Date(firstSeen + 'Z').getTime()) / 36e5;
-  return diff < NEW_THRESHOLD_HOURS;
+function locCodes() {
+  return document.getElementById('locFilter').value
+    .split(',').map(s => s.trim().toUpperCase()).filter(Boolean);
 }
 
-function buildGenreFilters() {
-  // genres come from top_artists — we don't have them in the events table,
-  // so we'll skip genre filter for now (events only have rank/name)
-  // Could be enhanced by joining against top_artists.json on the frontend
+function isNew(ts) {
+  return (Date.now() - new Date(ts + 'Z').getTime()) / 36e5 < NEW_HOURS;
 }
 
 function renderStatus() {
   const el = document.getElementById('statusBar');
   if (status.syncing) {
-    el.innerHTML = `<span class="syncing-msg">Sync in progress…</span>`;
-    setTimeout(async () => { status = await (await fetch('/api/status')).json(); renderStatus(); }, 5000);
+    el.innerHTML = `<span class="syncing">Sync in progress…</span>`;
+    setTimeout(async () => { status = await fetch('/api/status').then(r => r.json()); renderStatus(); }, 5000);
     return;
   }
   const ls = status.last_sync;
-  const lastSyncStr = ls
-    ? new Date(ls.finished_at + 'Z').toLocaleString()
-    : 'Never';
+  const when = ls ? new Date(ls.finished_at + 'Z').toLocaleString() : 'Never';
   el.innerHTML = `
     <span><strong>${status.artist_count}</strong> artists with dates</span>
-    <span><strong>${status.event_count}</strong> upcoming shows found</span>
-    <span>Last sync: <strong>${lastSyncStr}</strong></span>
+    <span><strong>${status.event_count}</strong> upcoming shows</span>
+    <span>Last sync: <strong>${when}</strong></span>
   `;
   document.getElementById('syncBtn').disabled = false;
 }
 
 function render() {
-  const q = document.getElementById('search').value.toLowerCase();
-  let rows = allArtists.filter(a => !q || a.name.toLowerCase().includes(q));
+  const q    = document.getElementById('search').value.toLowerCase();
+  const locs = locCodes();
 
-  // sort
-  rows = [...rows].sort((a, b) => {
+  let rows = allArtists
+    .filter(a => !q || a.name.toLowerCase().includes(q))
+    .map(a => {
+      const events = locs.length
+        ? a.events.filter(e => locs.includes(e.state?.toUpperCase()) || locs.includes(e.country?.toUpperCase()))
+        : a.events;
+      return { ...a, events };
+    })
+    .filter(a => a.events.length > 0);
+
+  rows.sort((a, b) => {
     let va = a[sortCol], vb = b[sortCol];
-    if (sortCol === 'next_date') {
-      va = a.events[0]?.date ?? 'z';
-      vb = b.events[0]?.date ?? 'z';
-    }
-    if (sortCol === 'rank') { va = a.rank; vb = b.rank; }
+    if (sortCol === 'next_date') { va = a.events[0]?.date ?? 'z'; vb = b.events[0]?.date ?? 'z'; }
+    if (sortCol === 'rank')      { va = a.rank; vb = b.rank; }
     return (va < vb ? -1 : va > vb ? 1 : 0) * sortDir;
   });
 
   if (!rows.length) {
     document.getElementById('tableWrap').innerHTML =
-      `<p class="empty">${allArtists.length ? 'No matches.' : 'No upcoming tours found yet. Try "Refresh Now".'}</p>`;
+      `<p class="empty">${allArtists.length ? 'No matches for current filters.' : 'No upcoming tours found. Try "Refresh Now".'}</p>`;
     return;
   }
 
-  const tbodyRows = rows.map(a => {
-    const hasNew = a.events.some(e => isNew(e.first_seen));
-    const eventsHtml = a.events.slice(0, 5).map(e => {
+  const tbody = rows.map(a => {
+    const evHtml = a.events.slice(0, 5).map(e => {
       const loc = [e.city, e.state || e.country].filter(Boolean).join(', ');
-      const newBadge = isNew(e.first_seen) ? '<span class="badge-new">NEW</span>' : '';
-      return `<div class="event-row">
-        <span class="event-date">${e.date}${newBadge}</span>
-        <span class="event-loc">${loc}${e.venue ? ` · ${e.venue}` : ''}</span>
-        ${e.url ? `<a class="event-link" href="${e.url}" target="_blank" rel="noopener">Tickets ↗</a>` : ''}
-      </div>`;
+      const nb  = isNew(e.first_seen) ? '<span class="badge-new">NEW</span>' : '';
+      const tkt = e.url ? `<a class="event-link" href="${e.url}" target="_blank" rel="noopener">Tickets ↗</a>` : '';
+      return `<div class="event-row"><span class="event-date">${e.date}${nb}</span><span class="event-loc">${loc}${e.venue ? ` · ${e.venue}` : ''}</span>${tkt}</div>`;
     }).join('');
-    const more = a.events.length > 5
-      ? `<div style="color:var(--muted);font-size:.72rem">+${a.events.length - 5} more dates</div>`
-      : '';
+    const more = a.events.length > 5 ? `<div style="color:var(--muted);font-size:.7rem">+${a.events.length - 5} more</div>` : '';
     return `<tr>
       <td class="rank">#${a.rank}</td>
       <td><span class="artist-name">${a.name}</span></td>
-      <td class="dates-cell">${eventsHtml}${more}</td>
+      <td class="dates-cell">${evHtml}${more}</td>
+      <td><button class="hide-btn" onclick="hideArtist(${a.rank},${JSON.stringify(a.name)})">✕ Hide</button></td>
     </tr>`;
   }).join('');
 
   document.getElementById('tableWrap').innerHTML = `
     <table>
-      <thead>
-        <tr>
-          <th onclick="setSort('rank')" class="${sortCol==='rank'?'sorted-'+(sortDir>0?'asc':'desc'):''}">Rank</th>
-          <th onclick="setSort('name')" class="${sortCol==='name'?'sorted-'+(sortDir>0?'asc':'desc'):''}">Artist</th>
-          <th onclick="setSort('next_date')" class="${sortCol==='next_date'?'sorted-'+(sortDir>0?'asc':'desc'):''}">Upcoming Shows</th>
-        </tr>
-      </thead>
-      <tbody>${tbodyRows}</tbody>
-    </table>
-  `;
+      <thead><tr>
+        <th onclick="setSort('rank')" class="${sortCol==='rank'?sortDir>0?'asc':'desc':''}">Rank</th>
+        <th onclick="setSort('name')" class="${sortCol==='name'?sortDir>0?'asc':'desc':''}">Artist</th>
+        <th onclick="setSort('next_date')" class="${sortCol==='next_date'?sortDir>0?'asc':'desc':''}">Upcoming Shows</th>
+        <th></th>
+      </tr></thead>
+      <tbody>${tbody}</tbody>
+    </table>`;
 }
 
 function setSort(col) {
-  if (sortCol === col) sortDir *= -1;
-  else { sortCol = col; sortDir = 1; }
+  sortDir = sortCol === col ? sortDir * -1 : 1;
+  sortCol = col;
   render();
 }
 
+async function hideArtist(rank, name) {
+  await fetch('/api/blacklist', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ rank, name }),
+  });
+  allArtists = allArtists.filter(a => a.rank !== rank);
+  blacklist.push({ rank, name });
+  renderBlacklist();
+  render();
+}
+
+async function restoreArtist(rank) {
+  await fetch(`/api/blacklist/${rank}`, { method: 'DELETE' });
+  blacklist = blacklist.filter(b => b.rank !== rank);
+  renderBlacklist();
+  // full reload to get events back
+  allArtists = await fetch('/api/artists').then(r => r.json());
+  render();
+}
+
+function renderBlacklist() {
+  const el = document.getElementById('blList');
+  if (!blacklist.length) { el.innerHTML = '<p class="bl-empty">No hidden artists.</p>'; return; }
+  el.innerHTML = blacklist
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(b => `<div class="bl-item">
+      <span>${b.name}</span>
+      <button class="bl-remove" onclick="restoreArtist(${b.rank})" title="Restore">✕</button>
+    </div>`).join('');
+}
+
+function syncLocInputs() {
+  document.getElementById('locFilter').value = document.getElementById('locSettingInput').value;
+  render();
+}
+
+function openSettings() {
+  document.getElementById('locSettingInput').value = document.getElementById('locFilter').value;
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+
+function closeSettings() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+
 async function triggerSync() {
-  const btn = document.getElementById('syncBtn');
-  btn.disabled = true;
+  document.getElementById('syncBtn').disabled = true;
   await fetch('/api/sync', { method: 'POST' });
-  document.getElementById('statusBar').innerHTML = '<span class="syncing-msg">Sync in progress…</span>';
-  setTimeout(async () => {
-    await load();
-  }, 3000);
+  status.syncing = true;
+  renderStatus();
+  setTimeout(load, 4000);
 }
 
 load();
