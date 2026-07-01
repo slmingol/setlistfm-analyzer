@@ -293,12 +293,7 @@
       "RRHOF",
       "VH1"
     ],
-    "aliases": [
-      "Robert Plant",
-      "Robert Plant & Alison Krauss",
-      "Robert Plant and Alison Krauss",
-      "Jimmy Page"
-    ],
+    "aliases": [],
     "deceased": true,
     "touring_status": "deceased"
   },
@@ -1411,9 +1406,7 @@
     ],
     "aliases": [
       "CSNY",
-      "Crosby Stills Nash Young",
-      "Crosby, Stills & Nash",
-      "Crosby Stills and Nash"
+      "Crosby Stills Nash Young"
     ],
     "deceased": true,
     "touring_status": "deceased"
@@ -3535,9 +3528,7 @@
       "RS100",
       "BB"
     ],
-    "aliases": [
-      "The Fugees"
-    ],
+    "aliases": [],
     "deceased": false,
     "touring_status": "active"
   },
@@ -3554,8 +3545,7 @@
       "BB"
     ],
     "aliases": [
-      "Beyoncé",
-      "Destiny's Child"
+      "Beyoncé"
     ],
     "deceased": false,
     "touring_status": "active"
