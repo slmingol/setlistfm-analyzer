@@ -147,8 +147,8 @@ footer{padding:1.5rem 0;color:var(--muted);font-size:.78rem;border-top:1px solid
 <nav class="app-nav">
   <div class="inner">
     <span class="nav-brand">setlist.fm</span>
-    <a href="/coverage.html" class="nav-link active">Coverage</a>
     <a href="/" class="nav-link">Tour Planner</a>
+    <a href="/coverage.html" class="nav-link active">Coverage</a>
     <button class="btn-settings-cov" id="settingsBtn" onclick="openSettings()">⚙ Settings<span class="sugg-badge" id="suggBadge" style="display:none"></span></button>
   </div>
 </nav>
@@ -180,6 +180,10 @@ footer{padding:1.5rem 0;color:var(--muted);font-size:.78rem;border-top:1px solid
   <div class="container">
     <h1>setlist.fm Analyzer</h1>
     <p class="sub" id="heroSub">Top 500 Musical Acts</p>
+    <div style="margin-top:.75rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="btn btn-accent" id="syncBtn" onclick="triggerSync()" style="font-size:.8rem;padding:.35rem .9rem">Refresh Data</button>
+      <span id="syncStatus" style="font-size:.78rem;color:var(--muted)"></span>
+    </div>
   </div>
 </div>
 
@@ -646,6 +650,22 @@ function openSettings() {
 function closeSettings() {
   document.getElementById('drawer').classList.remove('open');
   document.getElementById('overlay').classList.remove('open');
+}
+
+async function triggerSync() {
+  const btn = document.getElementById('syncBtn');
+  const status = document.getElementById('syncStatus');
+  btn.disabled = true;
+  status.textContent = 'Sync in progress…';
+  await fetch('/api/sync', { method: 'POST' });
+  const poll = async () => {
+    const s = await fetch('/api/status').then(r => r.json());
+    if (s.syncing) { setTimeout(poll, 3000); return; }
+    status.textContent = 'Updated ' + new Date().toLocaleTimeString();
+    btn.disabled = false;
+    await init();
+  };
+  setTimeout(poll, 3000);
 }
 
 init();
