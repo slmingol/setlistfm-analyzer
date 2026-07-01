@@ -4,9 +4,9 @@ services:
     ports:
       - "3234:3000"
     volumes:
-      - ./top_artists.json:/app/data/top_artists.json
       # tours.db persists between restarts
       - tour-data:/app/data
+      - ./top_artists.json:/app/data/top_artists.json
     env_file:
       - .env
     restart: unless-stopped
