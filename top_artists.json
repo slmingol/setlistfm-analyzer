@@ -3539,7 +3539,7 @@
       "BB"
     ],
     "aliases": [
-      "Beyoncé"
+      "Beyonc\u00e9"
     ],
     "deceased": false,
     "touring_status": "active"
@@ -3852,7 +3852,7 @@
       "VH1"
     ],
     "aliases": [
-      "Björk"
+      "Bj\u00f6rk"
     ],
     "deceased": false,
     "touring_status": "hiatus"
@@ -3943,7 +3943,8 @@
     ],
     "era": "1990s",
     "sources": [
-      "RS100"
+      "RS100",
+      "BB"
     ],
     "aliases": [
       "Chemical Brothers"
@@ -4888,7 +4889,7 @@
       "VH1"
     ],
     "aliases": [
-      "Motörhead"
+      "Mot\u00f6rhead"
     ],
     "deceased": true,
     "touring_status": "deceased"
@@ -4936,7 +4937,7 @@
       "BB"
     ],
     "aliases": [
-      "Mötley Crüe",
+      "M\u00f6tley Cr\u00fce",
       "Motley Crue"
     ],
     "deceased": false,
@@ -5229,23 +5230,6 @@
     "touring_status": "active"
   },
   {
-    "rank": 323,
-    "name": "Doobie Brothers",
-    "genre": [
-      "Classic Rock",
-      "Rock"
-    ],
-    "era": "1970s",
-    "sources": [
-      "RRHOF"
-    ],
-    "aliases": [
-      "The Doobie Brothers"
-    ],
-    "deceased": false,
-    "touring_status": "active"
-  },
-  {
     "rank": 324,
     "name": "James Taylor",
     "genre": [
@@ -5386,22 +5370,6 @@
     "touring_status": "disbanded"
   },
   {
-    "rank": 332,
-    "name": "REM",
-    "genre": [
-      "Alternative",
-      "Rock"
-    ],
-    "era": "1980s",
-    "sources": [
-      "RRHOF",
-      "RS100"
-    ],
-    "aliases": [],
-    "deceased": false,
-    "touring_status": "disbanded"
-  },
-  {
     "rank": 333,
     "name": "Squeeze",
     "genre": [
@@ -5523,7 +5491,7 @@
       "RS100"
     ],
     "aliases": [
-      "Hüsker Dü",
+      "H\u00fcsker D\u00fc",
       "Husker Du"
     ],
     "deceased": true,
@@ -7577,23 +7545,6 @@
     "touring_status": "active"
   },
   {
-    "rank": 473,
-    "name": "Chemical Brothers",
-    "genre": [
-      "Electronic"
-    ],
-    "era": "2000s",
-    "sources": [
-      "RS100",
-      "BB"
-    ],
-    "aliases": [
-      "The Chemical Brothers"
-    ],
-    "deceased": false,
-    "touring_status": "hiatus"
-  },
-  {
     "rank": 474,
     "name": "Orbital",
     "genre": [
@@ -7842,7 +7793,7 @@
       "BB"
     ],
     "aliases": [
-      "Janelle Monáe"
+      "Janelle Mon\u00e1e"
     ],
     "deceased": false,
     "touring_status": "hiatus"
@@ -8029,22 +7980,5 @@
       "Ringo Starr and His All Starr Band"
     ],
     "touring_status": "hiatus"
-  },
-  {
-    "rank": 502,
-    "name": "Bee Gees",
-    "genre": [
-      "Pop",
-      "Disco"
-    ],
-    "era": "1970s",
-    "sources": [
-      "RRHOF"
-    ],
-    "aliases": [
-      "The Bee Gees"
-    ],
-    "deceased": true,
-    "touring_status": "deceased"
   }
 ]
