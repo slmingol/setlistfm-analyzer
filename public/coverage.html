@@ -573,14 +573,14 @@ function renderSuggestions() {
     ? suggestions.map(s => `
         <div class="sugg-item" id="sugg-${s.artist_rank}">
           <div class="sugg-name">#${s.artist_rank} ${s.artist_name}</div>
-          <div class="sugg-detail">${s.reason}${s.consecutive_hits > 1 ? ` &middot; seen ${s.consecutive_hits}x` : ''}</div>
+          <div class="sugg-detail">${s.reason} &middot; ${s.consecutive_hits} week${s.consecutive_hits !== 1 ? 's' : ''} in a row</div>
           <div class="sugg-status">${pill(s.current_status)} &rarr; ${pill(s.suggested_status)}</div>
           <div class="sugg-actions">
             <button class="btn-accept" onclick="acceptSuggestion(${s.artist_rank},'${s.suggested_status}')">Accept</button>
             <button class="btn-dismiss-s" onclick="dismissSuggestion(${s.artist_rank})">Dismiss</button>
           </div>
         </div>`).join('')
-    : '<p class="bl-empty">No conflicts found. Run Check to scan now.</p>';
+    : '<p class="bl-empty">No conflicts found. Suggestions appear after 2 consecutive weekly checks with no TM events.</p>';
   updateBadge();
 }
 

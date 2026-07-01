@@ -119,7 +119,7 @@ app.post('/api/sync', async (_req, res) => {
 // Status suggestions
 app.get('/api/suggestions', (_req, res) => {
   const rows = db.prepare(
-    `SELECT * FROM status_suggestions WHERE dismissed = 0 ORDER BY consecutive_hits DESC, detected_at DESC`
+    `SELECT * FROM status_suggestions WHERE dismissed = 0 AND consecutive_hits >= 2 ORDER BY consecutive_hits DESC, detected_at DESC`
   ).all();
   res.json(rows);
 });
