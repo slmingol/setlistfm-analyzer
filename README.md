@@ -46,17 +46,17 @@ docker compose up -d
 
 ### Production (pull pre-built image from GHCR)
 
-Copy these three files to the server:
+Copy these files to the server and create the `data/` directory:
 
 ```
 docker-compose.prod.yml
-top_artists.json
+data/top_artists.json
 .env
 ```
 
-Then:
-
 ```bash
+mkdir -p data
+cp top_artists.json data/
 docker compose -f docker-compose.prod.yml up -d
 # open http://localhost:3234
 ```

@@ -2,3 +2,5 @@
 .DS_Store
 node_modules/
 data/tours.db
+data/tours.db-shm
+data/tours.db-wal
