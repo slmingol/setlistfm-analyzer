@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import db from './db.js';
-import { normalize, buildSeenSet } from './matcher.js';
+import { normalize, isTribute } from './matcher.js';
 import { fetchAttended } from './setlistfm.js';
 import { fetchEvents, parseEvent } from './tm.js';
 
@@ -48,6 +48,13 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     for (const show of shows) {
       const raw = show?.artist?.name;
       if (!raw) continue;
+
+      // Skip tribute/cover acts. Check both the artist name and the MusicBrainz
+      // disambiguation field (setlist.fm populates it with "tribute band" etc.).
+      const disambiguation = show?.artist?.disambiguation ?? '';
+      const tourName = show?.tour?.name ?? '';
+      if (isTribute(raw) || isTribute(disambiguation) || isTribute(tourName)) continue;
+
       const ranksThisShow = new Set();
 
       const r = aliasToRank.get(normalize(raw));
