@@ -58,8 +58,8 @@
   .rank{color:var(--muted);font-size:.78rem;width:46px}
   .artist-name{font-weight:600}
   .dates-cell{font-size:.9rem}
-  .event-row{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.28rem;flex-wrap:wrap}
-  .event-date{color:var(--orange);font-weight:600;white-space:nowrap;min-width:92px}
+  .event-row{display:grid;grid-template-columns:6.2rem 2.8rem 1fr auto;align-items:baseline;gap:.35rem;margin-bottom:.28rem}
+  .event-date{color:var(--orange);font-weight:600;white-space:nowrap}
   .event-loc{color:var(--muted)}
   .event-link{font-size:.7rem;white-space:nowrap}
   .hide-btn{background:none;border:none;color:#444;cursor:pointer;font-size:.8rem;
@@ -303,7 +303,7 @@ function render() {
       const loc = [e.city, e.state || e.country].filter(Boolean).join(', ');
       const nb  = isNew(e.first_seen) ? '<span class="badge-new">NEW</span>' : '';
       const tkt = e.url ? `<a class="event-link" href="${e.url}" target="_blank" rel="noopener">Tickets ↗</a>` : '';
-      return `<div class="event-row"><span class="event-date">${e.date}${nb}</span><span class="event-loc">${loc}${e.venue ? ` · ${e.venue}` : ''}</span>${tkt}</div>`;
+      return `<div class="event-row"><span class="event-date">${e.date}</span><span>${nb}</span><span class="event-loc">${loc}${e.venue ? ` · ${e.venue}` : ''}</span>${tkt}</div>`;
     }).join('');
     const more = a.events.length > 5 ? `<div style="color:var(--muted);font-size:.7rem">+${a.events.length - 5} more</div>` : '';
     return `<tr>
