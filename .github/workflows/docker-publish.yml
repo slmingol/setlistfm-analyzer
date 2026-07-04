@@ -49,11 +49,13 @@ jobs:
           NEW=$(npm version ${{ steps.bump.outputs.type }} --no-git-tag-version | tr -d 'v')
           echo "version=$NEW" >> $GITHUB_OUTPUT
 
-      - name: Commit and push version bump
+      - name: Commit, tag, and push version bump
         run: |
           git add package.json
           git commit -m "chore: bump version to ${{ steps.version.outputs.version }} [skip ci]"
+          git tag v${{ steps.version.outputs.version }}
           git push
+          git push origin v${{ steps.version.outputs.version }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -86,3 +88,11 @@ jobs:
             APP_VERSION=${{ steps.version.outputs.version }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v${{ steps.version.outputs.version }} \
+            --generate-notes \
+            --title "v${{ steps.version.outputs.version }}"
