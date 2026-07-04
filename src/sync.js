@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import db from './db.js';
 import { normalize, isTribute } from './matcher.js';
 import { fetchAttended } from './setlistfm.js';
-import { fetchEvents, parseEvent } from './tm.js';
+import { fetchEvents, parseEvent, isMusicEvent } from './tm.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const TOP_ARTISTS_PATH = join(__dir, '..', 'data', 'top_artists.json');
@@ -108,6 +108,7 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         const rawEvents = await fetchEvents(artist.name, tmKey);
         const upcoming  = rawEvents
           .filter(e => {
+            if (!isMusicEvent(e)) return false;
             if (isTribute(e.name ?? '')) return false;
             const attractions = e?._embedded?.attractions ?? [];
             if (attractions.some(a => isTribute(a.name ?? ''))) return false;

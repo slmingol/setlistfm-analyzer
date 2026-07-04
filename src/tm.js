@@ -40,6 +40,12 @@ export async function fetchEvents(artistName, apiKey, pageSize = 20) {
   return [];
 }
 
+export function isMusicEvent(raw) {
+  const classifications = raw?.classifications ?? [];
+  if (!classifications.length) return true;
+  return classifications.some(c => c?.segment?.name?.toLowerCase() === 'music');
+}
+
 export function parseEvent(raw) {
   const start  = raw?.dates?.start ?? {};
   const venue  = raw?._embedded?.venues?.[0] ?? {};
