@@ -3,12 +3,14 @@ const BASE = 'https://app.ticketmaster.com/discovery/v2';
 async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 export async function fetchEvents(artistName, apiKey, pageSize = 20) {
+  const startDateTime = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
   const params = new URLSearchParams({
     apikey: apiKey,
     keyword: artistName,
     classificationName: 'music',
     sort: 'date,asc',
     size: String(pageSize),
+    startDateTime,
   });
 
   for (let attempt = 0; attempt < 3; attempt++) {
