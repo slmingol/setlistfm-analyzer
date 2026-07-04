@@ -2,7 +2,7 @@ const BASE = 'https://app.ticketmaster.com/discovery/v2';
 
 async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-export async function fetchEvents(artistName, apiKey, pageSize = 50) {
+export async function fetchEvents(artistName, apiKey, pageSize = 20) {
   const params = new URLSearchParams({
     apikey: apiKey,
     keyword: artistName,
@@ -27,7 +27,10 @@ export async function fetchEvents(artistName, apiKey, pageSize = 50) {
       return data?._embedded?.events ?? [];
     } catch (err) {
       clearTimeout(timer);
-      if (err.name === 'AbortError') return []; // timeout — skip, don't retry
+      if (err.name === 'AbortError') {
+        console.warn(`TM timeout for "${artistName}"`);
+        return [];
+      }
       console.error(`TM fetch error for "${artistName}": ${err.message}`);
       await sleep(2 ** attempt * 1000);
     }
