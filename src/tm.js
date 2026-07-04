@@ -25,8 +25,12 @@ export async function resolveAttractionId(artistName, apiKey) {
     if (!res.ok) return null;
     const data = await res.json();
     const attractions = data?._embedded?.attractions ?? [];
-    const norm = normalize(artistName);
-    const matches = attractions.filter(a => normalize(a.name ?? '') === norm);
+    // Use full-name match WITHOUT stripping "The" — normalize() drops "The" which
+    // causes "The Cure" to match any entity named "Cure" (including venues).
+    const looseLower = s => s.toLowerCase().normalize('NFD')
+      .replace(/\p{Mn}/gu, '').replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+    const norm = looseLower(artistName);
+    const matches = attractions.filter(a => looseLower(a.name ?? '') === norm);
     if (!matches.length) return null;
     // Prefer attractions that have canonical metadata (Wikipedia or MusicBrainz).
     // A real artist almost always has these; a small namesake act typically does not.
