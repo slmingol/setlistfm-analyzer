@@ -31,6 +31,7 @@
     border-radius:6px;padding:.42rem .75rem;color:var(--text);font-size:.82rem;outline:none}
   .loc-box:focus{border-color:var(--orange)}
   .loc-label{color:var(--muted);font-size:.75rem;white-space:nowrap}
+  .seen-toggle{display:flex;align-items:center;gap:.3rem;color:var(--muted);font-size:.78rem;white-space:nowrap;cursor:pointer;user-select:none}
   .btn{border:1px solid var(--border);border-radius:5px;padding:.38rem .8rem;
     cursor:pointer;font-size:.78rem;font-weight:600;transition:all .15s}
   .btn-accent{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -150,6 +151,7 @@
     <input class="search-box" id="search" placeholder="Search artists…" oninput="render()">
     <span class="loc-label">Locations:</span>
     <input class="loc-box" id="locFilter" placeholder="CA, NY, WA …" title="Comma-separated state codes or country codes. Leave blank for all." oninput="saveLocFilter(this.value);render()">
+    <label class="seen-toggle" title="Include artists you've already seen"><input type="checkbox" id="showSeenChk" onchange="showSeen=this.checked;saveLocalPrefs();render()"> Show seen</label>
     <button class="btn btn-accent" id="syncBtn" onclick="triggerSync()">Refresh Now</button>
     <button class="btn btn-settings" id="settingsBtn" onclick="openSettings()">⚙ Settings<span class="sugg-badge" id="suggBadge" style="display:none"></span></button>
   </div>
@@ -201,10 +203,11 @@ let suggestions = [];
 let listSuggestions = [];
 let status = {};
 let sortCol = 'rank', sortDir = 1;
+let showSeen = false;
 const NEW_HOURS = 72;
 
 function saveLocalPrefs() {
-  localStorage.setItem('tour_prefs', JSON.stringify({ sortCol, sortDir }));
+  localStorage.setItem('tour_prefs', JSON.stringify({ sortCol, sortDir, showSeen }));
 }
 
 async function saveLocFilter(val) {
@@ -220,6 +223,7 @@ function loadPrefs(serverPrefs) {
     const p = JSON.parse(localStorage.getItem('tour_prefs') ?? '{}');
     if (p.sortCol) sortCol = p.sortCol;
     if (p.sortDir) sortDir = p.sortDir;
+    if (p.showSeen != null) { showSeen = p.showSeen; document.getElementById('showSeenChk').checked = showSeen; }
   } catch (_) {}
   const loc = serverPrefs.locFilter ?? '';
   document.getElementById('locFilter').value = loc;
@@ -279,6 +283,7 @@ function render() {
   const locs = locCodes();
 
   let rows = allArtists
+    .filter(a => showSeen || !a.seen)
     .filter(a => !q || a.name.toLowerCase().includes(q))
     .map(a => {
       const events = locs.length

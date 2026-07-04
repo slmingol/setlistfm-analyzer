@@ -77,11 +77,9 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     const uniqueArtists = new Set(shows.map(s => s?.artist?.name).filter(Boolean)).size;
     log(`  ${seenRanks.size} top-500 artists seen, ${uniqueArtists} unique artists total`);
 
-    // 3. Filter to unseen active artists
-    const unseen = active.filter(a => !seenRanks.has(a.rank));
-    log(`  ${unseen.length} unseen active artists to check`);
+    // 3. Query Ticketmaster for all active artists (seen + unseen)
+    log(`  ${active.length} active artists to check (${seenRanks.size} already seen)`);
 
-    // 4. Query Ticketmaster for each
     const today = new Date().toISOString().slice(0, 10);
     const insertEvent = db.prepare(`
       INSERT OR IGNORE INTO events
@@ -92,9 +90,9 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
 
     let eventsFound = 0, newEvents = 0;
 
-    for (let i = 0; i < unseen.length; i++) {
-      const artist = unseen[i];
-      if ((i + 1) % 20 === 0) log(`  [${i + 1}/${unseen.length}]`);
+    for (let i = 0; i < active.length; i++) {
+      const artist = active[i];
+      if ((i + 1) % 20 === 0) log(`  [${i + 1}/${active.length}]`);
 
       const rawEvents = await fetchEvents(artist.name, tmKey);
       const upcoming  = rawEvents

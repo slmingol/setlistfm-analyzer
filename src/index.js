@@ -51,6 +51,16 @@ app.get('/api/artists', (_req, res) => {
     db.prepare(`SELECT artist_rank FROM blacklist`).all().map(r => r.artist_rank)
   );
 
+  const seenRanks = new Set();
+  const cacheRow = db.prepare(`SELECT value FROM coverage_cache WHERE key = 'data'`).get();
+  if (cacheRow) {
+    try {
+      for (const a of (JSON.parse(cacheRow.value).artists ?? [])) {
+        if (a.seen) seenRanks.add(a.rank);
+      }
+    } catch (_) {}
+  }
+
   const rows = db.prepare(`
     SELECT artist_rank AS rank, artist_name AS name,
            date, venue, city, state, country, url, first_seen
@@ -62,7 +72,7 @@ app.get('/api/artists', (_req, res) => {
   const byArtist = {};
   for (const row of rows) {
     if (blacklisted.has(row.rank)) continue;
-    if (!byArtist[row.rank]) byArtist[row.rank] = { rank: row.rank, name: row.name, events: [] };
+    if (!byArtist[row.rank]) byArtist[row.rank] = { rank: row.rank, name: row.name, seen: seenRanks.has(row.rank), events: [] };
     byArtist[row.rank].events.push({
       date: row.date, venue: row.venue, city: row.city,
       state: row.state, country: row.country, url: row.url, first_seen: row.first_seen,
