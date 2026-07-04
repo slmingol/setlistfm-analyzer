@@ -25,6 +25,13 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
   const syncId = syncRow.lastInsertRowid;
 
   try {
+    const version = process.env.APP_VERSION ?? 'dev';
+    const bar = '━'.repeat(52);
+    log(bar);
+    log(`  setlist.fm Analyzer  v${version}`);
+    log(`  User: ${setlistUser}  ·  ${new Date().toISOString()}`);
+    log(bar);
+
     // 1. Load top artists + build alias lookup (normalized alias → rank)
     const topArtists = JSON.parse(readFileSync(TOP_ARTISTS_PATH, 'utf8'));
     const active = topArtists.filter(a => a.touring_status === 'active' && !a.deceased);

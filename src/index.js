@@ -28,6 +28,8 @@ if (!SETLIST_KEY || !SETLIST_USER || !TM_KEY) {
   process.exit(1);
 }
 
+const tsLog = (...args) => console.log(`[${new Date().toISOString()}]`, ...args);
+
 const app = express();
 app.use(express.static(join(__dir, '..', 'public')));
 
@@ -123,7 +125,7 @@ app.put('/api/preferences', express.json(), (req, res) => {
 app.post('/api/sync', async (_req, res) => {
   if (isSyncing()) return res.status(409).json({ error: 'Sync already running' });
   res.json({ started: true });
-  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY });
+  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
 });
 
 // Status suggestions
@@ -180,24 +182,24 @@ app.post('/api/list-sync', (_req, res) => {
 // --- Scheduler ---
 
 cron.schedule(CRON_SCHEDULE, () => {
-  console.log('Cron: starting weekly sync');
-  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY });
+  tsLog('Cron: starting weekly sync');
+  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
 });
 
 cron.schedule(STATUS_SYNC_SCHEDULE, () => {
-  console.log('Cron: starting weekly status sync');
-  runStatusSync({ tmKey: TM_KEY });
+  tsLog('Cron: starting weekly status sync');
+  runStatusSync({ tmKey: TM_KEY, log: tsLog });
 });
 
 cron.schedule(LIST_SYNC_SCHEDULE, () => {
-  console.log('Cron: starting monthly list sync');
-  runListSync();
+  tsLog('Cron: starting monthly list sync');
+  runListSync({ log: tsLog });
 });
 
 app.listen(Number(PORT), () => {
   console.log(`Tour app running on http://localhost:${PORT}`);
   if (SYNC_ON_START === 'true') {
-    console.log('Running initial sync…');
-    runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY });
+    tsLog('Running initial sync…');
+    runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
   }
 });
