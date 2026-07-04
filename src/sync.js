@@ -90,31 +90,39 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
 
     let eventsFound = 0, newEvents = 0;
 
-    for (let i = 0; i < active.length; i++) {
-      const artist = active[i];
-      if ((i + 1) % 5 === 0) log(`  [${i + 1}/${active.length}]`);
+    const CONCURRENCY = 5;
+    let cursor = 0, done = 0;
 
-      const rawEvents = await fetchEvents(artist.name, tmKey);
-      const upcoming  = rawEvents
-        .filter(e => {
-          if (isTribute(e.name ?? '')) return false;
-          const attractions = e?._embedded?.attractions ?? [];
-          if (attractions.some(a => isTribute(a.name ?? ''))) return false;
-          return true;
-        })
-        .map(parseEvent)
-        .filter(e => e.date >= today);
+    const worker = async () => {
+      while (cursor < active.length) {
+        const idx    = cursor++;
+        const artist = active[idx];
 
-      eventsFound += upcoming.length;
+        const rawEvents = await fetchEvents(artist.name, tmKey);
+        const upcoming  = rawEvents
+          .filter(e => {
+            if (isTribute(e.name ?? '')) return false;
+            const attractions = e?._embedded?.attractions ?? [];
+            if (attractions.some(a => isTribute(a.name ?? ''))) return false;
+            return true;
+          })
+          .map(parseEvent)
+          .filter(e => e.date >= today);
 
-      for (const ev of upcoming) {
-        const result = insertEvent.run({ artist_rank: artist.rank, artist_name: artist.name, ...ev });
-        if (result.changes) newEvents++;
+        eventsFound += upcoming.length;
+        for (const ev of upcoming) {
+          const result = insertEvent.run({ artist_rank: artist.rank, artist_name: artist.name, ...ev });
+          if (result.changes) newEvents++;
+        }
+        db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date < ?`).run(artist.rank, today);
+
+        done++;
+        if (done % 10 === 0) log(`  [${done}/${active.length}]`);
+        await new Promise(r => setTimeout(r, 100));
       }
+    };
 
-      db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date < ?`).run(artist.rank, today);
-      await new Promise(r => setTimeout(r, 100));
-    }
+    await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
     // Purge any tribute events across the whole table (one pass, not per-artist).
     db.prepare(`DELETE FROM events WHERE
