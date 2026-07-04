@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import db from './db.js';
 import { normalize, isTribute } from './matcher.js';
 import { fetchAttended } from './setlistfm.js';
-import { fetchEvents, parseEvent, isMusicEvent } from './tm.js';
+import { fetchEvents, parseEvent, isMusicEvent, resolveAttractionId } from './tm.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const TOP_ARTISTS_PATH = join(__dir, '..', 'data', 'top_artists.json');
@@ -97,6 +97,11 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
 
     let eventsFound = 0, newEvents = 0;
 
+    const getTmId  = db.prepare(`SELECT tm_id FROM tm_attraction_ids WHERE artist_rank = ?`);
+    const saveTmId = db.prepare(
+      `INSERT OR REPLACE INTO tm_attraction_ids (artist_rank, tm_id, resolved_at) VALUES (?, ?, datetime('now'))`
+    );
+
     const CONCURRENCY = 5;
     let cursor = 0, done = 0;
 
@@ -105,7 +110,18 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         const idx    = cursor++;
         const artist = active[idx];
 
-        const rawEvents = await fetchEvents(artist.name, tmKey);
+        // Resolve TM attraction ID on first encounter; cached for subsequent syncs.
+        // Using attractionId instead of keyword prevents false-positive matches
+        // (e.g. "No Cure" or a small tribute act named "The Cure" matching the real band).
+        const cached = getTmId.get(artist.rank);
+        let tmId = cached?.tm_id ?? null;
+        if (!tmId) {
+          tmId = await resolveAttractionId(artist.name, tmKey);
+          if (tmId) saveTmId.run(artist.rank, tmId);
+          await new Promise(r => setTimeout(r, 100));
+        }
+
+        const rawEvents = await fetchEvents(artist.name, tmKey, { attractionId: tmId });
         const upcoming  = rawEvents
           .filter(e => {
             if (!isMusicEvent(e)) return false;

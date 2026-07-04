@@ -1,17 +1,56 @@
+import { normalize } from './matcher.js';
+
 const BASE = 'https://app.ticketmaster.com/discovery/v2';
 
 async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-export async function fetchEvents(artistName, apiKey, pageSize = 20) {
-  const startDateTime = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+/**
+ * Resolve the canonical TM attraction ID for an artist name.
+ * Searches /attractions.json and picks the exact-name match with the most
+ * upcoming events — this reliably selects the real artist over a small
+ * namesake act (e.g. The Cure the band vs "The Cure" the club DJ).
+ */
+export async function resolveAttractionId(artistName, apiKey) {
   const params = new URLSearchParams({
     apikey: apiKey,
     keyword: artistName,
+    classificationName: 'music',
+    size: '5',
+  });
+  const ac = new AbortController();
+  const timer = setTimeout(() => ac.abort(), 10000);
+  try {
+    const res = await fetch(`${BASE}/attractions.json?${params}`, { signal: ac.signal });
+    clearTimeout(timer);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const attractions = data?._embedded?.attractions ?? [];
+    const norm = normalize(artistName);
+    const matches = attractions.filter(a => normalize(a.name ?? '') === norm);
+    if (!matches.length) return null;
+    matches.sort((a, b) => (b.upcomingEvents?._total ?? 0) - (a.upcomingEvents?._total ?? 0));
+    return matches[0].id;
+  } catch (err) {
+    clearTimeout(timer);
+    if (err.name === 'AbortError') console.warn(`TM attraction timeout for "${artistName}"`);
+    return null;
+  }
+}
+
+export async function fetchEvents(artistName, apiKey, { pageSize = 20, attractionId = null } = {}) {
+  const startDateTime = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+  const params = new URLSearchParams({
+    apikey: apiKey,
     classificationName: 'music',
     sort: 'date,asc',
     size: String(pageSize),
     startDateTime,
   });
+  if (attractionId) {
+    params.set('attractionId', attractionId);
+  } else {
+    params.set('keyword', artistName);
+  }
 
   for (let attempt = 0; attempt < 3; attempt++) {
     const ac = new AbortController();

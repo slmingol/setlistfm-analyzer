@@ -73,6 +73,12 @@ db.exec(`
     dismissed   INTEGER NOT NULL DEFAULT 0,
     UNIQUE(source, name)
   );
+
+  CREATE TABLE IF NOT EXISTS tm_attraction_ids (
+    artist_rank   INTEGER PRIMARY KEY,
+    tm_id         TEXT NOT NULL,
+    resolved_at   TEXT NOT NULL DEFAULT (datetime('now'))
+  );
 `);
 
 export default db;
