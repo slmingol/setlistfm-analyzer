@@ -1,23 +1,26 @@
 # setlist.fm Analyzer
 
-A self-hosted web app that tracks your concert coverage against a curated list of the top 500 musical acts of all time, and surfaces upcoming shows from artists you haven't seen yet.
+A self-hosted web app that tracks your concert coverage against a curated list of the top 500+ musical acts of all time, and surfaces upcoming shows from artists you haven't seen yet.
 
 ## Features
 
-**Coverage tab**
-- Coverage dials: All 500 / Living / Touring+Off-Tour / Touring Only
-- Genre and era breakdown charts
-- Filterable table of all 500 artists with seen/unseen status, genre, era, and source
-- Filter by seen status, touring status, and genre
-- Artists You've Seen table with show counts
-- All filter selections persist across page loads
-
 **Tour Planner tab**
-- Queries Ticketmaster weekly for upcoming shows from unseen top-500 active artists
+- Queries Ticketmaster weekly for upcoming shows from all active top-500 artists
+- Toggle between unseen-only and all active artists (including ones you've seen)
+- Tribute and cover acts automatically filtered from results
 - Location filter (enter state/country codes to show only nearby shows)
+- Expand "+N more" to see full tour schedules per artist
 - Hide artists you have no interest in seeing (persisted in DB)
 - Newly found dates badged **NEW** for 72 hours
-- Filter and sort state persists across page loads
+- Filter, sort, and location state persists across page loads
+
+**Coverage tab**
+- Coverage dials: All / Living / Touring+Off-Tour / Touring Only — click any dial to filter the artist table
+- Genre and era breakdown charts
+- Filterable table of all artists with seen/unseen status, genre, era, and source
+- Filter by seen status, touring status, and genre
+- Refresh Data button triggers a full sync from the Coverage tab
+- All filter selections persist across page loads
 
 **Touring status suggestions**
 - Every Monday the app checks all active/hiatus artists against Ticketmaster and flags conflicts: an "active" artist with no upcoming shows, or a "hiatus" artist who suddenly has dates
@@ -67,7 +70,7 @@ On first start the app syncs immediately (fetches your setlist.fm history and qu
 
 | File | Description |
 |------|-------------|
-| `top_artists.json` | 501-artist reference list with genre, era, deceased/touring status, and name aliases |
+| `top_artists.json` | 536-artist reference list with genre, era, deceased/touring status, and name aliases |
 | `data/tours.db` | SQLite database (created at runtime, persisted via Docker volume) |
 
 ## Configuration
@@ -92,6 +95,8 @@ Show history is matched against `top_artists.json` via a three-pass algorithm:
 3. Split `X with Y` co-bills and credit each artist independently
 
 Aliases cover common variations (e.g. `Pat Benatar & Neil Giraldo` → `Pat Benatar`, `Jefferson Starship` → `Jefferson Airplane`).
+
+Tribute and cover acts are excluded from matching. Shows are skipped if the artist name, MusicBrainz disambiguation field, or tour name contains tribute markers (`tribute`, `cover band`, `celebrating`, `the music of`, `salute to`). The same filter applies to Ticketmaster results.
 
 ## Touring status values
 
