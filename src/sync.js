@@ -199,7 +199,7 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
       UPDATE sync_log SET finished_at = datetime('now'),
         artists_checked = ?, events_found = ?, new_events = ?
       WHERE id = ?
-    `).run(unseen.length, eventsFound, newEvents, syncId);
+    `).run(active.length, eventsFound, newEvents, syncId);
 
     log(`Sync complete — ${eventsFound} upcoming events (${newEvents} new), ${seenRanks.size}/${topArtists.length} top-500 seen`);
   } finally {
