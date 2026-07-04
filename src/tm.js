@@ -11,9 +11,9 @@ export async function fetchEvents(artistName, apiKey, pageSize = 50) {
     size: String(pageSize),
   });
 
-  for (let attempt = 0; attempt < 4; attempt++) {
+  for (let attempt = 0; attempt < 3; attempt++) {
     const ac = new AbortController();
-    const timer = setTimeout(() => ac.abort(), 15000);
+    const timer = setTimeout(() => ac.abort(), 10000);
     try {
       const res = await fetch(`${BASE}/events.json?${params}`, { signal: ac.signal });
       clearTimeout(timer);
@@ -27,6 +27,7 @@ export async function fetchEvents(artistName, apiKey, pageSize = 50) {
       return data?._embedded?.events ?? [];
     } catch (err) {
       clearTimeout(timer);
+      if (err.name === 'AbortError') return []; // timeout — skip, don't retry
       console.error(`TM fetch error for "${artistName}": ${err.message}`);
       await sleep(2 ** attempt * 1000);
     }

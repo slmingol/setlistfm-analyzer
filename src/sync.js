@@ -92,7 +92,7 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
 
     for (let i = 0; i < active.length; i++) {
       const artist = active[i];
-      if ((i + 1) % 20 === 0) log(`  [${i + 1}/${active.length}]`);
+      if ((i + 1) % 5 === 0) log(`  [${i + 1}/${active.length}]`);
 
       const rawEvents = await fetchEvents(artist.name, tmKey);
       const upcoming  = rawEvents
