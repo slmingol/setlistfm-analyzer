@@ -58,7 +58,8 @@
   td{padding:.5rem .75rem;border-bottom:1px solid #1a1a30;vertical-align:top}
   tr:hover td{background:rgba(124,77,255,.04)}
   .rank{color:var(--muted);font-size:.78rem;width:46px}
-  .artist-name{font-weight:600}
+  .artist-name{font-weight:600;color:inherit;text-decoration:none}
+  .artist-name:hover{text-decoration:underline}
   .dates-cell{font-size:.9rem}
   .event-row{display:grid;grid-template-columns:6.2rem 2.8rem 1fr auto;align-items:baseline;gap:.35rem;margin-bottom:.28rem}
   .event-date{color:var(--orange);font-weight:600;white-space:nowrap}
@@ -319,7 +320,7 @@ function render() {
     const more = extra > 0 ? `<span class="more-toggle" onclick="toggleMore(this,${extra})">+${extra} more</span>` : '';
     return `<tr>
       <td class="rank">#${a.rank}</td>
-      <td><span class="artist-name">${a.name}</span></td>
+      <td><a class="artist-name" href="https://en.wikipedia.org/wiki/${encodeURIComponent(a.name).replace(/%20/g,'_')}" target="_blank" rel="noopener">${a.name}</a></td>
       <td class="dates-cell">${evHtml}${more}</td>
       <td><button class="hide-btn" data-rank="${a.rank}" data-name="${a.name.replace(/"/g,'&quot;')}" onclick="hideArtist(this)">✕ Hide</button></td>
     </tr>`;
