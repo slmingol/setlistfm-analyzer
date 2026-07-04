@@ -1,4 +1,4 @@
-const TRIBUTE_RE = /\btribute\b|\bcover\s*band\b|\bcelebrating\b|\bthe music of\b|\bsalute to\b|the\s+.+\s+story\b|the\s+.+\s+experience\b|\bstory songs\b|\bsongs of the\b|\bsymphon|\bphilharmon/i;
+const TRIBUTE_RE = /\btribute\b|\bcover\s*band\b|\bcelebrating\b|\bthe music of\b|\bsalute to\b|the\s+.+\s+story\b|the\s+.+\s+experience\b|\bstory songs\b|\bsongs of the\b|\bsymphon|\bphilharmon|\bbook tour\b/i;
 
 /** Returns true if the name looks like a tribute/cover act rather than the real artist. */
 export function isTribute(name) {
