@@ -112,6 +112,12 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
             if (isTribute(e.name ?? '')) return false;
             const attractions = e?._embedded?.attractions ?? [];
             if (attractions.some(a => isTribute(a.name ?? ''))) return false;
+            // If TM provided attractions, at least one must resolve to this artist.
+            // Guards against keyword false-positives (e.g. "No Cure" matching "The Cure").
+            if (attractions.length > 0) {
+              const hit = attractions.some(a => aliasToRank.get(normalize(a.name ?? '')) === artist.rank);
+              if (!hit) return false;
+            }
             return true;
           })
           .map(parseEvent)
