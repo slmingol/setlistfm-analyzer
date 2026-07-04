@@ -12,8 +12,11 @@ export async function fetchEvents(artistName, apiKey, pageSize = 50) {
   });
 
   for (let attempt = 0; attempt < 4; attempt++) {
+    const ac = new AbortController();
+    const timer = setTimeout(() => ac.abort(), 15000);
     try {
-      const res = await fetch(`${BASE}/events.json?${params}`);
+      const res = await fetch(`${BASE}/events.json?${params}`, { signal: ac.signal });
+      clearTimeout(timer);
       if (res.status === 429) { await sleep(2 ** attempt * 1000); continue; }
       if (!res.ok) {
         const body = await res.text().catch(() => '');
@@ -23,6 +26,7 @@ export async function fetchEvents(artistName, apiKey, pageSize = 50) {
       const data = await res.json();
       return data?._embedded?.events ?? [];
     } catch (err) {
+      clearTimeout(timer);
       console.error(`TM fetch error for "${artistName}": ${err.message}`);
       await sleep(2 ** attempt * 1000);
     }
