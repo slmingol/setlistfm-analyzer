@@ -137,7 +137,8 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
       event_name LIKE '%the music of%' OR event_name LIKE '%cover band%' OR
       event_name LIKE '%salute to%' OR event_name LIKE '% story' OR
       event_name LIKE '% experience' OR event_name LIKE '%story songs%' OR
-      event_name LIKE '%songs of the%'
+      event_name LIKE '%songs of the%' OR event_name LIKE '%symphon%' OR
+      event_name LIKE '%philharmon%'
     `).run();
 
     db.prepare(`DELETE FROM events WHERE date < ?`).run(today);
