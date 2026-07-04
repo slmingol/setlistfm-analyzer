@@ -1,6 +1,6 @@
 {
   "name": "setlistfm-analyzer",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
