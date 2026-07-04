@@ -28,8 +28,14 @@ export async function resolveAttractionId(artistName, apiKey) {
     const norm = normalize(artistName);
     const matches = attractions.filter(a => normalize(a.name ?? '') === norm);
     if (!matches.length) return null;
-    matches.sort((a, b) => (b.upcomingEvents?._total ?? 0) - (a.upcomingEvents?._total ?? 0));
-    return matches[0].id;
+    // Prefer attractions that have canonical metadata (Wikipedia or MusicBrainz).
+    // A real artist almost always has these; a small namesake act typically does not.
+    const withLinks = matches.filter(a =>
+      a.externalLinks?.wikipedia?.length || a.externalLinks?.musicbrainz?.length
+    );
+    const candidates = withLinks.length ? withLinks : matches;
+    candidates.sort((a, b) => (b.upcomingEvents?._total ?? 0) - (a.upcomingEvents?._total ?? 0));
+    return candidates[0].id;
   } catch (err) {
     clearTimeout(timer);
     if (err.name === 'AbortError') console.warn(`TM attraction timeout for "${artistName}"`);

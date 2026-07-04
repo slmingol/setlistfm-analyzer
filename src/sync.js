@@ -88,11 +88,20 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     log(`  ${active.length} active artists to check (${seenRanks.size} already seen)`);
 
     const today = new Date().toISOString().slice(0, 10);
+    // Upsert: update mutable fields on conflict but preserve first_seen.
     const insertEvent = db.prepare(`
-      INSERT OR IGNORE INTO events
+      INSERT INTO events
         (artist_rank, artist_name, tm_id, event_name, date, venue, city, state, country, url)
       VALUES
         (@artist_rank, @artist_name, @tm_id, @event_name, @date, @venue, @city, @state, @country, @url)
+      ON CONFLICT(tm_id) DO UPDATE SET
+        event_name = excluded.event_name,
+        date       = excluded.date,
+        venue      = excluded.venue,
+        city       = excluded.city,
+        state      = excluded.state,
+        country    = excluded.country,
+        url        = excluded.url
     `);
 
     let eventsFound = 0, newEvents = 0;
@@ -143,6 +152,17 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         for (const ev of upcoming) {
           const result = insertEvent.run({ artist_rank: artist.rank, artist_name: artist.name, ...ev });
           if (result.changes) newEvents++;
+        }
+
+        // Remove stale future events: anything TM no longer returns for this artist.
+        // This purges false-positives stored by previous syncs (e.g. a namesake act).
+        const tmIds = upcoming.map(e => e.tm_id).filter(Boolean);
+        if (tmIds.length > 0) {
+          const ph = tmIds.map(() => '?').join(',');
+          db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date >= ? AND tm_id NOT IN (${ph})`)
+            .run(artist.rank, today, ...tmIds);
+        } else {
+          db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date >= ?`).run(artist.rank, today);
         }
         db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date < ?`).run(artist.rank, today);
 
