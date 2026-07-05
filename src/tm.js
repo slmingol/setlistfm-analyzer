@@ -72,7 +72,7 @@ export async function fetchEvents(artistName, apiKey, { pageSize = 20, attractio
       if (!res.ok) {
         const body = await res.text().catch(() => '');
         console.error(`TM API ${res.status} for "${artistName}": ${body.slice(0, 200)}`);
-        return [];
+        return null;  // null = error, [] = definitive empty
       }
       const data = await res.json();
       return data?._embedded?.events ?? [];
@@ -80,13 +80,13 @@ export async function fetchEvents(artistName, apiKey, { pageSize = 20, attractio
       clearTimeout(timer);
       if (err.name === 'AbortError') {
         console.warn(`TM timeout for "${artistName}"`);
-        return [];
+        return null;
       }
       console.error(`TM fetch error for "${artistName}": ${err.message}`);
       await sleep(2 ** attempt * 1000);
     }
   }
-  return [];
+  return null;
 }
 
 export function isMusicEvent(raw) {

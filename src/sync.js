@@ -146,6 +146,8 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         }
 
         const rawEvents = await fetchEvents(artist.name, tmKey, { attractionId: tmId });
+        // null = API error; skip purge to avoid wiping events on transient failures
+        if (rawEvents === null) { done++; if (done % 10 === 0) log(`  [${done}/${active.length}]`); continue; }
         const upcoming  = rawEvents
           .filter(e => {
             if (!isMusicEvent(e)) return false;
