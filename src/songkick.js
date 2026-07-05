@@ -23,14 +23,13 @@ async function scrapeTrackedPage(username, sessionCookie, page) {
     }
   }
 
-  // Extract artist entries: href="/artists/12345-artist-name">Artist Name</a>
+  // Structure: <a href="/artists/ID-slug"><img ...>Artist Name\n</a>
   const artists = [];
-  const re = /href="\/artists\/(\d+)-[^"]*"[^>]*>\s*([^<]+?)\s*<\/a>/g;
+  const re = /href="\/artists\/(\d+)-[^"]*"[^>]*>\s*<img[^>]*>\s*([^\n<]+)/g;
   let m;
   while ((m = re.exec(html)) !== null) {
     const [, id, name] = m;
-    // Skip pagination / nav links (very short or numeric-only names)
-    if (name.length < 2 || /^\d+$/.test(name)) continue;
+    if (name.trim().length < 2) continue;
     artists.push({ name: name.trim(), songkickId: id });
   }
 
