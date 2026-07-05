@@ -10,10 +10,10 @@ const TOP_ARTISTS_PATH = join(__dir, '..', 'top_artists.json');
 
 const SONGKICK_BASE_RANK = 10000;
 
-// Non-music acts to skip (comedians, etc.)
+// Non-music acts or duplicates to skip
 const SKIP_NORMS = new Set([
-  'jerry seinfeld', 'john oliver', 'ricky gervais', 'seth meyers', 'seth meyers',
-  'mico',
+  'jerry seinfeld', 'john oliver', 'ricky gervais', 'seth meyers',
+  'mico', 'day6', 'eaj', 'indigo girl',
 ].map(s => normalize(s)));
 
 let running = false;
@@ -47,9 +47,13 @@ export async function runSongkickSync({
 
     const existing = buildExistingNameSet();
 
+    // Filter out existing/skipped, then deduplicate within the scraped batch by normalized name
+    const seenNorms = new Set();
     const newArtists = tracked.filter(a => {
       const n = normalize(a.name);
-      return !existing.has(n) && !SKIP_NORMS.has(n);
+      if (existing.has(n) || SKIP_NORMS.has(n) || seenNorms.has(n)) return false;
+      seenNorms.add(n);
+      return true;
     });
     log(`Songkick: ${newArtists.length} new artists not yet in tracked list`);
 
