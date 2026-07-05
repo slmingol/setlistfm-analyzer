@@ -1,6 +1,15 @@
 const BASE = 'https://www.songkick.com';
 const UA   = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
 
+function decodeEntities(s) {
+  return s
+    .replace(/&amp;/g, '&')
+    .replace(/&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>');
+}
+
 async function scrapeTrackedPage(username, sessionCookie, page) {
   // sessionCookie can be either a raw cookie header string (preferred)
   // or just the _skweb_session value for backwards compat
@@ -29,8 +38,9 @@ async function scrapeTrackedPage(username, sessionCookie, page) {
   let m;
   while ((m = re.exec(html)) !== null) {
     const [, id, name] = m;
-    if (name.trim().length < 2) continue;
-    artists.push({ name: name.trim(), songkickId: id });
+    const decoded = decodeEntities(name.trim());
+    if (decoded.length < 2) continue;
+    artists.push({ name: decoded, songkickId: id });
   }
 
   // Detect "no more pages": either no artists found, or a "no results" indicator

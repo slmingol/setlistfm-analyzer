@@ -10,6 +10,12 @@ const TOP_ARTISTS_PATH = join(__dir, '..', 'top_artists.json');
 
 const SONGKICK_BASE_RANK = 10000;
 
+// Non-music acts to skip (comedians, etc.)
+const SKIP_NORMS = new Set([
+  'jerry seinfeld', 'john oliver', 'ricky gervais', 'seth meyers', 'seth meyers',
+  'mico',
+].map(s => normalize(s)));
+
 let running = false;
 export function isSongkickSyncing() { return running; }
 
@@ -41,7 +47,10 @@ export async function runSongkickSync({
 
     const existing = buildExistingNameSet();
 
-    const newArtists = tracked.filter(a => !existing.has(normalize(a.name)));
+    const newArtists = tracked.filter(a => {
+      const n = normalize(a.name);
+      return !existing.has(n) && !SKIP_NORMS.has(n);
+    });
     log(`Songkick: ${newArtists.length} new artists not yet in tracked list`);
 
     if (!newArtists.length) { log('Songkick: nothing to add'); return; }
