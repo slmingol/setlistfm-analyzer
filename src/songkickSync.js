@@ -29,15 +29,14 @@ function buildExistingNameSet() {
 
 export async function runSongkickSync({
   username,
-  email,
-  password,
+  sessionCookie,
   log = console.log,
 } = {}) {
   if (running) { log('Songkick sync already in progress, skipping'); return; }
   running = true;
 
   try {
-    const tracked = await fetchTrackedArtists(username, email, password, { log });
+    const tracked = await fetchTrackedArtists(username, sessionCookie, { log });
     log(`Songkick: ${tracked.length} tracked artists fetched`);
 
     const existing = buildExistingNameSet();

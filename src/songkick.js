@@ -1,88 +1,8 @@
 const BASE = 'https://www.songkick.com';
 const UA   = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
 
-function parseCookieHeader(raw) {
-  if (!raw) return '';
-  const parts = Array.isArray(raw) ? raw : [raw];
-  return parts.map(c => c.split(';')[0]).join('; ');
-}
-
-async function getLoginForm() {
-  // First check redirect without following to see where /login actually goes
-  const probe = await fetch(`${BASE}/login`, {
-    headers: { 'User-Agent': UA, 'Accept': 'text/html' },
-    redirect: 'manual',
-  });
-  const redirectUrl = probe.headers.get('location');
-  console.log(`Songkick /login status=${probe.status} redirect=${redirectUrl ?? 'none'}`);
-
-  const loginUrl = redirectUrl && !redirectUrl.includes('/login')
-    ? redirectUrl          // follow to wherever Songkick redirected
-    : `${BASE}/login`;
-
-  const res = await fetch(loginUrl.startsWith('http') ? loginUrl : `${BASE}${loginUrl}`, {
-    headers: { 'User-Agent': UA, 'Accept': 'text/html' },
-    redirect: 'follow',
-  });
-  const html = await res.text();
-  console.log(`Songkick login page final URL status=${res.status} length=${html.length}`);
-
-  // Try input field (any attribute order)
-  let csrf = html.match(/name="authenticity_token"[^>]*value="([^"]+)"/)?.[1]
-          ?? html.match(/value="([^"]+)"[^>]*name="authenticity_token"/)?.[1];
-
-  // Fallback: Rails csrf-token meta tag
-  if (!csrf) csrf = html.match(/<meta[^>]+name="csrf-token"[^>]+content="([^"]+)"/)?.[1]
-                 ?? html.match(/<meta[^>]+content="([^"]+)"[^>]+name="csrf-token"/)?.[1];
-
-  if (!csrf) {
-    // Search for any form action to help diagnose
-    const forms = [...html.matchAll(/<form[^>]*action="([^"]+)"/g)].map(m => m[1]);
-    const inputs = [...html.matchAll(/name="([^"]+)"/g)].map(m => m[1]).slice(0, 20);
-    throw new Error(
-      `Could not find Songkick CSRF token.\n` +
-      `  Final URL: ${res.url}\n` +
-      `  Form actions found: ${JSON.stringify(forms)}\n` +
-      `  Input names found: ${JSON.stringify(inputs)}`
-    );
-  }
-
-  const rawCookies = res.headers.getSetCookie?.() ?? [];
-  return { csrf, cookies: parseCookieHeader(rawCookies) };
-}
-
-async function login(email, password) {
-  const { csrf, cookies } = await getLoginForm();
-
-  const body = new URLSearchParams({
-    'authenticity_token': csrf,
-    'username[email]':    email,
-    'username[password]': password,
-    'commit':             'Log in',
-  });
-
-  const res = await fetch(`${BASE}/session`, {
-    method:   'POST',
-    redirect: 'manual',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'User-Agent':   UA,
-      'Referer':      `${BASE}/login`,
-      'Cookie':       cookies,
-    },
-    body: body.toString(),
-  });
-
-  // Successful login redirects (3xx); a 200 means login page re-rendered (bad credentials)
-  if (res.status === 200) throw new Error('Songkick login failed — check SONGKICK_EMAIL / SONGKICK_PASSWORD');
-
-  const rawCookies = res.headers.getSetCookie?.() ?? [];
-  const sessionCookie = parseCookieHeader(rawCookies);
-  if (!sessionCookie) throw new Error('Songkick login: no session cookie returned');
-  return sessionCookie;
-}
-
-async function scrapeTrackedPage(username, cookie, page) {
+async function scrapeTrackedPage(username, sessionCookie, page) {
+  const cookie = `_songkick_session=${sessionCookie}`;
   const url = `${BASE}/users/${username}/artists/tracked?page=${page}`;
   const res = await fetch(url, {
     headers: { 'User-Agent': UA, 'Cookie': cookie, 'Accept': 'text/html' },
@@ -108,19 +28,22 @@ async function scrapeTrackedPage(username, cookie, page) {
 }
 
 /**
- * Log in and return all tracked artists for the given Songkick username.
+ * Scrape all tracked artists for a Songkick username using a session cookie.
+ *
+ * The session cookie value comes from the _songkick_session cookie in your
+ * browser after logging into songkick.com. Set SONGKICK_COOKIE in env vars.
+ *
  * Returns an array of { name, songkickId }.
  */
-export async function fetchTrackedArtists(username, email, password, { log = console.log } = {}) {
-  log(`Songkick: logging in as ${email}`);
-  const cookie = await login(email, password);
-  log('Songkick: login successful, scraping tracked artists…');
+export async function fetchTrackedArtists(username, sessionCookie, { log = console.log } = {}) {
+  if (!sessionCookie) throw new Error('SONGKICK_COOKIE is required — see docs for how to obtain it');
+  log(`Songkick: scraping tracked artists for ${username}…`);
 
   const all = new Map(); // songkickId → { name, songkickId }
   let page = 1;
 
   while (true) {
-    const { artists, hasMore } = await scrapeTrackedPage(username, cookie, page);
+    const { artists, hasMore } = await scrapeTrackedPage(username, sessionCookie, page);
     for (const a of artists) all.set(a.songkickId, a);
     log(`  page ${page}: ${artists.length} artists (${all.size} total)`);
     if (!hasMore) break;

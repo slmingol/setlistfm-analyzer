@@ -24,8 +24,7 @@ const {
   LIST_SYNC_SCHEDULE   = '0 10 1 * *',       // 1st of each month, 10am UTC
   SONGKICK_SYNC_SCHEDULE = '0 8 * * 0',      // Sunday 8am UTC
   SONGKICK_USERNAME = 'slmingol',
-  SONGKICK_EMAIL    = '',
-  SONGKICK_PASSWORD = '',
+  SONGKICK_COOKIE   = '',                    // value of _songkick_session cookie from browser
 } = process.env;
 
 if (!SETLIST_KEY || !SETLIST_USER || !TM_KEY) {
@@ -185,12 +184,12 @@ app.post('/api/list-sync', (_req, res) => {
 });
 
 app.post('/api/songkick-sync', (_req, res) => {
-  if (!SONGKICK_EMAIL || !SONGKICK_PASSWORD) {
-    return res.status(400).json({ error: 'SONGKICK_EMAIL and SONGKICK_PASSWORD env vars required' });
+  if (!SONGKICK_COOKIE) {
+    return res.status(400).json({ error: 'SONGKICK_COOKIE env var required' });
   }
   if (isSongkickSyncing()) return res.status(409).json({ error: 'Songkick sync already running' });
   res.json({ started: true });
-  runSongkickSync({ username: SONGKICK_USERNAME, email: SONGKICK_EMAIL, password: SONGKICK_PASSWORD, log: tsLog });
+  runSongkickSync({ username: SONGKICK_USERNAME, sessionCookie: SONGKICK_COOKIE, log: tsLog });
 });
 
 // --- Scheduler ---
@@ -210,13 +209,13 @@ cron.schedule(LIST_SYNC_SCHEDULE, () => {
   runListSync({ log: tsLog });
 });
 
-if (SONGKICK_EMAIL && SONGKICK_PASSWORD) {
+if (SONGKICK_COOKIE) {
   cron.schedule(SONGKICK_SYNC_SCHEDULE, () => {
     tsLog('Cron: starting weekly Songkick sync');
-    runSongkickSync({ username: SONGKICK_USERNAME, email: SONGKICK_EMAIL, password: SONGKICK_PASSWORD, log: tsLog });
+    runSongkickSync({ username: SONGKICK_USERNAME, sessionCookie: SONGKICK_COOKIE, log: tsLog });
   });
 } else {
-  tsLog('Songkick sync disabled — set SONGKICK_EMAIL and SONGKICK_PASSWORD to enable');
+  tsLog('Songkick sync disabled — set SONGKICK_COOKIE to enable');
 }
 
 app.listen(Number(PORT), () => {
