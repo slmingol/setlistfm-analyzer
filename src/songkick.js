@@ -3,12 +3,22 @@ const UA   = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
 
 async function scrapeTrackedPage(username, sessionCookie, page) {
   const cookie = `_skweb_session=${sessionCookie}`;
-  const url = `${BASE}/users/${username}/artists/tracked?page=${page}`;
-  const res = await fetch(url, {
-    headers: { 'User-Agent': UA, 'Cookie': cookie, 'Accept': 'text/html' },
-    redirect: 'follow',
-  });
-  if (!res.ok) throw new Error(`Songkick artists page returned ${res.status}`);
+  // Try candidate URL patterns — Songkick has changed their URL structure
+  const candidates = [
+    `${BASE}/users/${username}/artists/tracked?page=${page}`,
+    `${BASE}/users/${username}/tracking?page=${page}`,
+    `${BASE}/users/${username}/gigography?page=${page}`,
+  ];
+  let res, url;
+  for (const u of candidates) {
+    res = await fetch(u, {
+      headers: { 'User-Agent': UA, 'Cookie': cookie, 'Accept': 'text/html' },
+      redirect: 'follow',
+    });
+    console.log(`  ${u} → ${res.status}`);
+    if (res.ok) { url = u; break; }
+  }
+  if (!res.ok) throw new Error(`Songkick artists page returned ${res.status} on all candidate URLs`);
   const html = await res.text();
 
   // Extract artist entries: href="/artists/12345-artist-name">Artist Name</a>
