@@ -8595,5 +8595,15 @@
     "aliases": [],
     "deceased": true,
     "touring_status": "deceased"
+  },
+  {
+    "rank": 541,
+    "name": "Indigo Girls",
+    "genre": ["Folk", "Rock"],
+    "era": "1980s",
+    "sources": ["user"],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
   }
 ]
