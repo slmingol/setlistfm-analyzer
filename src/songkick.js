@@ -8,11 +8,24 @@ function parseCookieHeader(raw) {
 }
 
 async function getLoginForm() {
-  const res = await fetch(`${BASE}/login`, {
+  // First check redirect without following to see where /login actually goes
+  const probe = await fetch(`${BASE}/login`, {
+    headers: { 'User-Agent': UA, 'Accept': 'text/html' },
+    redirect: 'manual',
+  });
+  const redirectUrl = probe.headers.get('location');
+  console.log(`Songkick /login status=${probe.status} redirect=${redirectUrl ?? 'none'}`);
+
+  const loginUrl = redirectUrl && !redirectUrl.includes('/login')
+    ? redirectUrl          // follow to wherever Songkick redirected
+    : `${BASE}/login`;
+
+  const res = await fetch(loginUrl.startsWith('http') ? loginUrl : `${BASE}${loginUrl}`, {
     headers: { 'User-Agent': UA, 'Accept': 'text/html' },
     redirect: 'follow',
   });
   const html = await res.text();
+  console.log(`Songkick login page final URL status=${res.status} length=${html.length}`);
 
   // Try input field (any attribute order)
   let csrf = html.match(/name="authenticity_token"[^>]*value="([^"]+)"/)?.[1]
@@ -23,9 +36,15 @@ async function getLoginForm() {
                  ?? html.match(/<meta[^>]+content="([^"]+)"[^>]+name="csrf-token"/)?.[1];
 
   if (!csrf) {
-    // Dump a snippet to help diagnose
-    const snippet = html.slice(0, 3000).replace(/\n/g, ' ');
-    throw new Error(`Could not find Songkick CSRF token. Page snippet: ${snippet}`);
+    // Search for any form action to help diagnose
+    const forms = [...html.matchAll(/<form[^>]*action="([^"]+)"/g)].map(m => m[1]);
+    const inputs = [...html.matchAll(/name="([^"]+)"/g)].map(m => m[1]).slice(0, 20);
+    throw new Error(
+      `Could not find Songkick CSRF token.\n` +
+      `  Final URL: ${res.url}\n` +
+      `  Form actions found: ${JSON.stringify(forms)}\n` +
+      `  Input names found: ${JSON.stringify(inputs)}`
+    );
   }
 
   const rawCookies = res.headers.getSetCookie?.() ?? [];
