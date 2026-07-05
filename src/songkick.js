@@ -11,6 +11,16 @@ async function scrapeTrackedPage(username, sessionCookie, page) {
   if (!res.ok) throw new Error(`Songkick artists page returned ${res.status}`);
   const html = await res.text();
 
+  // DEBUG: dump a slice around the first artist link to calibrate the regex
+  if (page === 1) {
+    const artistIdx = html.search(/\/artists\//);
+    if (artistIdx >= 0) {
+      console.log('DEBUG artist link context:', html.slice(Math.max(0, artistIdx - 100), artistIdx + 300));
+    } else {
+      console.log('DEBUG: no /artists/ links found. Page snippet:', html.slice(0, 1000));
+    }
+  }
+
   // Extract artist entries: href="/artists/12345-artist-name">Artist Name</a>
   const artists = [];
   const re = /href="\/artists\/(\d+)-[^"]*"[^>]*>\s*([^<]+?)\s*<\/a>/g;

@@ -17,6 +17,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY package.json .
 COPY src/ ./src/
 COPY public/ ./public/
+COPY top_artists.json .
 
 RUN mkdir -p /app/data
 
