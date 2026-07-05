@@ -54,10 +54,11 @@ export async function fetchTrackedArtists(username, sessionCookie, { log = conso
   let page = 1;
 
   while (true) {
+    const prevSize = all.size;
     const { artists, hasMore } = await scrapeTrackedPage(username, sessionCookie, page);
     for (const a of artists) all.set(a.songkickId, a);
     log(`  page ${page}: ${artists.length} artists (${all.size} total)`);
-    if (!hasMore) break;
+    if (!hasMore || all.size === prevSize) break;
     page++;
     await new Promise(r => setTimeout(r, 500));
   }
