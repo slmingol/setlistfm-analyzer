@@ -2,7 +2,9 @@ const BASE = 'https://www.songkick.com';
 const UA   = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
 
 async function scrapeTrackedPage(username, sessionCookie, page) {
-  const cookie = `_skweb_session=${sessionCookie}`;
+  // sessionCookie can be either a raw cookie header string (preferred)
+  // or just the _skweb_session value for backwards compat
+  const cookie = sessionCookie.includes('=') ? sessionCookie : `_skweb_session=${sessionCookie}`;
   const url = `${BASE}/tracker/artists?page=${page}`;
   const res = await fetch(url, {
     headers: { 'User-Agent': UA, 'Cookie': cookie, 'Accept': 'text/html' },
