@@ -13,8 +13,21 @@ async function getLoginForm() {
     redirect: 'follow',
   });
   const html = await res.text();
-  const csrf = html.match(/name="authenticity_token"\s+value="([^"]+)"/)?.[1];
-  if (!csrf) throw new Error('Could not find Songkick CSRF token on login page');
+
+  // Try input field (any attribute order)
+  let csrf = html.match(/name="authenticity_token"[^>]*value="([^"]+)"/)?.[1]
+          ?? html.match(/value="([^"]+)"[^>]*name="authenticity_token"/)?.[1];
+
+  // Fallback: Rails csrf-token meta tag
+  if (!csrf) csrf = html.match(/<meta[^>]+name="csrf-token"[^>]+content="([^"]+)"/)?.[1]
+                 ?? html.match(/<meta[^>]+content="([^"]+)"[^>]+name="csrf-token"/)?.[1];
+
+  if (!csrf) {
+    // Dump a snippet to help diagnose
+    const snippet = html.slice(0, 3000).replace(/\n/g, ' ');
+    throw new Error(`Could not find Songkick CSRF token. Page snippet: ${snippet}`);
+  }
+
   const rawCookies = res.headers.getSetCookie?.() ?? [];
   return { csrf, cookies: parseCookieHeader(rawCookies) };
 }
