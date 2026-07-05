@@ -79,6 +79,13 @@ db.exec(`
     tm_id         TEXT NOT NULL,
     resolved_at   TEXT NOT NULL DEFAULT (datetime('now'))
   );
+
+  CREATE TABLE IF NOT EXISTS songkick_artists (
+    rank        INTEGER PRIMARY KEY,
+    name        TEXT NOT NULL UNIQUE,
+    songkick_id TEXT,
+    added_at    TEXT NOT NULL DEFAULT (datetime('now'))
+  );
 `);
 
 export default db;

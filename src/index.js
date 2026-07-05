@@ -8,6 +8,7 @@ import db from './db.js';
 import { runSync, isSyncing } from './sync.js';
 import { runStatusSync, isStatusSyncing, applyStatusChange } from './statusSync.js';
 import { runListSync, isListSyncing } from './listSync.js';
+import { runSongkickSync, isSongkickSyncing } from './songkickSync.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 mkdirSync(join(__dir, '..', 'data'), { recursive: true });
@@ -18,9 +19,13 @@ const {
   TICKETMASTER_API_KEY: TM_KEY     = '',
   PORT = '3000',
   SYNC_ON_START = 'true',
-  CRON_SCHEDULE = '0 12 * * 1',         // Monday noon UTC
-  STATUS_SYNC_SCHEDULE = '0 14 * * 1',  // Monday 2pm UTC (after main sync)
-  LIST_SYNC_SCHEDULE   = '0 10 1 * *',  // 1st of each month, 10am UTC
+  CRON_SCHEDULE = '0 12 * * 1',              // Monday noon UTC
+  STATUS_SYNC_SCHEDULE = '0 14 * * 1',       // Monday 2pm UTC (after main sync)
+  LIST_SYNC_SCHEDULE   = '0 10 1 * *',       // 1st of each month, 10am UTC
+  SONGKICK_SYNC_SCHEDULE = '0 8 * * 0',      // Sunday 8am UTC
+  SONGKICK_USERNAME = 'slmingol',
+  SONGKICK_EMAIL    = '',
+  SONGKICK_PASSWORD = '',
 } = process.env;
 
 if (!SETLIST_KEY || !SETLIST_USER || !TM_KEY) {
@@ -179,6 +184,15 @@ app.post('/api/list-sync', (_req, res) => {
   runListSync();
 });
 
+app.post('/api/songkick-sync', (_req, res) => {
+  if (!SONGKICK_EMAIL || !SONGKICK_PASSWORD) {
+    return res.status(400).json({ error: 'SONGKICK_EMAIL and SONGKICK_PASSWORD env vars required' });
+  }
+  if (isSongkickSyncing()) return res.status(409).json({ error: 'Songkick sync already running' });
+  res.json({ started: true });
+  runSongkickSync({ username: SONGKICK_USERNAME, email: SONGKICK_EMAIL, password: SONGKICK_PASSWORD, log: tsLog });
+});
+
 // --- Scheduler ---
 
 cron.schedule(CRON_SCHEDULE, () => {
@@ -195,6 +209,15 @@ cron.schedule(LIST_SYNC_SCHEDULE, () => {
   tsLog('Cron: starting monthly list sync');
   runListSync({ log: tsLog });
 });
+
+if (SONGKICK_EMAIL && SONGKICK_PASSWORD) {
+  cron.schedule(SONGKICK_SYNC_SCHEDULE, () => {
+    tsLog('Cron: starting weekly Songkick sync');
+    runSongkickSync({ username: SONGKICK_USERNAME, email: SONGKICK_EMAIL, password: SONGKICK_PASSWORD, log: tsLog });
+  });
+} else {
+  tsLog('Songkick sync disabled — set SONGKICK_EMAIL and SONGKICK_PASSWORD to enable');
+}
 
 app.listen(Number(PORT), () => {
   console.log(`Tour app running on http://localhost:${PORT}`);

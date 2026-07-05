@@ -34,6 +34,21 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
 
     // 1. Load top artists + build alias lookup (normalized alias → rank)
     const topArtists = JSON.parse(readFileSync(TOP_ARTISTS_PATH, 'utf8'));
+
+    // Merge Songkick-followed artists (stored in DB) into the artist pool.
+    // They get genre/era placeholders since we don't have that metadata.
+    const skRows = db.prepare(`SELECT rank, name FROM songkick_artists`).all();
+    for (const row of skRows) {
+      if (!topArtists.find(a => a.rank === row.rank)) {
+        topArtists.push({
+          rank: row.rank, name: row.name,
+          genre: ['Other'], era: 'Unknown',
+          sources: ['songkick'], aliases: [],
+          deceased: false, touring_status: 'active',
+        });
+      }
+    }
+
     const active = topArtists.filter(a => a.touring_status === 'active' && !a.deceased);
 
     const aliasToRank = new Map();
