@@ -8599,10 +8599,2008 @@
   {
     "rank": 541,
     "name": "Indigo Girls",
-    "genre": ["Folk", "Rock"],
+    "genre": [
+      "Folk",
+      "Rock"
+    ],
     "era": "1980s",
-    "sources": ["user"],
+    "sources": [
+      "user"
+    ],
     "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 542,
+    "name": "10,000 Maniacs",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "10000 Maniacs"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 543,
+    "name": "ABC",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 544,
+    "name": "Adam Ant",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Adam and the Ants"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 545,
+    "name": "a-ha",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "aha"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 546,
+    "name": "Aimee Mann",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 547,
+    "name": "Air Supply",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 548,
+    "name": "A.J. Croce",
+    "genre": [
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "AJ Croce"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 549,
+    "name": "AJR",
+    "genre": [
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 550,
+    "name": "Al Stewart",
+    "genre": [
+      "Folk",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 551,
+    "name": "Alison Krauss",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Alison Krauss and Union Station",
+      "Alison Krauss & Union Station",
+      "Robert Plant & Alison Krauss"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 552,
+    "name": "Alphaville",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 553,
+    "name": "Ambrosia",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 554,
+    "name": "Annie Lennox",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 555,
+    "name": "The Bacon Brothers",
+    "genre": [
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Bacon Brothers"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 556,
+    "name": "Barenaked Ladies",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "BNL"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 557,
+    "name": "Bastille",
+    "genre": [
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 558,
+    "name": "Belinda Carlisle",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 559,
+    "name": "Bellamy Brothers",
+    "genre": [
+      "Country"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 560,
+    "name": "Ben Folds Five",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 561,
+    "name": "BERLIN",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Berlin"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 562,
+    "name": "Big Country",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 563,
+    "name": "Billy Currington",
+    "genre": [
+      "Country"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 564,
+    "name": "Bonnie Tyler",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 565,
+    "name": "Brad Paisley",
+    "genre": [
+      "Country"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 566,
+    "name": "Bruce Hornsby",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Bruce Hornsby and the Range"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 567,
+    "name": "Bryan Adams",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 568,
+    "name": "Bryan Ferry",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 569,
+    "name": "Carrie Underwood",
+    "genre": [
+      "Country"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 570,
+    "name": "The Chicks",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Dixie Chicks",
+      "The Chicks (US)",
+      "Chicks"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 571,
+    "name": "Chris Stapleton",
+    "genre": [
+      "Country"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 572,
+    "name": "Christopher Cross",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 573,
+    "name": "The Church",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Church"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 574,
+    "name": "Cowboy Junkies",
+    "genre": [
+      "Alternative",
+      "Country"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 575,
+    "name": "Crowded House",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 576,
+    "name": "Crystal Gayle",
+    "genre": [
+      "Country"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 577,
+    "name": "Culture Club",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 578,
+    "name": "Dan Fogelberg",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 579,
+    "name": "Darius Rucker",
+    "genre": [
+      "Country",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 580,
+    "name": "Daryl Hall",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Daryl Hall & John Oates",
+      "Daryl Hall and John Oates",
+      "Hall & Oates",
+      "Hall and Oates"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 581,
+    "name": "Dave Mason",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 582,
+    "name": "Dave Wakeling",
+    "genre": [
+      "Ska",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 583,
+    "name": "Diana Krall",
+    "genre": [
+      "Jazz"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 584,
+    "name": "Dido",
+    "genre": [
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 585,
+    "name": "Don Henley",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 586,
+    "name": "Don McLean",
+    "genre": [
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 587,
+    "name": "Edie Brickell",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Edie Brickell and New Bohemians",
+      "Edie Brickell & New Bohemians"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 588,
+    "name": "Ellie Goulding",
+    "genre": [
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 589,
+    "name": "The English Beat",
+    "genre": [
+      "Ska",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "English Beat",
+      "The Beat"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 590,
+    "name": "Erasure",
+    "genre": [
+      "Pop",
+      "Electronic"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 591,
+    "name": "Evanescence",
+    "genre": [
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 592,
+    "name": "Fine Young Cannibals",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "FYC"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 593,
+    "name": "Firefall",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 594,
+    "name": "Five For Fighting",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 595,
+    "name": "The Fixx",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Fixx"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 596,
+    "name": "Foster the People",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 597,
+    "name": "Frankie Goes to Hollywood",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "FGTH"
+    ],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 598,
+    "name": "General Public",
+    "genre": [
+      "Ska",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 599,
+    "name": "George Ezra",
+    "genre": [
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 600,
+    "name": "Graham Nash",
+    "genre": [
+      "Folk",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 601,
+    "name": "Harry Connick Jr.",
+    "genre": [
+      "Jazz",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Harry Connick, Jr."
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 602,
+    "name": "Hooters",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 603,
+    "name": "Howard Jones",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 604,
+    "name": "Howie Day",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 605,
+    "name": "The Human League",
+    "genre": [
+      "Pop",
+      "Electronic"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Human League"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 606,
+    "name": "Imagine Dragons",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 607,
+    "name": "INXS",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "disbanded"
+  },
+  {
+    "rank": 608,
+    "name": "Jim Brickman",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 609,
+    "name": "Jimmy Buffett",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 610,
+    "name": "Joan Osborne",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 611,
+    "name": "Joe Jackson",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 612,
+    "name": "John Ford Coley",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "England Dan and John Ford Coley"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 613,
+    "name": "John Hiatt",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 614,
+    "name": "Josh Groban",
+    "genre": [
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 615,
+    "name": "k.d. lang",
+    "genre": [
+      "Country",
+      "Pop"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "kd lang",
+      "KD Lang"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 616,
+    "name": "Keith Urban",
+    "genre": [
+      "Country"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 617,
+    "name": "Kings of Leon",
+    "genre": [
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 618,
+    "name": "Lady A",
+    "genre": [
+      "Country"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Lady Antebellum"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 619,
+    "name": "Lenny Kravitz",
+    "genre": [
+      "Rock",
+      "R&B"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 620,
+    "name": "Level 42",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 621,
+    "name": "Little Feat",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 622,
+    "name": "Little River Band",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "LRB"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 623,
+    "name": "Loreena McKennitt",
+    "genre": [
+      "Folk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 624,
+    "name": "Luke Bryan",
+    "genre": [
+      "Country"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 625,
+    "name": "Macy Gray",
+    "genre": [
+      "R&B"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 626,
+    "name": "Marc Cohn",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 627,
+    "name": "Mark Knopfler",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 628,
+    "name": "Martina McBride",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 629,
+    "name": "Mary Chapin Carpenter",
+    "genre": [
+      "Country",
+      "Folk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 630,
+    "name": "Melissa Etheridge",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 631,
+    "name": "Men At Work",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 632,
+    "name": "Modern English",
+    "genre": [
+      "Post-Punk"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 633,
+    "name": "The Motels",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Motels"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 634,
+    "name": "Mumford & Sons",
+    "genre": [
+      "Folk",
+      "Rock"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Mumford and Sons"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 635,
+    "name": "Naked Eyes",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 636,
+    "name": "Natalie Cole",
+    "genre": [
+      "R&B",
+      "Pop"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": true,
+    "touring_status": "deceased"
+  },
+  {
+    "rank": 637,
+    "name": "Natalie Merchant",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 638,
+    "name": "Nickelback",
+    "genre": [
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 639,
+    "name": "O.A.R.",
+    "genre": [
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "OAR"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 640,
+    "name": "Orchestral Manoeuvres In The Dark",
+    "genre": [
+      "Pop",
+      "Electronic"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "OMD",
+      "Orchestral Manoeuvres in the Dark"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 641,
+    "name": "Paramore",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 642,
+    "name": "Patty Smyth",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 643,
+    "name": "Paula Cole",
+    "genre": [
+      "Pop",
+      "Folk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 644,
+    "name": "Pet Shop Boys",
+    "genre": [
+      "Pop",
+      "Electronic"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "PSB"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 645,
+    "name": "Player",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 646,
+    "name": "The Psychedelic Furs",
+    "genre": [
+      "Post-Punk",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Psychedelic Furs"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 647,
+    "name": "Ray LaMontagne",
+    "genre": [
+      "Folk",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 648,
+    "name": "Real Estate",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "2010s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 649,
+    "name": "Rick Astley",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 650,
+    "name": "Rick Springfield",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 651,
+    "name": "Rob Thomas",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 652,
+    "name": "Robert Plant",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 653,
+    "name": "Roxette",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "hiatus"
+  },
+  {
+    "rank": 654,
+    "name": "Sarah McLachlan",
+    "genre": [
+      "Pop",
+      "Folk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 655,
+    "name": "Shawn Colvin",
+    "genre": [
+      "Folk"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 656,
+    "name": "Simple Minds",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 657,
+    "name": "Simply Red",
+    "genre": [
+      "Pop",
+      "Soul"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 658,
+    "name": "Spandau Ballet",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 659,
+    "name": "Stephen Stills",
+    "genre": [
+      "Rock",
+      "Folk"
+    ],
+    "era": "1970s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 660,
+    "name": "Sting",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 661,
+    "name": "Suzanne Vega",
+    "genre": [
+      "Folk",
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 662,
+    "name": "Tears For Fears",
+    "genre": [
+      "Pop",
+      "Rock"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 663,
+    "name": "Tenacious D",
+    "genre": [
+      "Rock"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 664,
+    "name": "They Might Be Giants",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "TMBG"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 665,
+    "name": "Thompson Twins",
+    "genre": [
+      "Pop"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 666,
+    "name": "Toad the Wet Sprocket",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 667,
+    "name": "Tracy Chapman",
+    "genre": [
+      "Folk",
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 668,
+    "name": "Train",
+    "genre": [
+      "Rock",
+      "Pop"
+    ],
+    "era": "2000s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 669,
+    "name": "Travis Tritt",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 670,
+    "name": "Trisha Yearwood",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 671,
+    "name": "Vince Gill",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 672,
+    "name": "Violent Femmes",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1980s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 673,
+    "name": "The Wallflowers",
+    "genre": [
+      "Rock"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Wallflowers"
+    ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 674,
+    "name": "Wynonna Judd",
+    "genre": [
+      "Country"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [
+      "Wynona Judd",
+      "Wynonna"
+    ],
     "deceased": false,
     "touring_status": "active"
   }
