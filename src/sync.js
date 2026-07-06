@@ -4,10 +4,10 @@ import { fileURLToPath } from 'url';
 import db from './db.js';
 import { normalize, isTribute } from './matcher.js';
 import { fetchAttended } from './setlistfm.js';
-import { fetchEvents, parseEvent, isMusicEvent, resolveAttractionId } from './tm.js';
+import { fetchEvents, parseEvent, isMusicEvent, resolveAttractionId, TM_QUOTA_EXCEEDED } from './tm.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
-const TOP_ARTISTS_PATH = join(__dir, '..', 'data', 'top_artists.json');
+const TOP_ARTISTS_PATH = join(__dir, '..', 'top_artists.json');
 
 let running = false;
 
@@ -127,10 +127,10 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     );
 
     const CONCURRENCY = 5;
-    let cursor = 0, done = 0;
+    let cursor = 0, done = 0, quotaHit = false;
 
     const worker = async () => {
-      while (cursor < active.length) {
+      while (cursor < active.length && !quotaHit) {
         const idx    = cursor++;
         const artist = active[idx];
 
@@ -140,12 +140,23 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         const cached = getTmId.get(artist.rank);
         let tmId = cached?.tm_id ?? null;
         if (!tmId) {
-          tmId = await resolveAttractionId(artist.name, tmKey);
+          const resolved = await resolveAttractionId(artist.name, tmKey);
+          if (resolved === TM_QUOTA_EXCEEDED) {
+            quotaHit = true;
+            log(`TM daily quota exceeded — sync aborted after ${done} artists. Resets at midnight UTC.`);
+            return;
+          }
+          tmId = resolved;
           if (tmId) saveTmId.run(artist.rank, tmId);
           await new Promise(r => setTimeout(r, 100));
         }
 
         const rawEvents = await fetchEvents(artist.name, tmKey, { attractionId: tmId });
+        if (rawEvents === TM_QUOTA_EXCEEDED) {
+          quotaHit = true;
+          log(`TM daily quota exceeded — sync aborted after ${done} artists. Resets at midnight UTC.`);
+          return;
+        }
         // null = API error; skip purge to avoid wiping events on transient failures
         if (rawEvents === null) { done++; if (done % 10 === 0) log(`  [${done}/${active.length}]`); continue; }
         const upcoming  = rawEvents

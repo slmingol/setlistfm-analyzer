@@ -54,11 +54,16 @@ jobs:
           git add package.json
           git commit -m "chore: bump version to ${{ steps.version.outputs.version }} [skip ci]"
           git tag v${{ steps.version.outputs.version }}
+          pushed=false
           for i in 1 2 3; do
-            git push --follow-tags && break
+            if git push --follow-tags; then
+              pushed=true
+              break
+            fi
             echo "Push rejected — rebasing on origin/main (attempt $i)"
             git pull --rebase origin main
           done
+          $pushed || { echo "Failed to push after 3 attempts"; exit 1; }
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3

@@ -10,6 +10,9 @@ async function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
  * upcoming events — this reliably selects the real artist over a small
  * namesake act (e.g. The Cure the band vs "The Cure" the club DJ).
  */
+// Sentinel returned when the TM API key has hit its daily quota.
+export const TM_QUOTA_EXCEEDED = Symbol('TM_QUOTA_EXCEEDED');
+
 export async function resolveAttractionId(artistName, apiKey) {
   const params = new URLSearchParams({
     apikey: apiKey,
@@ -22,6 +25,7 @@ export async function resolveAttractionId(artistName, apiKey) {
   try {
     const res = await fetch(`${BASE}/attractions.json?${params}`, { signal: ac.signal });
     clearTimeout(timer);
+    if (res.status === 429) return TM_QUOTA_EXCEEDED;
     if (!res.ok) return null;
     const data = await res.json();
     const attractions = data?._embedded?.attractions ?? [];
@@ -68,7 +72,14 @@ export async function fetchEvents(artistName, apiKey, { pageSize = 20, attractio
     try {
       const res = await fetch(`${BASE}/events.json?${params}`, { signal: ac.signal });
       clearTimeout(timer);
-      if (res.status === 429) { await sleep(2 ** attempt * 1000); continue; }
+      if (res.status === 429) {
+        if (attempt === 0) {
+          // First 429 might be a short burst limit — back off and retry once.
+          await sleep(2000);
+          continue;
+        }
+        return TM_QUOTA_EXCEEDED;
+      }
       if (!res.ok) {
         const body = await res.text().catch(() => '');
         console.error(`TM API ${res.status} for "${artistName}": ${body.slice(0, 200)}`);
