@@ -53,7 +53,7 @@ jobs:
         run: |
           git add package.json
           git commit -m "chore: bump version to ${{ steps.version.outputs.version }} [skip ci]"
-          git tag v${{ steps.version.outputs.version }}
+          git tag -a v${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
           pushed=false
           for i in 1 2 3; do
             if git push --follow-tags; then
