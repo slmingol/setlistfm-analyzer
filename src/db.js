@@ -86,6 +86,11 @@ db.exec(`
     songkick_id TEXT,
     added_at    TEXT NOT NULL DEFAULT (datetime('now'))
   );
+
+  CREATE TABLE IF NOT EXISTS events_sync_cache (
+    artist_rank INTEGER PRIMARY KEY,
+    synced_at   TEXT NOT NULL
+  );
 `);
 
 export default db;

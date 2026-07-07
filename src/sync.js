@@ -50,10 +50,14 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     }
 
     const active = topArtists.filter(a => a.touring_status === 'active' && !a.deceased);
-    // Shuffle so high-rank artists aren't always last when quota runs short.
-    for (let i = active.length - 1; i > 0; i--) {
+    const hiatus = topArtists.filter(a => a.touring_status === 'hiatus' && !a.deceased);
+    // Combine active + hiatus so hiatus artists also get event checks and
+    // status suggestions without a separate TM pass.
+    const workList = [...active, ...hiatus];
+    // Shuffle so no subset is always last when quota runs short mid-sync.
+    for (let i = workList.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [active[i], active[j]] = [active[j], active[i]];
+      [workList[i], workList[j]] = [workList[j], workList[i]];
     }
 
     const aliasToRank = new Map();
@@ -104,8 +108,8 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     const uniqueArtists = new Set(shows.map(s => s?.artist?.name).filter(Boolean)).size;
     log(`  ${seenRanks.size} top-500 artists seen, ${uniqueArtists} unique artists total`);
 
-    // 3. Query Ticketmaster for all active artists (seen + unseen)
-    log(`  ${active.length} active artists to check (${seenRanks.size} already seen)`);
+    // 3. Query Ticketmaster for all active + hiatus artists (seen + unseen)
+    log(`  ${workList.length} artists to check (${active.length} active, ${hiatus.length} hiatus; ${seenRanks.size} already seen)`);
 
     const today = new Date().toISOString().slice(0, 10);
     // Upsert: update mutable fields on conflict but preserve first_seen.
@@ -131,13 +135,50 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
       `INSERT OR REPLACE INTO tm_attraction_ids (artist_rank, tm_id, resolved_at) VALUES (?, ?, datetime('now'))`
     );
 
+    const checkStale   = db.prepare(`SELECT synced_at FROM events_sync_cache WHERE artist_rank = ?`);
+    const markSynced   = db.prepare(`INSERT OR REPLACE INTO events_sync_cache (artist_rank, synced_at) VALUES (?, datetime('now'))`);
+    const STALE_MS     = 18 * 60 * 60 * 1000; // skip artists synced within 18 h
+
+    const upsertSuggestion = db.prepare(`
+      INSERT INTO status_suggestions
+        (artist_rank, artist_name, current_status, suggested_status, reason, consecutive_hits, detected_at, dismissed)
+      VALUES
+        (@rank, @name, @current, @suggested, @reason, 1, datetime('now'), 0)
+      ON CONFLICT(artist_rank) DO UPDATE SET
+        current_status   = excluded.current_status,
+        suggested_status = excluded.suggested_status,
+        reason           = excluded.reason,
+        consecutive_hits = CASE
+          WHEN suggested_status = excluded.suggested_status THEN consecutive_hits + 1
+          ELSE 1
+        END,
+        detected_at = CASE
+          WHEN suggested_status = excluded.suggested_status THEN detected_at
+          ELSE datetime('now')
+        END,
+        dismissed = 0
+    `);
+    const clearSuggestion = db.prepare(`DELETE FROM status_suggestions WHERE artist_rank = ?`);
+
     const CONCURRENCY = 5;
-    let cursor = 0, done = 0, quotaHit = false;
+    let cursor = 0, done = 0, skipped = 0, quotaHit = false;
 
     const worker = async () => {
-      while (cursor < active.length && !quotaHit) {
+      while (cursor < workList.length && !quotaHit) {
         const idx    = cursor++;
-        const artist = active[idx];
+        const artist = workList[idx];
+
+        // Skip artists whose events were fetched recently (saves TM quota on
+        // manual triggers and restarts that follow a completed sync).
+        const staleRow = checkStale.get(artist.rank);
+        if (staleRow) {
+          const ageMs = Date.now() - new Date(staleRow.synced_at.replace(' ', 'T') + 'Z').getTime();
+          if (ageMs < STALE_MS) {
+            done++; skipped++;
+            if (done % 10 === 0) log(`  [${done}/${workList.length}]`);
+            continue;
+          }
+        }
 
         // Resolve TM attraction ID on first encounter; cached for subsequent syncs.
         // Using attractionId instead of keyword prevents false-positive matches
@@ -148,7 +189,7 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
           const resolved = await resolveAttractionId(artist.name, tmKey);
           if (resolved === TM_QUOTA_EXCEEDED) {
             quotaHit = true;
-            log(`TM daily quota exceeded — sync aborted after ${done} artists. Resets at midnight UTC.`);
+            log(`TM daily quota exceeded — sync aborted after ${done}/${workList.length} artists. Resets at midnight UTC.`);
             return;
           }
           tmId = resolved;
@@ -159,11 +200,11 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         const rawEvents = await fetchEvents(artist.name, tmKey, { attractionId: tmId });
         if (rawEvents === TM_QUOTA_EXCEEDED) {
           quotaHit = true;
-          log(`TM daily quota exceeded — sync aborted after ${done} artists. Resets at midnight UTC.`);
+          log(`TM daily quota exceeded — sync aborted after ${done}/${workList.length} artists. Resets at midnight UTC.`);
           return;
         }
         // null = API error; skip purge to avoid wiping events on transient failures
-        if (rawEvents === null) { done++; if (done % 10 === 0) log(`  [${done}/${active.length}]`); continue; }
+        if (rawEvents === null) { done++; if (done % 10 === 0) log(`  [${done}/${workList.length}]`); continue; }
         const upcoming  = rawEvents
           .filter(e => {
             if (!isMusicEvent(e)) return false;
@@ -199,8 +240,20 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         }
         db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date < ?`).run(artist.rank, today);
 
+        // Inline status suggestions — replaces the separate status-sync TM pass.
+        const status = artist.touring_status;
+        if (status === 'active' && upcoming.length === 0) {
+          upsertSuggestion.run({ rank: artist.rank, name: artist.name, current: 'active', suggested: 'hiatus', reason: '0 upcoming TM events' });
+        } else if (status === 'hiatus' && upcoming.length > 0) {
+          upsertSuggestion.run({ rank: artist.rank, name: artist.name, current: 'hiatus', suggested: 'active', reason: `${upcoming.length} upcoming TM event(s) found` });
+        } else {
+          clearSuggestion.run(artist.rank);
+        }
+
+        markSynced.run(artist.rank);
+
         done++;
-        if (done % 10 === 0) log(`  [${done}/${active.length}]`);
+        if (done % 10 === 0) log(`  [${done}/${workList.length}]`);
         await new Promise(r => setTimeout(r, 100));
       }
     };
@@ -287,9 +340,10 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
       UPDATE sync_log SET finished_at = datetime('now'),
         artists_checked = ?, events_found = ?, new_events = ?
       WHERE id = ?
-    `).run(active.length, eventsFound, newEvents, syncId);
+    `).run(workList.length, eventsFound, newEvents, syncId);
 
-    log(`Sync complete — ${eventsFound} upcoming events (${newEvents} new), ${seenRanks.size}/${topArtists.length} top-500 seen`);
+    const skippedNote = skipped > 0 ? `, ${skipped} skipped (fresh < 18h)` : '';
+    log(`Sync complete — ${eventsFound} upcoming events (${newEvents} new), ${seenRanks.size}/${topArtists.length} top-500 seen${skippedNote}`);
   } finally {
     running = false;
   }
