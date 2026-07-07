@@ -50,6 +50,11 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     }
 
     const active = topArtists.filter(a => a.touring_status === 'active' && !a.deceased);
+    // Shuffle so high-rank artists aren't always last when quota runs short.
+    for (let i = active.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [active[i], active[j]] = [active[j], active[i]];
+    }
 
     const aliasToRank = new Map();
     for (const a of topArtists) {
