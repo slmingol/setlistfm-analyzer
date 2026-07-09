@@ -51,7 +51,7 @@ export async function resolveAttractionId(artistName, apiKey) {
   }
 }
 
-export async function fetchEvents(artistName, apiKey, { pageSize = 20, attractionId = null } = {}) {
+export async function fetchEvents(artistName, apiKey, { pageSize = 50, attractionId = null } = {}) {
   const startDateTime = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
   const params = new URLSearchParams({
     apikey: apiKey,
