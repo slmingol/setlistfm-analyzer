@@ -83,7 +83,7 @@ The `top_artists.json` reference list is baked into the image — no separate fi
 | `SETLISTFM_USERNAME` | required | setlist.fm username |
 | `TICKETMASTER_API_KEY` | required | Ticketmaster Discovery API Consumer Key |
 | `PORT` | `3000` | Internal container port |
-| `SYNC_ON_START` | `true` | Run a sync on startup (skipped automatically if last sync finished < 12h ago) |
+| `SYNC_ON_START` | `false` | Run a sync on startup (skipped automatically if last sync finished < 12h ago) |
 | `CRON_SCHEDULE` | `0 12 * * 1` | When to run the weekly TM sync (default: Monday noon UTC) |
 | `LIST_SYNC_SCHEDULE` | `0 10 1 * *` | When to check RRHOF inductee gaps (1st of each month) |
 | `SONGKICK_USERNAME` | `slmingol` | Songkick username to scrape followed artists from |
@@ -94,7 +94,7 @@ The `top_artists.json` reference list is baked into the image — no separate fi
 
 The free Ticketmaster API tier allows 5,000 calls/day. The app protects against exhaustion in three ways:
 
-- **Staleness cache** — artists whose events were fetched within the last 18 hours are skipped on subsequent syncs, making post-deploy restarts and manual triggers nearly free
+- **Staleness cache** — artists whose events were fetched within the last 72 hours are skipped on subsequent syncs, making post-deploy restarts and manual triggers nearly free
 - **Early abort** — on a 429 quota response the sync stops immediately instead of burning remaining calls
 - **Startup skip** — if a sync completed within the last 12 hours the startup sync is skipped entirely
 

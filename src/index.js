@@ -160,7 +160,7 @@ app.post('/api/suggestions/:rank/dismiss', (req, res) => {
 app.post('/api/status-sync', (_req, res) => {
   if (isStatusSyncing()) return res.status(409).json({ error: 'Status sync already running' });
   res.json({ started: true });
-  runStatusSync({ tmKey: TM_KEY });
+  runStatusSync();
 });
 
 // List gap suggestions (RRHOF etc.)
