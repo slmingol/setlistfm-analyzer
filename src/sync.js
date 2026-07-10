@@ -137,7 +137,7 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
 
     const checkStale   = db.prepare(`SELECT synced_at FROM events_sync_cache WHERE artist_rank = ?`);
     const markSynced   = db.prepare(`INSERT OR REPLACE INTO events_sync_cache (artist_rank, synced_at) VALUES (?, datetime('now'))`);
-    const STALE_MS     = 18 * 60 * 60 * 1000; // skip artists synced within 18 h
+    const STALE_MS     = 72 * 60 * 60 * 1000; // skip artists synced within 72 h
 
     const upsertSuggestion = db.prepare(`
       INSERT INTO status_suggestions
@@ -159,6 +159,25 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         dismissed = 0
     `);
     const clearSuggestion = db.prepare(`DELETE FROM status_suggestions WHERE artist_rank = ?`);
+
+    // Support multiple comma-separated API keys. On quota exhaustion for one key,
+    // rotate to the next. All keys exhausted → abort sync as before.
+    const tmKeys = tmKey.split(',').map(s => s.trim()).filter(Boolean);
+    let keyIdx = 0;
+    const keyExhausted = new Set();
+
+    const withKeyRotation = async (fn) => {
+      while (true) {
+        const result = await fn(tmKeys[keyIdx]);
+        if (result !== TM_QUOTA_EXCEEDED) return result;
+        keyExhausted.add(keyIdx);
+        log(`TM key ${keyIdx + 1}/${tmKeys.length} quota exhausted`);
+        const next = tmKeys.findIndex((_, i) => !keyExhausted.has(i));
+        if (next === -1) return TM_QUOTA_EXCEEDED;
+        keyIdx = next;
+        log(`Rotating to TM key ${keyIdx + 1}/${tmKeys.length}`);
+      }
+    };
 
     const CONCURRENCY = 5;
     let cursor = 0, done = 0, skipped = 0, quotaHit = false;
@@ -186,10 +205,10 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
         const cached = getTmId.get(artist.rank);
         let tmId = cached?.tm_id ?? null;
         if (!tmId) {
-          const resolved = await resolveAttractionId(artist.name, tmKey);
+          const resolved = await withKeyRotation(k => resolveAttractionId(artist.name, k));
           if (resolved === TM_QUOTA_EXCEEDED) {
             quotaHit = true;
-            log(`TM daily quota exceeded — sync aborted after ${done}/${workList.length} artists. Resets at midnight UTC.`);
+            log(`All TM keys quota exceeded — sync aborted after ${done}/${workList.length} artists. Resets at midnight UTC.`);
             return;
           }
           tmId = resolved;
@@ -197,10 +216,10 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
           await new Promise(r => setTimeout(r, 100));
         }
 
-        const rawEvents = await fetchEvents(artist.name, tmKey, { attractionId: tmId });
+        const rawEvents = await withKeyRotation(k => fetchEvents(artist.name, k, { attractionId: tmId }));
         if (rawEvents === TM_QUOTA_EXCEEDED) {
           quotaHit = true;
-          log(`TM daily quota exceeded — sync aborted after ${done}/${workList.length} artists. Resets at midnight UTC.`);
+          log(`All TM keys quota exceeded — sync aborted after ${done}/${workList.length} artists. Resets at midnight UTC.`);
           return;
         }
         // null = API error; skip purge to avoid wiping events on transient failures
