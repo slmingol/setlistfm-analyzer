@@ -114,18 +114,10 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     const today = new Date().toISOString().slice(0, 10);
     // Upsert: update mutable fields on conflict but preserve first_seen.
     const insertEvent = db.prepare(`
-      INSERT INTO events
+      INSERT OR IGNORE INTO events
         (artist_rank, artist_name, tm_id, event_name, date, venue, city, state, country, url)
       VALUES
         (@artist_rank, @artist_name, @tm_id, @event_name, @date, @venue, @city, @state, @country, @url)
-      ON CONFLICT(tm_id) DO UPDATE SET
-        event_name = excluded.event_name,
-        date       = excluded.date,
-        venue      = excluded.venue,
-        city       = excluded.city,
-        state      = excluded.state,
-        country    = excluded.country,
-        url        = excluded.url
     `);
 
     let eventsFound = 0, newEvents = 0;
