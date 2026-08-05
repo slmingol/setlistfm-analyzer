@@ -102,11 +102,6 @@ db.exec(`
     synced_at   TEXT NOT NULL
   );
 
-  CREATE TABLE IF NOT EXISTS jambase_artist_ids (
-    artist_rank INTEGER PRIMARY KEY,
-    jb_id       TEXT NOT NULL,
-    resolved_at TEXT NOT NULL DEFAULT (datetime('now'))
-  );
 `);
 
 export default db;

@@ -88,7 +88,6 @@ The `top_artists.json` reference list is baked into the image — no separate fi
 | `LIST_SYNC_SCHEDULE` | `0 10 1 * *` | When to check RRHOF inductee gaps (1st of each month) |
 | `SONGKICK_USERNAME` | `slmingol` | Songkick username to scrape followed artists from |
 | `SONGKICK_COOKIE` | _(unset)_ | Raw cookie header string from a logged-in Songkick session (`_skweb_session=...; auth_http_s=...`). Songkick sync is disabled when unset. |
-| `JAMBASE_API_KEY` | _(unset)_ | JamBase API key. When set, artists with 0 Ticketmaster events are also queried against JamBase (strong coverage for indie/jam/smaller-venue acts). Sign up at [data.jambase.com](https://data.jambase.com/). |
 | `SONGKICK_SYNC_SCHEDULE` | `0 8 * * 0` | When to scrape Songkick (default: Sunday 8am UTC) |
 
 ### Ticketmaster quota
