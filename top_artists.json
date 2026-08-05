@@ -8894,7 +8894,7 @@
     ],
     "aliases": [],
     "deceased": false,
-    "touring_status": "active"
+    "touring_status": "hiatus"
   },
   {
     "rank": 561,
@@ -10601,6 +10601,20 @@
       "Wynona Judd",
       "Wynonna"
     ],
+    "deceased": false,
+    "touring_status": "active"
+  },
+  {
+    "rank": 675,
+    "name": "Ben Folds",
+    "genre": [
+      "Alternative"
+    ],
+    "era": "1990s",
+    "sources": [
+      "user"
+    ],
+    "aliases": [],
     "deceased": false,
     "touring_status": "active"
   }
