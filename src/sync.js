@@ -5,6 +5,7 @@ import db from './db.js';
 import { normalize, isTribute } from './matcher.js';
 import { fetchAttended } from './setlistfm.js';
 import { fetchEvents, parseEvent, isMusicEvent, resolveAttractionId, TM_QUOTA_EXCEEDED } from './tm.js';
+import { fetchEvents as fetchJbEvents, parseEvent as parseJbEvent, resolveArtistId as resolveJbArtistId } from './jambase.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const TOP_ARTISTS_PATH = join(__dir, '..', 'top_artists.json');
@@ -15,7 +16,7 @@ export function isSyncing() { return running; }
 
 const primaryGenre = a => (Array.isArray(a.genre) ? a.genre[0] : a.genre) ?? 'Other';
 
-export async function runSync({ setlistKey, setlistUser, tmKey, log = console.log } = {}) {
+export async function runSync({ setlistKey, setlistUser, tmKey, jambaseKey = '', log = console.log } = {}) {
   if (running) { log('Sync already in progress, skipping'); return; }
   running = true;
 
@@ -131,6 +132,11 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
     const markSynced   = db.prepare(`INSERT OR REPLACE INTO events_sync_cache (artist_rank, synced_at) VALUES (?, datetime('now'))`);
     const STALE_MS     = 72 * 60 * 60 * 1000; // skip artists synced within 72 h
 
+    const getJbId  = db.prepare(`SELECT jb_id FROM jambase_artist_ids WHERE artist_rank = ?`);
+    const saveJbId = db.prepare(
+      `INSERT OR REPLACE INTO jambase_artist_ids (artist_rank, jb_id, resolved_at) VALUES (?, ?, datetime('now'))`
+    );
+
     const upsertSuggestion = db.prepare(`
       INSERT INTO status_suggestions
         (artist_rank, artist_name, current_status, suggested_status, reason, consecutive_hits, detected_at, dismissed)
@@ -239,24 +245,69 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
           if (result.changes) newEvents++;
         }
 
-        // Remove stale future events: anything TM no longer returns for this artist.
-        // This purges false-positives stored by previous syncs (e.g. a namesake act).
+        // Source-aware stale purge.
         const tmIds = upcoming.map(e => e.tm_id).filter(Boolean);
+        let jbUpcoming = [];
+
         if (tmIds.length > 0) {
+          // TM has events — purge stale TM events and any lingering JamBase events
+          // (JamBase was a fallback; TM is now authoritative for this artist).
           const ph = tmIds.map(() => '?').join(',');
           db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date >= ? AND tm_id NOT IN (${ph})`)
             .run(artist.rank, today, ...tmIds);
         } else {
-          db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date >= ?`).run(artist.rank, today);
+          // TM returned 0 events — purge stale TM events, then try JamBase fallback.
+          db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date >= ? AND tm_id NOT LIKE 'jambase:%'`)
+            .run(artist.rank, today);
+
+          if (jambaseKey) {
+            // Resolve JamBase artist ID if needed (prefer ticketmaster: cross-ref).
+            let jbId = getJbId.get(artist.rank)?.jb_id ?? null;
+            if (!jbId && !tmId) {
+              jbId = await resolveJbArtistId(artist.name, jambaseKey);
+              if (jbId) saveJbId.run(artist.rank, jbId);
+            }
+
+            const rawJbEvents = await fetchJbEvents(artist.name, jambaseKey, {
+              tmAttractionId: tmId ?? null,
+              jambaseId: jbId ?? null,
+            });
+
+            if (rawJbEvents) {
+              jbUpcoming = rawJbEvents
+                .map(parseJbEvent)
+                .filter(e => e.date >= today && e.venue);
+
+              eventsFound += jbUpcoming.length;
+              for (const ev of jbUpcoming) {
+                const result = insertEvent.run({ artist_rank: artist.rank, artist_name: artist.name, ...ev });
+                if (result.changes) newEvents++;
+              }
+
+              // Purge stale JamBase events not in current response.
+              const jbIds = jbUpcoming.map(e => e.tm_id).filter(Boolean);
+              if (jbIds.length > 0) {
+                const ph2 = jbIds.map(() => '?').join(',');
+                db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date >= ? AND tm_id LIKE 'jambase:%' AND tm_id NOT IN (${ph2})`)
+                  .run(artist.rank, today, ...jbIds);
+              } else {
+                db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date >= ? AND tm_id LIKE 'jambase:%'`)
+                  .run(artist.rank, today);
+              }
+            }
+          }
         }
+
         db.prepare(`DELETE FROM events WHERE artist_rank = ? AND date < ?`).run(artist.rank, today);
 
-        // Inline status suggestions — replaces the separate status-sync TM pass.
+        // Status suggestions based on combined TM + JamBase event count.
         const status = artist.touring_status;
-        if (status === 'active' && upcoming.length === 0) {
-          upsertSuggestion.run({ rank: artist.rank, name: artist.name, current: 'active', suggested: 'hiatus', reason: '0 upcoming TM events' });
-        } else if (status === 'hiatus' && upcoming.length > 0) {
-          upsertSuggestion.run({ rank: artist.rank, name: artist.name, current: 'hiatus', suggested: 'active', reason: `${upcoming.length} upcoming TM event(s) found` });
+        const totalUpcoming = upcoming.length + jbUpcoming.length;
+        const upcomingSource = upcoming.length > 0 ? 'TM' : 'JamBase';
+        if (status === 'active' && totalUpcoming === 0) {
+          upsertSuggestion.run({ rank: artist.rank, name: artist.name, current: 'active', suggested: 'hiatus', reason: '0 upcoming events (TM + JamBase)' });
+        } else if (status === 'hiatus' && totalUpcoming > 0) {
+          upsertSuggestion.run({ rank: artist.rank, name: artist.name, current: 'hiatus', suggested: 'active', reason: `${totalUpcoming} upcoming ${upcomingSource} event(s) found` });
         } else {
           clearSuggestion.run(artist.rank);
         }
@@ -353,7 +404,7 @@ export async function runSync({ setlistKey, setlistUser, tmKey, log = console.lo
       WHERE id = ?
     `).run(workList.length, eventsFound, newEvents, syncId);
 
-    const skippedNote = skipped > 0 ? `, ${skipped} skipped (fresh < 18h)` : '';
+    const skippedNote = skipped > 0 ? `, ${skipped} skipped (fresh < 72h)` : '';
     log(`Sync complete — ${eventsFound} upcoming events (${newEvents} new), ${seenRanks.size}/${topArtists.length} top-500 seen${skippedNote}`);
   } finally {
     running = false;

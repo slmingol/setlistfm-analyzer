@@ -17,6 +17,7 @@ const {
   SETLISTFM_API_KEY:  SETLIST_KEY  = '',
   SETLISTFM_USERNAME: SETLIST_USER = '',
   TICKETMASTER_API_KEY: TM_KEY     = '',
+  JAMBASE_API_KEY:    JAMBASE_KEY  = '',
   PORT = '3000',
   SYNC_ON_START = 'false',
   CRON_SCHEDULE = '0 12 * * 1',              // Monday noon UTC
@@ -128,7 +129,7 @@ app.put('/api/preferences', express.json(), (req, res) => {
 app.post('/api/sync', async (_req, res) => {
   if (isSyncing()) return res.status(409).json({ error: 'Sync already running' });
   res.json({ started: true });
-  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
+  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, jambaseKey: JAMBASE_KEY, log: tsLog });
 });
 
 // Status suggestions
@@ -195,7 +196,7 @@ app.post('/api/songkick-sync', (_req, res) => {
 
 cron.schedule(CRON_SCHEDULE, () => {
   tsLog('Cron: starting weekly sync');
-  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
+  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, jambaseKey: JAMBASE_KEY, log: tsLog });
 });
 
 
@@ -227,7 +228,7 @@ app.listen(Number(PORT), () => {
       tsLog(`Skipping startup sync — last sync finished ${Math.round(ageMs / 60000)} min ago`);
     } else {
       tsLog('Running initial sync…');
-      runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
+      runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, jambaseKey: JAMBASE_KEY, log: tsLog });
     }
   }
 });
