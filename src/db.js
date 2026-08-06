@@ -34,16 +34,6 @@ db.exec(`
 
   CREATE INDEX IF NOT EXISTS idx_events_artist ON events(artist_rank);
   CREATE INDEX IF NOT EXISTS idx_events_date   ON events(date);
-`);
-
-// Deduplicate same-show TM listings (hotel packages, VIP bundles posted as separate event IDs)
-// before creating the unique index so the index creation never fails on existing dupes.
-db.exec(`
-  DELETE FROM events WHERE id NOT IN (
-    SELECT MIN(id) FROM events GROUP BY artist_rank, date, venue
-  );
-  CREATE UNIQUE INDEX IF NOT EXISTS idx_events_no_dupe ON events(artist_rank, date, venue);
-`);
 
   CREATE TABLE IF NOT EXISTS blacklist (
     artist_rank INTEGER PRIMARY KEY,
@@ -101,7 +91,15 @@ db.exec(`
     artist_rank INTEGER PRIMARY KEY,
     synced_at   TEXT NOT NULL
   );
+`);
 
+// Deduplicate same-show TM listings (hotel packages, VIP bundles posted as separate event IDs)
+// before creating the unique index so the index creation never fails on existing dupes.
+db.exec(`
+  DELETE FROM events WHERE id NOT IN (
+    SELECT MIN(id) FROM events GROUP BY artist_rank, date, venue
+  );
+  CREATE UNIQUE INDEX IF NOT EXISTS idx_events_no_dupe ON events(artist_rank, date, venue);
 `);
 
 export default db;
