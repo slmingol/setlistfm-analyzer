@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # Need full history to push back; token allows write
           token: ${{ secrets.GITHUB_TOKEN }}
