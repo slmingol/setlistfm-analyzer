@@ -66,9 +66,9 @@ export async function fetchEvents(artistName, apiKey, { pageSize = 50, attractio
     params.set('keyword', artistName);
   }
 
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 4; attempt++) {
     const ac = new AbortController();
-    const timer = setTimeout(() => ac.abort(), 10000);
+    const timer = setTimeout(() => ac.abort(), 15000);
     try {
       const res = await fetch(`${BASE}/events.json?${params}`, { signal: ac.signal });
       clearTimeout(timer);
