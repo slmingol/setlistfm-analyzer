@@ -73,6 +73,33 @@ db.exec(`
     dismissed   INTEGER NOT NULL DEFAULT 0,
     UNIQUE(source, name)
   );
+
+  CREATE TABLE IF NOT EXISTS tm_attraction_ids (
+    artist_rank   INTEGER PRIMARY KEY,
+    tm_id         TEXT NOT NULL,
+    resolved_at   TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+
+  CREATE TABLE IF NOT EXISTS songkick_artists (
+    rank        INTEGER PRIMARY KEY,
+    name        TEXT NOT NULL UNIQUE,
+    songkick_id TEXT,
+    added_at    TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+
+  CREATE TABLE IF NOT EXISTS events_sync_cache (
+    artist_rank INTEGER PRIMARY KEY,
+    synced_at   TEXT NOT NULL
+  );
+`);
+
+// Deduplicate same-show TM listings (hotel packages, VIP bundles posted as separate event IDs)
+// before creating the unique index so the index creation never fails on existing dupes.
+db.exec(`
+  DELETE FROM events WHERE id NOT IN (
+    SELECT MIN(id) FROM events GROUP BY artist_rank, date, venue
+  );
+  CREATE UNIQUE INDEX IF NOT EXISTS idx_events_no_dupe ON events(artist_rank, date, venue);
 `);
 
 export default db;

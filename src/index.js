@@ -8,6 +8,7 @@ import db from './db.js';
 import { runSync, isSyncing } from './sync.js';
 import { runStatusSync, isStatusSyncing, applyStatusChange } from './statusSync.js';
 import { runListSync, isListSyncing } from './listSync.js';
+import { runSongkickSync, isSongkickSyncing } from './songkickSync.js';
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 mkdirSync(join(__dir, '..', 'data'), { recursive: true });
@@ -17,16 +18,20 @@ const {
   SETLISTFM_USERNAME: SETLIST_USER = '',
   TICKETMASTER_API_KEY: TM_KEY     = '',
   PORT = '3000',
-  SYNC_ON_START = 'true',
-  CRON_SCHEDULE = '0 12 * * 1',         // Monday noon UTC
-  STATUS_SYNC_SCHEDULE = '0 14 * * 1',  // Monday 2pm UTC (after main sync)
-  LIST_SYNC_SCHEDULE   = '0 10 1 * *',  // 1st of each month, 10am UTC
+  SYNC_ON_START = 'false',
+  CRON_SCHEDULE = '0 12 * * 1',              // Monday noon UTC
+  LIST_SYNC_SCHEDULE   = '0 10 1 * *',       // 1st of each month, 10am UTC
+  SONGKICK_SYNC_SCHEDULE = '0 8 * * 0',      // Sunday 8am UTC
+  SONGKICK_USERNAME = 'slmingol',
+  SONGKICK_COOKIE   = '',                    // value of _songkick_session cookie from browser
 } = process.env;
 
 if (!SETLIST_KEY || !SETLIST_USER || !TM_KEY) {
   console.error('Missing required env vars: SETLISTFM_API_KEY, SETLISTFM_USERNAME, TICKETMASTER_API_KEY');
   process.exit(1);
 }
+
+const tsLog = (...args) => console.log(`[${new Date().toISOString()}]`, ...args);
 
 const app = express();
 app.use(express.static(join(__dir, '..', 'public')));
@@ -123,7 +128,7 @@ app.put('/api/preferences', express.json(), (req, res) => {
 app.post('/api/sync', async (_req, res) => {
   if (isSyncing()) return res.status(409).json({ error: 'Sync already running' });
   res.json({ started: true });
-  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY });
+  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
 });
 
 // Status suggestions
@@ -155,7 +160,7 @@ app.post('/api/suggestions/:rank/dismiss', (req, res) => {
 app.post('/api/status-sync', (_req, res) => {
   if (isStatusSyncing()) return res.status(409).json({ error: 'Status sync already running' });
   res.json({ started: true });
-  runStatusSync({ tmKey: TM_KEY });
+  runStatusSync();
 });
 
 // List gap suggestions (RRHOF etc.)
@@ -177,27 +182,52 @@ app.post('/api/list-sync', (_req, res) => {
   runListSync();
 });
 
+app.post('/api/songkick-sync', (_req, res) => {
+  if (!SONGKICK_COOKIE) {
+    return res.status(400).json({ error: 'SONGKICK_COOKIE env var required' });
+  }
+  if (isSongkickSyncing()) return res.status(409).json({ error: 'Songkick sync already running' });
+  res.json({ started: true });
+  runSongkickSync({ username: SONGKICK_USERNAME, sessionCookie: SONGKICK_COOKIE, log: tsLog });
+});
+
 // --- Scheduler ---
 
 cron.schedule(CRON_SCHEDULE, () => {
-  console.log('Cron: starting weekly sync');
-  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY });
+  tsLog('Cron: starting weekly sync');
+  runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
 });
 
-cron.schedule(STATUS_SYNC_SCHEDULE, () => {
-  console.log('Cron: starting weekly status sync');
-  runStatusSync({ tmKey: TM_KEY });
-});
 
 cron.schedule(LIST_SYNC_SCHEDULE, () => {
-  console.log('Cron: starting monthly list sync');
-  runListSync();
+  tsLog('Cron: starting monthly list sync');
+  runListSync({ log: tsLog });
 });
+
+if (SONGKICK_COOKIE) {
+  cron.schedule(SONGKICK_SYNC_SCHEDULE, () => {
+    tsLog('Cron: starting weekly Songkick sync');
+    runSongkickSync({ username: SONGKICK_USERNAME, sessionCookie: SONGKICK_COOKIE, log: tsLog });
+  });
+} else {
+  tsLog('Songkick sync disabled — set SONGKICK_COOKIE to enable');
+}
 
 app.listen(Number(PORT), () => {
   console.log(`Tour app running on http://localhost:${PORT}`);
   if (SYNC_ON_START === 'true') {
-    console.log('Running initial sync…');
-    runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY });
+    const recent = db.prepare(
+      `SELECT finished_at FROM sync_log WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1`
+    ).get();
+    const SKIP_MS = 12 * 60 * 60 * 1000;
+    const ageMs = recent
+      ? Date.now() - new Date(recent.finished_at.replace(' ', 'T') + 'Z').getTime()
+      : Infinity;
+    if (ageMs < SKIP_MS) {
+      tsLog(`Skipping startup sync — last sync finished ${Math.round(ageMs / 60000)} min ago`);
+    } else {
+      tsLog('Running initial sync…');
+      runSync({ setlistKey: SETLIST_KEY, setlistUser: SETLIST_USER, tmKey: TM_KEY, log: tsLog });
+    }
   }
 });

@@ -1,15 +1,15 @@
 {
   "name": "setlistfm-analyzer",
-  "version": "1.7.0",
+  "version": "1.19.10",
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js"
   },
   "dependencies": {
-    "better-sqlite3": "^9.6.0",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "node-cron": "^3.0.3"
+    "better-sqlite3": "^13.0.0",
+    "dotenv": "^18.0.0",
+    "express": "^5.0.0",
+    "node-cron": "^4.0.0"
   }
 }

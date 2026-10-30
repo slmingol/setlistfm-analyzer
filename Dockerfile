@@ -1,4 +1,4 @@
-FROM node:22-alpine AS builder
+FROM node:26-alpine AS builder
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ COPY package.json .
 RUN npm install --omit=dev
 
 # ---- runtime image ----
-FROM node:22-alpine
+FROM node:26-alpine
 
 WORKDIR /app
 
@@ -17,6 +17,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY package.json .
 COPY src/ ./src/
 COPY public/ ./public/
+COPY top_artists.json .
 
 RUN mkdir -p /app/data
 
